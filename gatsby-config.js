@@ -5,6 +5,15 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'open sans\:200, 400, 700'
+        ],
+        display: 'swap'
+      }
+    }
   ]
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import '../styles/index.scss'
-import layoutStyles from './layout.module.scss'
+import layoutStyles from '../styles/components/layout.module.scss'
 
 const Layout = (props) => {
     return (
