@@ -18,6 +18,24 @@
     filter: blur(7px)
 }
 
+.navbar  {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    z-index: 99;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+
+    &Active {
+        color: #E60012;
+        font-weight: 700;
+    }
+}
+
 .headerLogoBox {
     position: absolute;
     top: 10%;

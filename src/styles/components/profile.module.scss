@@ -1,0 +1,137 @@
+@import '../abstracts/utils.scss';
+@import "../abstracts/mixins.scss";
+@import "../abstracts/variables.scss";
+
+.profile {
+    max-width: 75%;
+    height: 100vh;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+}
+
+.subtitle {
+    color: #727878;
+    font-size: 2rem;
+    font-weight: 100;
+
+    &::after {
+            content: "";
+            height: 1px;
+            display: block;
+            background-color: currentColor;
+            margin: 1.1rem 0 1.7rem 0;
+            opacity: 0.3;
+            margin-top: 3rem;
+    }
+}
+
+.aboutDetails {
+    display: flex;
+    padding-left: 8rem;
+}
+
+.about {
+    max-width: 65%;
+
+    & h1:first-child {
+        transform: translateX(-4rem);
+    }
+}
+
+.aboutText {
+    padding-right: 8rem;
+    transform: translateX(-4rem)
+}
+
+.details {
+    max-width: 35%;
+
+    &Adress {
+        line-height: 1.4;
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+.figure {
+    border: 0.7rem solid #eb616e;
+    width: 25rem;
+    height: 25rem;
+    float: right;
+    transform: translateX(-4rem);
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;    
+}
+
+.profilePic {
+    height: 100%;
+    width: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden;
+    transition: all .5s;
+}
+
+.figCaption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: white;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden;
+}
+
+.aboutDetails:hover .figCaption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.aboutDetails:hover .profilePic {
+    transform: scale(1);
+    filter: blur(.3rem) brightness(80%);
+
+}
+
+.giftRequest {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.toolip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+
+    & .toolipText {
+        visibility: hidden;
+        width: 8.5rem;
+        background-color: #1B95E0;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: .5rem 0;
+
+        /* Position the tooltip */
+        position: absolute;
+        top: -130%;
+        left: -3%;
+        z-index: 1;
+    }
+
+    &:hover .toolipText {
+        visibility: visible;
+    }
+}

@@ -1,17 +1,17 @@
 import React from "react"
 import { Link } from 'gatsby'
+
 import Layout from "../components/Layout";
 import Head from '../components/head'
+import Header from '../components/header'
 
-const GermanPage = () => {
+const EnglishPage = () => {
     return (
         <Layout>
-            <Head title="German"/>
-            <h1>Gr</h1>
-            <p><Link to=''>English</Link></p>
-            <p><Link to='/fr'>French</Link></p>
+            <Head title="English" />
+            <Header subtitle="Interaktiver lebenslauf"/>
         </Layout>
     )
 }
 
-export default GermanPage
+export default EnglishPage

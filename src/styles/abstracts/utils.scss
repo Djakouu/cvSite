@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+.headingPrimaryMain {
+    color: $color-primary-light;
+    font-size: 5rem;
+    font-weight: 200;
+}
+
+.headingPrimarySub {
+    color: $color-primary-light;
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+p {
+    font-size: 1.5rem;
+}
