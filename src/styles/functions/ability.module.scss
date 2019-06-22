@@ -1,0 +1,27 @@
+@import '../abstracts//variables.scss';
+
+.ability {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    flex-wrap: wrap;
+    padding: 0 5%;
+    align-items: center;
+}
+
+.starFull,
+.starEmpty {
+    height: 1.3rem;
+    width: 1.3rem;
+    margin-left: 2px;
+}
+
+.starFull {
+    fill: $color-primary-light;
+
+}
+
+.starEmpty {
+    fill: #ddd;
+}
+

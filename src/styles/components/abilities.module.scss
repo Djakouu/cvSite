@@ -1,0 +1,17 @@
+@import '../abstracts/utils.scss';
+@import '../abstracts/mixins.scss';
+
+.abilityGroups {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5%;
+}
+
+.skillsToolsLanguages {
+    padding: 2rem 4rem 8rem 4rem;
+}
+
+.skills::after,
+.tools::after {
+    @include separatorAfter;
+}

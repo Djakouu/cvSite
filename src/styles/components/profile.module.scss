@@ -2,35 +2,6 @@
 @import "../abstracts/mixins.scss";
 @import "../abstracts/variables.scss";
 
-.profile {
-    max-width: 75%;
-    height: 100vh;
-    margin: auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.container {
-    text-align: center;
-    padding: 2rem;
-}
-
-.subtitle {
-    color: #727878;
-    font-size: 2rem;
-    font-weight: 100;
-
-    &::after {
-            content: "";
-            height: 1px;
-            display: block;
-            background-color: currentColor;
-            margin: 1.1rem 0 1.7rem 0;
-            opacity: 0.3;
-            margin-top: 3rem;
-    }
-}
 
 .aboutDetails {
     display: flex;
@@ -38,7 +9,7 @@
 }
 
 .about {
-    max-width: 65%;
+    min-width: 65%;
 
     & h1:first-child {
         transform: translateX(-4rem);
@@ -51,7 +22,7 @@
 }
 
 .details {
-    max-width: 35%;
+    min-width: 35%;
 
     &Adress {
         line-height: 1.4;
@@ -104,6 +75,18 @@
     filter: blur(.3rem) brightness(80%);
 
 }
+
+.media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+
+}
+// .linkedIn {
+//     margin-top: -1rem;
+//     // margin-left: -1rem;
+// }
 
 .giftRequest {
     margin-top: 4rem;

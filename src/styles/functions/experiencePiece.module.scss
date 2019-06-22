@@ -1,0 +1,23 @@
+.experience {
+
+    &Piece {
+        display: flex;
+        margin-bottom: 3rem;
+    }
+
+    &LocationDate {
+        min-width: 40%;
+    }
+
+    &PurposeDescription {
+        min-width: 60%;
+    }
+
+    &Location {
+        margin-bottom: .7rem;
+    }
+
+    &Purpose {
+        margin-bottom: .7rem;
+    }
+}

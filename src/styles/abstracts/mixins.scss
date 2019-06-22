@@ -12,3 +12,13 @@
     transform: translate(-50%, -50%);
 }
 
+@mixin separatorAfter {
+    content: "";
+    height: 1px;
+    display: block;
+    background-color: currentColor;
+    margin: 1.1rem 0 1.7rem 0;
+    opacity: 0.3;
+    margin-top: 3rem;
+}
+

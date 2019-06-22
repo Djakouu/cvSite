@@ -1,0 +1,16 @@
+@import '../abstracts/utils.scss';
+@import '../abstracts/mixins.scss';
+
+.educationCareer {
+    padding-left: 4rem;
+}
+
+.education::after {
+    @include separatorAfter;
+    margin-bottom: 3rem;
+}
+
+.experience {
+    background-color: #F3EFE0;
+    padding-bottom: 4rem;
+}
