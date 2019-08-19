@@ -7,12 +7,14 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
-      resolve: 'gatsby-plugin-google-fonts',
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
-          'open sans\:200, 400, 700'
+          {
+          family: `Lato`,
+          variants: [`300`, `400`, `700`]
+          },
         ],
-        display: 'swap'
       }
     }
   ]

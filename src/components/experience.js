@@ -3,15 +3,27 @@ import React from 'react'
 import ExperiencePiece from '../functions/ExperiencePiece'
 import experienceStyles from '../styles/components/experience.module.scss'
 
-const Experience = ({ title, subtitle }) => {
+import langDeterminer from '../functions/langDeterminer'
+
+
+const Experience = ({ location }) => {
+
+    const dataDeterminer = (ability) => {
+        return langDeterminer(ability, location)
+    }
+
     return (
-        <div className={experienceStyles.experience}>
+        <div className={experienceStyles.experience} id="experience">
 
             <div className={experienceStyles.jumbotron}>
 
                 <div className={experienceStyles.container}>
-                    <h1 className={experienceStyles.headingPrimaryMain}>{title}</h1>
-                    <p className={experienceStyles.subtitle}>{subtitle}</p>
+                    <h1 className={experienceStyles.headingPrimaryMain}>{dataDeterminer("experienceTitle")}</h1>
+                    <div className={experienceStyles.blockquoteContainer}>
+                        <blockquote className={experienceStyles.subtitle}>{dataDeterminer("experienceQuote")}
+                        <p>- John D. Rockefeller</p>
+                        </blockquote>
+                    </div>
                 </div>
 
                 <div className={experienceStyles.educationCareer}>
@@ -20,28 +32,34 @@ const Experience = ({ title, subtitle }) => {
 
                         <h1 className={experienceStyles.headingPrimarySub}>Education</h1>
                         <ExperiencePiece 
-                            location="Grenoble-Alpes University"
+                            location={dataDeterminer('educationOneLocation')}
                             date="2019 - 2020"
-                            purpose="Master in mathematics and computer science"
-                            description="Coming soon..."
+                            purpose={dataDeterminer('educationOnePurpose')}
+                            description={dataDeterminer('educationOneDescription')}
                         />
                         <ExperiencePiece 
-                            location="Grenoble-Alpes University"
+                            location={dataDeterminer('educationTwoLocation')}
+                            date="2015 - 2019"
+                            purpose={dataDeterminer('educationTwoPurpose')}
+                            description={dataDeterminer('educationTwoDescription')}
+                        />
+                        <ExperiencePiece 
+                            location={dataDeterminer('educationThreeLocation')}
                             date="2014 - 2015"
-                            purpose="Master in energy economics"
-                            description="Coming soon..."
+                            purpose={dataDeterminer('educationThreePurpose')}
+                            description={dataDeterminer('educationThreeDescription')}
                         />
                         <ExperiencePiece 
-                            location="M'Hamed-Bougara University"
-                            date="2013 - 2014"
-                            purpose="Master in energy economics"
-                            description="Coming soon..."
+                            location={dataDeterminer('educationFourLocation')}
+                            date="2008 - 2014"
+                            purpose={dataDeterminer('educationFourPurpose')}
+                            description={dataDeterminer('educationFourDescription')}
                         />
                         <ExperiencePiece 
-                            location="The New High school"
+                            location={dataDeterminer('educationFiveLocation')}
                             date="2007 - 2008"
-                            purpose="High school diploma"
-                            description="Coming soon..."
+                            purpose={dataDeterminer('educationFivePurpose')}
+                            description={dataDeterminer('educationFiveDescription')}
                         />
                             
                         
@@ -50,10 +68,43 @@ const Experience = ({ title, subtitle }) => {
                     <div className={experienceStyles.career}>
                         <h1 className={experienceStyles.headingPrimarySub}>Career</h1>
                         <ExperiencePiece 
-                            location="CNRS"
-                            date="June 2015 - September 2015"
-                            purpose="Internship"
-                            description="Coming soon..."
+                            location={dataDeterminer('careerOneLocation')}
+                            date={dataDeterminer('careerOneDate')}
+                            purpose={dataDeterminer('careerOnePurpose')}
+                            description={dataDeterminer('careerOneDescription')}
+                        />
+                        <ExperiencePiece 
+                            location={dataDeterminer('careerTwoLocation')}
+                            date={dataDeterminer('careerTwoDate')}
+                            purpose={dataDeterminer('careerTwoPurpose')}
+                            description={dataDeterminer('careerTwoDescription')}
+                        />
+                    </div>
+                    <div className={experienceStyles.activities}>
+                        <h1 className={experienceStyles.headingPrimarySub}>Extracurricular activities</h1>
+                        <ExperiencePiece 
+                            location={dataDeterminer('activityOneLocation')}
+                            date={`2017 - 2019 (${dataDeterminer('activityOneDate')})`}
+                            purpose={dataDeterminer('activityOnePurpose')}
+                            description={dataDeterminer('activityOneDescription')}
+                        />
+                        <ExperiencePiece 
+                            location={dataDeterminer('activityTwoLocation')}
+                            date={`2019 (${dataDeterminer('activityTwoDate')})`}
+                            purpose={dataDeterminer('activityTwoPurpose')}
+                            description={dataDeterminer('activityTwoDescription')}
+                        />
+                        <ExperiencePiece 
+                            location={dataDeterminer('activityThreeLocation')}
+                            date={`2017 - 2019 (${dataDeterminer('activityThreeDate')})`}
+                            purpose={dataDeterminer('activityThreePurpose')}
+                            description={dataDeterminer('activityThreeDescription')}
+                        />
+                        <ExperiencePiece 
+                            location={dataDeterminer('activityFourLocation')}
+                            date={`2016 - 2017 (${dataDeterminer('activityFourDate')})`}
+                            purpose={dataDeterminer('activityFourPurpose')}
+                            description={dataDeterminer('activityFourDescription')}
                         />
                     </div>
 

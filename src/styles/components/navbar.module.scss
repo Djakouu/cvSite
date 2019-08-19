@@ -1,0 +1,29 @@
+.navbar  {
+    position: sticky;
+    float: right;
+    margin-right: 3.4%;
+    // margin-top: 2rem;
+
+    &Header {
+        top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    &Footer {
+        bottom: 4rem;
+        margin-top: 2rem;
+    }
+}
+
+
+.link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+
+    &Active,
+    &:hover {
+        color: #E60012;
+        font-weight: 700;
+    }
+}

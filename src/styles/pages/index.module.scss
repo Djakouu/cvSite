@@ -2,9 +2,7 @@
 @import "../abstracts/mixins.scss";
 
 .header {
-    
-
-
+    position: relative;
 }
 
 .headerBgImg {
@@ -18,24 +16,6 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-}
-
-.navbar  {
-    position: fixed;
-    top: 5%;
-    right: 5%;
-    z-index: 99;
-}
-
-.link {
-    text-decoration: none;
-    color: white;
-    font-size: 1.3rem;
-
-    &Active {
-        color: #E60012;
-        font-weight: 700;
-    }
 }
 
 .headerLogoBox {
@@ -52,11 +32,12 @@
 .container {
     @include absCenterTop;
     color: white;
+    cursor: pointer;
 }
 
 .headerTitle {
     font-size: 5rem;
-    font-weight: 700;
+    font-weight: 400;
     
 
     &::after {
@@ -71,7 +52,7 @@
 
 .headerSubtitle {
     font-size: 2.5rem;
-    font-weight: 200;
+    font-weight: 300;
     opacity: 0.85;
 }
 

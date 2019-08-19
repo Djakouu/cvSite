@@ -1,0 +1,85 @@
+.navbar  {
+    position: fixed;
+    // top: 90%;
+    right: 2%;
+    z-index: 99;
+    
+
+    &List {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        position: relative;
+
+        list-style: none;
+        color: black;
+        font-size: 1.5rem;
+        font-weight: 400;
+
+        &::before {
+            content: "";
+            // display: inline;
+            position: absolute;
+            top: 36%;
+            left: 0;
+            height: 14.2rem;
+            width: .9rem;
+            background-color: #E60012;
+            margin: 0 1rem 0 0 ;
+            opacity: 0.3;
+        }
+        
+
+        &Item {
+            cursor: pointer;
+            z-index: 99;
+        
+            &:hover,
+            &Active {
+                color: #E60012;
+                font-weight: 700;
+                // &::before {
+                //     content: "";
+                //     display: inline-block;
+                //     height: 1.3rem;
+                //     width: .9rem;
+                //     background-color: currentColor;
+                //     margin: 0 -1rem 0 0 ;
+                //     opacity: 0.3;
+                // }
+            }
+
+            &Bottom,
+            &Up {
+                flex-grow: 1;
+            }
+
+            &CircleUp {
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+
+.circleUp {
+    height: 3.3rem;
+    width: 3.3rem;
+    // margin-left: 2rem;
+    transition: margin-left .3s;
+    fill: #E60012;
+    opacity: .7;
+
+    &:hover {
+        opacity: .9;
+    }
+}
+
+// .circleUp {
+//     fill: $color-primary-light;
+
+// }
+
+// .circleDown {
+//     fill: #ddd;
+// }

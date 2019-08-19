@@ -1,0 +1,75 @@
+@import '../abstracts/utils.scss';
+@import '../abstracts/mixins.scss';
+@import '../abstracts/variables.scss';
+
+.footer {
+    background-color: #6b6b6e;
+    padding-bottom: 4rem;
+}
+
+.headingPrimaryMain {
+    color: #ffffff;
+    
+}
+
+.subtitle {
+    color: #cdcdcd;
+}
+
+.jumbotron {
+    min-height: 85vh;
+}
+
+.container {
+    &::after {
+        color: #cdcdcd;
+    }
+}
+
+.contact {
+    display: flex;
+    padding: 0 4rem 2rem 4rem;
+    flex-wrap: wrap;
+
+    &Group {
+        &::after {
+            @include separatorAfter;
+            color: #cdcdcd;
+            margin: 0 4rem;
+        }
+    }
+
+    &Links {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        margin-bottom: 2.5rem;
+        text-decoration: none;
+
+        &:hover &Icon {
+            fill: #ffffff;
+        }
+
+        &:hover &Txt {
+            color: #ffffff;
+        }
+
+        &Icon {
+            fill: #cdcdcd;
+            height: 3rem;
+            width: 3rem;
+            margin-right: 2rem;
+        }
+    
+        &Txt {
+            color: #cdcdcd;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+    }
+}
+
+.likes {
+    padding: 2rem 4rem;
+    text-align: center;
+}

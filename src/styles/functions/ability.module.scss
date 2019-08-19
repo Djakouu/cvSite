@@ -1,12 +1,26 @@
+@import '../vendors/animate.scss';
 @import '../abstracts//variables.scss';
 
 .ability {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 40%;
     flex-wrap: wrap;
-    padding: 0 5%;
+    margin: 0 5%;
     align-items: center;
+
+    &:hover {
+        background-color: #F2F2F2;
+    }
+
+    &:hover &StarsScale .starEmpty,
+    &:hover &StarsScale .starFull {
+        margin-left: 4.5px;
+    }
+
+    &:hover &StarsPulse{
+        animation: pulse 1s;
+    }
 }
 
 .starFull,
@@ -14,6 +28,7 @@
     height: 1.3rem;
     width: 1.3rem;
     margin-left: 2px;
+    transition: margin-left .3s;
 }
 
 .starFull {
@@ -25,3 +40,7 @@
     fill: #ddd;
 }
 
+span {
+    color: #a7a5a5;
+    font-size: 1.3rem;
+}

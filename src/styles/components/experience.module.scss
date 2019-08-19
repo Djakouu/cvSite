@@ -5,7 +5,8 @@
     padding-left: 4rem;
 }
 
-.education::after {
+.education::after,
+.career::after {
     @include separatorAfter;
     margin-bottom: 3rem;
 }
@@ -14,3 +15,4 @@
     background-color: #F3EFE0;
     padding-bottom: 4rem;
 }
+

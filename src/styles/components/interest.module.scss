@@ -1,0 +1,147 @@
+@import '../abstracts/utils.scss';
+@import '../abstracts/mixins.scss';
+@import '../abstracts/variables.scss';
+
+.jumbotron {
+    margin: 0 12.5rem;
+    max-width: 100%;
+}
+
+.interest {
+    margin-bottom: 4rem;
+
+    &PartOne {
+        min-height: 75vh;
+        display: flex;
+        margin: 4rem 0;
+    
+        &Txt {
+            width: 50%;
+            padding-right: 4rem;
+            align-self: center;
+        }
+
+        &Composition {
+            position: relative;
+            width: 50%;
+
+            &Pic {
+                width: 55%;
+                box-shadow: 0 1.5rem 4rem rgba(0,0,0, .4);
+                position: absolute;
+                z-index: 10;
+                transition: all .3s;
+                outline-offset: 2rem;
+
+                &:hover {
+                    
+                    transform: scale(1.05) translateY(-.5rem);
+                    box-shadow: 0 2.5rem 4rem rgba(0,0,0, .5);
+                    z-index: 20;
+                }
+            }
+
+            &:hover &Pic:not(:hover) {
+                transform: scale(.95);
+            }
+        }
+    }
+
+    &PartTwo {
+        min-height: 75vh;
+        display: flex;
+        margin: 4rem 0;
+    
+        &Composition {
+            position: relative;
+            width: 50%;
+
+            &Pic {
+                width: 55%;
+                box-shadow: 0 1.5rem 4rem rgba(0,0,0, .4);
+                position: absolute;
+                z-index: 10;
+                transition: all .3s;
+                outline-offset: 2rem;
+
+                &:hover {
+                    
+                    transform: scale(1.05) translateY(-.5rem);
+                    box-shadow: 0 2.5rem 4rem rgba(0,0,0, .5);
+                    z-index: 20;
+                }
+            }
+
+            &:hover &Pic:not(:hover) {
+                transform: scale(.90);
+            }
+        }
+
+        &Txt {
+            width: 50%;
+            padding-left: 4rem;
+            align-self: center;
+        }
+    }
+}
+
+
+#p1 {
+    left: 0;
+    top: -2rem;
+
+    &:hover {
+        outline: 1.5rem solid #E60012;
+    }
+}
+
+#p2 {
+    right: 0;
+    top: 2rem;
+
+    &:hover {
+        outline: 1.5rem solid #f7dd4c;
+    }
+}
+
+#p3 {
+    left: 20%;
+    top: 15rem;
+
+    &:hover {
+        outline: 1.5rem solid $color-primary-light;
+    }
+}
+
+#p4 {
+    // height: 60%;
+    // width: 50%;
+    left: 0;
+    top: -2rem;
+
+    &:hover {
+        outline: 1.5rem solid #E60012;
+    }
+}
+
+#p5 {
+    // height: 50%;
+    // width: 70%;
+    right: 0;
+    top: 2rem;
+
+    &:hover {
+        outline: 1.5rem solid #f7dd4c;
+    }
+}
+
+#p6 {
+    // height: 60%;
+    // width: 60%;
+    left: 13%;
+    top: 15rem;
+
+    &:hover {
+        outline: 1.5rem solid $color-primary-light;
+    }
+}

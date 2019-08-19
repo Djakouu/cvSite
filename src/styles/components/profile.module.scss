@@ -2,6 +2,9 @@
 @import "../abstracts/mixins.scss";
 @import "../abstracts/variables.scss";
 
+// .profile {
+//     position: relative;
+// }
 
 .aboutDetails {
     display: flex;
@@ -73,20 +76,15 @@
 .aboutDetails:hover .profilePic {
     transform: scale(1);
     filter: blur(.3rem) brightness(80%);
-
 }
 
 .media {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 40%;
+    width: 47%;
 
 }
-// .linkedIn {
-//     margin-top: -1rem;
-//     // margin-left: -1rem;
-// }
 
 .giftRequest {
     margin-top: 4rem;
