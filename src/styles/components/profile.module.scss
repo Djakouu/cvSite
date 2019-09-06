@@ -1,6 +1,7 @@
 @import '../abstracts/utils.scss';
 @import "../abstracts/mixins.scss";
 @import "../abstracts/variables.scss";
+@import "../vendors/animate.scss";
 
 // .profile {
 //     position: relative;
@@ -43,7 +44,9 @@
     transform: translateX(-4rem);
     position: relative;
     overflow: hidden;
-    border-radius: 50%;    
+    border-radius: 50%; 
+    opacity: 0;
+    transition: opacity 2s;
 }
 
 .profilePic {
@@ -115,4 +118,8 @@
     &:hover .toolipText {
         visibility: visible;
     }
+}
+
+.jsWp1 {
+    opacity: 1;
 }

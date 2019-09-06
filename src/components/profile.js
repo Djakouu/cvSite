@@ -1,5 +1,7 @@
 import React from 'react'
 import ScriptTag from 'react-script-tag';
+import $ from 'jquery'
+import { Waypoint } from 'react-waypoint';
 
 import profileStyles from '../styles/components/profile.module.scss'
 import PageNavbar from './pageNavbar';
@@ -9,12 +11,17 @@ import langDeterminer from '../functions/langDeterminer'
 
 
 const Profile = ({ location }) => {
+    
+    const handleEnter = () => {
+        $(`.${profileStyles.figure}`).addClass(`${profileStyles.jsWp1}`)
+    }
+
     return (
         <div className={profileStyles.profile} id="profile">
             <PageNavbar location={location} />
             <div className={profileStyles.jumbotron}>
                 <div className={profileStyles.container}>
-                    <h1 className={profileStyles.headingPrimaryMain}>{langDeterminer('profileTitle', location)}</h1>
+                    <h1 className={profileStyles.headingPrimaryMain} id={profileStyles.jsWp1}>{langDeterminer('profileTitle', location)}</h1>
                     <p className={profileStyles.subtitle}>{langDeterminer('profileSubtitle', location)}</p>
                 </div>
 
@@ -23,11 +30,14 @@ const Profile = ({ location }) => {
                     <div className={profileStyles.about}>
                         <h1 className={profileStyles.headingPrimarySub}>About</h1>
                         
-                        <div>
-                            <figure className={profileStyles.figure}>
-                                <img src={'copenhagen.jpg'} alt="Profile pic" className={profileStyles.profilePic}/>
+                        <Waypoint onEnter={handleEnter}
+                                  bottomOffset='50%'>
+                            <figure className={profileStyles.figure} >
+                                <img src={'copenhagen.jpg'} alt="Profile pic" className={profileStyles.profilePic} />
                                 <figcaption className={profileStyles.figCaption}>Mohamed Kimouche</figcaption>
                             </figure>
+                        </Waypoint>
+                            
                             <p className={profileStyles.aboutText}>
                                 Unusual, economist 🏦 📈 and full-stack web developer 🖥️ ⌨️ 
                                 Curious to always learn more, eager for challenges 
@@ -37,7 +47,6 @@ const Profile = ({ location }) => {
                                 I am proactive, enterprising and I love teamwork.
                                 "If everyone is moving forward together, then success takes care of itself." – Henry Ford 
                             </p>
-                        </div>
                     </div>
 
                     <div className={profileStyles.details}>
@@ -70,7 +79,6 @@ const Profile = ({ location }) => {
                 </div>
 
             </div>
-
         </div>
         
     )

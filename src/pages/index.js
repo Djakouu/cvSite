@@ -1,5 +1,6 @@
 import React from "react"
 import $ from 'jquery'
+import ScriptTag from 'react-script-tag';
 
 import Layout from "../components/Layout";
 import Head from '../components/head'
@@ -23,6 +24,7 @@ const EnglishPage = ({ location }) => {
     });
 
     return (
+        <div>
         <Layout>
             <Head title="English" />
             <Header subtitle="Interactive resume"/>
@@ -33,6 +35,9 @@ const EnglishPage = ({ location }) => {
             <Interest location={location} />
             <Footer location={location} />
         </Layout>
+        <ScriptTag src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></ScriptTag>
+        </div>
+        
     )
 }
 

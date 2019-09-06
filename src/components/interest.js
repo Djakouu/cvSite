@@ -1,4 +1,7 @@
 import React from 'react'
+import $ from 'jquery'
+import { Waypoint } from 'react-waypoint';
+
 
 import interestStyles from '../styles/components/interest.module.scss'
 import langDeterminer from '../functions/langDeterminer'
@@ -7,6 +10,14 @@ const Interest = ({ title, location }) => {
 
     const dataDeterminer = (ability) => {
         return langDeterminer(ability, location)
+    }
+
+    const handleEnter1 = () => {
+        $(`.${interestStyles.interestPartOneComposition}`).addClass(`${interestStyles.jsWp}`)
+    }
+
+    const handleEnter2 = () => {
+        $(`.${interestStyles.interestPartTwoComposition}`).addClass(`${interestStyles.jsWp}`)
     }
 
     return (
@@ -36,22 +47,28 @@ const Interest = ({ title, location }) => {
                         <p>I've also got the opportunity to help refugees settle in the city, answering their needs for two years. I've taught them French, computer science, helped them with paperwork, translation and finding jobs. It's a great honor for me to see them moved forward since they got here</p>
                     </div>
 
-                    <div className={interestStyles.interestPartOneComposition}>
-                        <img src={'copenhagen.jpg'} alt="Copenhagen" className={interestStyles.interestPartOneCompositionPic} id={interestStyles.p1} />
-                        <img src={'remix.jpg'} alt="My association Remix" className={interestStyles.interestPartOneCompositionPic} id={interestStyles.p2} />
-                        <img src={'chelsea.png'} alt="Chelsea Football Club" className={interestStyles.interestPartOneCompositionPic} id={interestStyles.p3} />
-                    </div>
+                    <Waypoint onEnter={handleEnter1}
+                              bottomOffset='70%'>
+                        <div className={interestStyles.interestPartOneComposition}>
+                            <img src={'copenhagen.jpg'} alt="Copenhagen" className={interestStyles.interestPartOneCompositionPic} id={interestStyles.p1} />
+                            <img src={'remix.jpg'} alt="My association Remix" className={interestStyles.interestPartOneCompositionPic} id={interestStyles.p2} />
+                            <img src={'chelsea.png'} alt="Chelsea Football Club" className={interestStyles.interestPartOneCompositionPic} id={interestStyles.p3} />
+                        </div>
+                    </Waypoint>
 
                 </div>
 
                 <div className={interestStyles.interestPartTwo}>
                     
 
-                    <div className={interestStyles.interestPartTwoComposition}>
-                        <img src={'tv.jpg'} alt="TV" className={interestStyles.interestPartTwoCompositionPic} id={interestStyles.p4} />
-                        <img src={'games.jpg'} alt="Video games" className={interestStyles.interestPartTwoCompositionPic} id={interestStyles.p5} />
-                        <img src={'computer.jpg'} alt="Coding" className={interestStyles.interestPartTwoCompositionPic} id={interestStyles.p6} />
-                    </div>
+                    <Waypoint onEnter={handleEnter2}
+                    bottomOffset='70%'>
+                        <div className={interestStyles.interestPartTwoComposition}>
+                            <img src={'tv.jpg'} alt="TV" className={interestStyles.interestPartTwoCompositionPic} id={interestStyles.p4} />
+                            <img src={'games.jpg'} alt="Video games" className={interestStyles.interestPartTwoCompositionPic} id={interestStyles.p5} />
+                            <img src={'computer.jpg'} alt="Coding" className={interestStyles.interestPartTwoCompositionPic} id={interestStyles.p6} />
+                        </div>
+                    </Waypoint>
 
                     <div className={interestStyles.interestPartTwoTxt}>
                         <p className={interestStyles.separationTitle}>Movies</p>

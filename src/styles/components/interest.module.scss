@@ -1,6 +1,7 @@
 @import '../abstracts/utils.scss';
 @import '../abstracts/mixins.scss';
 @import '../abstracts/variables.scss';
+@import '../vendors/animate.scss';
 
 .jumbotron {
     margin: 0 12.5rem;
@@ -24,6 +25,8 @@
         &Composition {
             position: relative;
             width: 50%;
+            opacity: 0;
+            transition: opacity 1s;
 
             &Pic {
                 width: 55%;
@@ -55,6 +58,8 @@
         &Composition {
             position: relative;
             width: 50%;
+            opacity: 0;
+            transition: opacity 1s;
 
             &Pic {
                 width: 55%;
@@ -144,4 +149,8 @@
     &:hover {
         outline: 1.5rem solid $color-primary-light;
     }
+}
+
+.jsWp {
+    opacity: 1;
 }
