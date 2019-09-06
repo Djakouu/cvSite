@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import $ from 'jquery'
 
 import Layout from "../components/layout";
@@ -13,15 +13,19 @@ import Footer from "../components/footer";
 
 
 const GermanPage = ({location}) => {
-    $(window).scroll(() => {
-        sessionStorage.scrollTop = $(window).scrollTop();
-    });
-      
-    $(document).ready(() => {
-    if (sessionStorage.scrollTop !== "undefined") {
-        $(window).scrollTop(sessionStorage.scrollTop);
-    }
-    });
+    useEffect(() => {
+        if(window !== undefined) {
+            $(window).scroll(() => {
+                sessionStorage.scrollTop = $(window).scrollTop();
+            });
+              
+            $(document).ready(() => {
+            if (sessionStorage.scrollTop !== "undefined") {
+                $(window).scrollTop(sessionStorage.scrollTop);
+            }
+            });
+        }
+    }, []);
 
     return (
         <Layout>

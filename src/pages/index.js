@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import $ from 'jquery'
 import ScriptTag from 'react-script-tag';
 
@@ -13,15 +13,19 @@ import Interest from "../components/interest";
 import Footer from "../components/footer";
 
 const EnglishPage = ({ location }) => {
-    $(window).scroll(() => {
-        sessionStorage.scrollTop = $(window).scrollTop();
-    });
-      
-    $(document).ready(() => {
-    if (sessionStorage.scrollTop !== "undefined") {
-        $(window).scrollTop(sessionStorage.scrollTop);
-    }
-    });
+    useEffect(() => {
+        if(window !== undefined) {
+            $(window).scroll(() => {
+                sessionStorage.scrollTop = $(window).scrollTop();
+            });
+              
+            $(document).ready(() => {
+            if (sessionStorage.scrollTop !== "undefined") {
+                $(window).scrollTop(sessionStorage.scrollTop);
+            }
+            });
+        }
+    }, []);
 
     return (
         <div>
