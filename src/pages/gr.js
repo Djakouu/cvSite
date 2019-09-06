@@ -1,7 +1,7 @@
 import React from "react"
 import $ from 'jquery'
 
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import Head from '../components/head'
 import Header from '../components/header'
 import Profile from '../components/profile'
