@@ -1,5 +1,4 @@
-import React, { useEffect } from "react"
-import $ from 'jquery'
+import React from "react"
 
 import Layout from "../components/layout";
 import Head from '../components/head'
@@ -10,23 +9,11 @@ import Abilities from "../components/abiliies";
 import Projects from "../components/projects";
 import Interest from "../components/interest";
 import Footer from "../components/footer";
-import { compose } from "redux";
+import restoreScrollPosition from '../functions/restoreScrollPosition'
 
 
 const FrenchPage = ({location}) => {
-    useEffect(() => {
-        if(window !== undefined) {
-            $(window).scroll(() => {
-                sessionStorage.scrollTop = $(window).scrollTop();
-            });
-              
-            $(document).ready(() => {
-            if (sessionStorage.scrollTop !== "undefined") {
-                $(window).scrollTop(sessionStorage.scrollTop);
-            }
-            });
-        }
-    }, []);
+    restoreScrollPosition()
 
     return (
         <Layout>

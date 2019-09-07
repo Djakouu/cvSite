@@ -1,5 +1,4 @@
-import React, { useEffect } from "react"
-import $ from 'jquery'
+import React from "react"
 import ScriptTag from 'react-script-tag';
 
 import Layout from "../components/layout";
@@ -11,21 +10,10 @@ import Abilities from "../components/abiliies";
 import Projects from "../components/projects";
 import Interest from "../components/interest";
 import Footer from "../components/footer";
+import restoreScrollPosition from '../functions/restoreScrollPosition'
 
 const EnglishPage = ({ location }) => {
-    useEffect(() => {
-        if(window !== undefined) {
-            $(window).scroll(() => {
-                sessionStorage.scrollTop = $(window).scrollTop();
-            });
-              
-            $(document).ready(() => {
-            if (sessionStorage.scrollTop !== "undefined") {
-                $(window).scrollTop(sessionStorage.scrollTop);
-            }
-            });
-        }
-    }, []);
+    restoreScrollPosition()
 
     return (
         <div>
