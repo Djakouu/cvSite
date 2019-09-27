@@ -27,8 +27,8 @@ const Abilities = ({ location }) => {
 
                     <div className={abilitiesStyles.skills}>
 
-                        <h1 className={abilitiesStyles.headingPrimarySub}>Skills</h1>
-                        <p className={abilitiesStyles.separationTitle}>Languages</p>
+                        <h1 className={abilitiesStyles.headingPrimarySub}>{dataDeterminer('skillsTitle')}</h1>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillOne')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="HTML 5"
@@ -72,7 +72,7 @@ const Abilities = ({ location }) => {
                             />
                             
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>JS runtime & libraries</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillTwo')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Node.js"
@@ -99,7 +99,7 @@ const Abilities = ({ location }) => {
                                 starsFull="2"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>JS frameworks</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillThree')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Express.js"
@@ -118,21 +118,21 @@ const Abilities = ({ location }) => {
                                 starsFull="2"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>CSS frameworks</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillFour')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Bootstrap"
                                 starsFull="3"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>Site generators</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillFive')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="GatsbyJS"
                                 starsFull="3"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>dev platform</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillSix')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Postman"
@@ -147,7 +147,7 @@ const Abilities = ({ location }) => {
                                 starsFull="0"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>Template engines</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillSeven')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Handlebars"
@@ -158,7 +158,7 @@ const Abilities = ({ location }) => {
                                 starsFull="0"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>CMS</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillEight')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Contentful"
@@ -169,17 +169,17 @@ const Abilities = ({ location }) => {
                                 starsFull="1"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>Software</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillNine')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Scilab"
                                 starsFull="2"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>Other</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillTen')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
-                            ability="Web design"
+                            ability="Web Design"
                             starsFull="3"
                             />
                         </div>
@@ -187,8 +187,8 @@ const Abilities = ({ location }) => {
                     </div>
 
                     <div className={abilitiesStyles.tools}>
-                        <h1 className={abilitiesStyles.headingPrimarySub}>Tools</h1>
-                        <p className={abilitiesStyles.separationTitle}>Code editors</p>
+                        <h1 className={abilitiesStyles.headingPrimarySub}>{dataDeterminer('toolsTitle')}</h1>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('toolOne')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="VS Code"
@@ -207,7 +207,7 @@ const Abilities = ({ location }) => {
                                 starsFull="4"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>Dev tools</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('toolTwo')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Chrome DevTools"
@@ -218,14 +218,14 @@ const Abilities = ({ location }) => {
                                 starsFull="3"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>Version control</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('toolThree')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Git"
                                 starsFull="3"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>JS compiler & bundler</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('toolFour')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="babel"
@@ -240,7 +240,7 @@ const Abilities = ({ location }) => {
                                 starsFull="3"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>Package managers</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('toolFive')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="npm"
@@ -251,7 +251,7 @@ const Abilities = ({ location }) => {
                                 starsFull="4"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>Databases</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('toolSix')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="MongoDB"
@@ -262,7 +262,7 @@ const Abilities = ({ location }) => {
                                 starsFull="3"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>ODM, ORM & Prisma</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('toolSeven')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Mongoose"
@@ -273,7 +273,7 @@ const Abilities = ({ location }) => {
                                 starsFull="3"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>MS Office</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('toolEight')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Word"
@@ -288,7 +288,7 @@ const Abilities = ({ location }) => {
                                 starsFull="5"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>Mailing</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('toolNine')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="SendGrid"
@@ -299,7 +299,7 @@ const Abilities = ({ location }) => {
                                 starsFull="0"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>Payment platforms</p>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('toolTen')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Stripe"
@@ -309,7 +309,7 @@ const Abilities = ({ location }) => {
                     </div>
 
                     <div className={abilitiesStyles.languages}>
-                        <h1 className={abilitiesStyles.headingPrimarySub}>Languages</h1>
+                        <h1 className={abilitiesStyles.headingPrimarySub}>{dataDeterminer('langTitle')}</h1>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability
                                 ability={dataDeterminer("langOne")}

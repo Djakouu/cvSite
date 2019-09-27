@@ -1,7 +1,6 @@
 import React from 'react'
 
 import abilityStyles from '../styles/functions/ability.module.scss'
-
 import sprite from '../img/icons/sprite.svg'
 
 const hrefStarFull = sprite + '#icon-star-full'

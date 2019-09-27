@@ -14,8 +14,17 @@ const PageNavbar = ({ location }) => {
         scroll.scrollToTop(); 
     }
 
+    const bottomBoundary = (location) => {
+        if (location.pathname === "/")
+            return 8370
+        else if (location.pathname === "/fr")
+            return 8625
+        else 
+            return 8780
+    }
+
     return(
-        <Sticky bottomBoundary={8300} >
+        <Sticky bottomBoundary={bottomBoundary(location)} >
             <nav className={pageNavbarStyles.navbar}>
                 <ul className={pageNavbarStyles.navbarList}>
                     <li className={pageNavbarStyles.navbarListItemUp}></li>

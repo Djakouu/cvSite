@@ -30,7 +30,7 @@ const Experience = ({ location }) => {
 
                     <div className={experienceStyles.education}>
 
-                        <h1 className={experienceStyles.headingPrimarySub}>Education</h1>
+                        <h1 className={experienceStyles.headingPrimarySub}>{dataDeterminer("educationTitle")}</h1>
                         <ExperiencePiece 
                             location={dataDeterminer('educationOneLocation')}
                             date="2019 - 2020"
@@ -66,7 +66,7 @@ const Experience = ({ location }) => {
                         </div>
 
                     <div className={experienceStyles.career}>
-                        <h1 className={experienceStyles.headingPrimarySub}>Career</h1>
+                        <h1 className={experienceStyles.headingPrimarySub}>{dataDeterminer("careerTitle")}</h1>
                         <ExperiencePiece 
                             location={dataDeterminer('careerOneLocation')}
                             date={dataDeterminer('careerOneDate')}
@@ -81,7 +81,7 @@ const Experience = ({ location }) => {
                         />
                     </div>
                     <div className={experienceStyles.activities}>
-                        <h1 className={experienceStyles.headingPrimarySub}>Extracurricular activities</h1>
+                        <h1 className={experienceStyles.headingPrimarySub}>{dataDeterminer("activitiesTitle")}</h1>
                         <ExperiencePiece 
                             location={dataDeterminer('activityOneLocation')}
                             date={`2017 - 2019 (${dataDeterminer('activityOneDate')})`}

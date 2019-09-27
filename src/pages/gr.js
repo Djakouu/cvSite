@@ -17,7 +17,7 @@ const GermanPage = ({location}) => {
     return (
         <Layout>
             <Head title="Deutsch" />
-            <Header subtitle="Interaktiver lebenslauf"/>
+            <Header subtitle="Interaktiver Lebenslauf"/>
             <Profile location={location} />
             <Experience location={location} />
             <Abilities location={location} />

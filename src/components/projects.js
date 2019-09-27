@@ -58,11 +58,11 @@ const Projects = ({ location }) => {
                                         <use href={newTab}></use>
                                     </svg>
                                     <figcaption className={[projectsStyles.projectsCardFigcaption, projectsStyles.projectsCardFigcaption1].join(' ')}>
-                                        <h1 className={[projectsStyles.projectsCardFigcaptionTitle, projectsStyles.projectsCardFigcaptionTitle1].join(' ')}>interactiv resume</h1>
+                                        <h1 className={[projectsStyles.projectsCardFigcaptionTitle, projectsStyles.projectsCardFigcaptionTitle1].join(' ')}>{dataDeterminer("projectOneTitle")}</h1>
                                         <div className={[projectsStyles.projectsCardFigcaptionDetails, projectsStyles.projectsCardFigcaptionDetails1].join(' ')}>
-                                            <p  className={projectsStyles.projectsCardFigcaptionDetailsDesc}>An online interactiv resume</p>
+                                            <p  className={projectsStyles.projectsCardFigcaptionDetailsDesc}>{dataDeterminer("projectOneDesc")}</p>
                                             <br />
-                                            <p>Tags:</p>
+                                            <p>{dataDeterminer("projectTagsTitle")}:</p>
                                             <p className={projectsStyles.projectsCardFigcaptionDetailsTags}>Gatsby, React, Sass</p>
                                         </div> 
                                     </figcaption>
@@ -79,9 +79,9 @@ const Projects = ({ location }) => {
                                     <figcaption className={[projectsStyles.projectsCardFigcaption, projectsStyles.projectsCardFigcaption2].join(' ')}>
                                         <h1 className={[projectsStyles.projectsCardFigcaptionTitle, projectsStyles.projectsCardFigcaptionTitle2].join(' ')}>Nexter</h1>
                                         <div className={[projectsStyles.projectsCardFigcaptionDetails, projectsStyles.projectsCardFigcaptionDetails2].join(' ')}>
-                                            <p className={projectsStyles.projectsCardFigcaptionDetailsDesc}>A virtual retail agency</p>
+                                            <p className={projectsStyles.projectsCardFigcaptionDetailsDesc}>{dataDeterminer("projectTwoDesc")}</p>
                                             <br />
-                                            <p>Tags:</p>
+                                            <p>{dataDeterminer("projectTagsTitle")}:</p>
                                             <p className={projectsStyles.projectsCardFigcaptionDetailsTags}>Advanced HTLM 5, CSS 3, SASS</p>
                                         </div> 
                                     </figcaption>
@@ -102,9 +102,9 @@ const Projects = ({ location }) => {
                                     <figcaption className={[projectsStyles.projectsCardFigcaption, projectsStyles.projectsCardFigcaption3].join(' ')}>
                                         <h1 className={[projectsStyles.projectsCardFigcaptionTitle, projectsStyles.projectsCardFigcaptionTitle3].join(' ')}>Omnifood</h1>
                                         <div className={[projectsStyles.projectsCardFigcaptionDetails, projectsStyles.projectsCardFigcaptionDetails3].join(' ')}>
-                                            <p>A virtual healthy food place</p>
+                                            <p>{dataDeterminer("projectThreeDesc")}</p>
                                             <br />
-                                            <p>Tags:</p>
+                                            <p>{dataDeterminer("projectTagsTitle")}:</p>
                                             <p>Advanced HTLM 5, CSS 3, SASS</p>
                                         </div> 
                                     </figcaption>
@@ -120,9 +120,9 @@ const Projects = ({ location }) => {
                                     <figcaption className={[projectsStyles.projectsCardFigcaption, projectsStyles.projectsCardFigcaption4].join(' ')}>
                                         <h1 className={[projectsStyles.projectsCardFigcaptionTitle, projectsStyles.projectsCardFigcaptionTitle4].join(' ')}>Expensify</h1>
                                         <div className={[projectsStyles.projectsCardFigcaptionDetails, projectsStyles.projectsCardFigcaptionDetails4].join(' ')}>
-                                            <p>Expenses app</p>
+                                            <p>{dataDeterminer("projectFourDesc")}</p>
                                             <br />
-                                            <p>Tags:</p>
+                                            <p>{dataDeterminer("projectTagsTitle")}:</p>
                                             <p>Advanced HTLM 5, CSS 3, SASS</p>
                                         </div> 
                                     </figcaption>
@@ -143,9 +143,9 @@ const Projects = ({ location }) => {
                                     <figcaption className={[projectsStyles.projectsCardFigcaption, projectsStyles.projectsCardFigcaption5].join(' ')}>
                                         <h1 className={[projectsStyles.projectsCardFigcaptionTitle, projectsStyles.projectsCardFigcaptionTitle5].join(' ')}>Forkify</h1>
                                         <div className={[projectsStyles.projectsCardFigcaptionDetails, projectsStyles.projectsCardFigcaptionDetails5].join(' ')}>
-                                            <p>Recipes app</p>
+                                            <p>{dataDeterminer("projectFiveDesc")}</p>
                                             <br />
-                                            <p>Tags:</p>
+                                            <p>{dataDeterminer("projectTagsTitle")}:</p>
                                             <p>Advanced HTLM 5, CSS 3, SASS</p>
                                         </div> 
                                     </figcaption>
@@ -161,9 +161,9 @@ const Projects = ({ location }) => {
                                     <figcaption className={[projectsStyles.projectsCardFigcaption, projectsStyles.projectsCardFigcaption6].join(' ')}>
                                         <h1 className={[projectsStyles.projectsCardFigcaptionTitle, projectsStyles.projectsCardFigcaptionTitle6].join(' ')}>Chat app</h1>
                                         <div className={[projectsStyles.projectsCardFigcaptionDetails, projectsStyles.projectsCardFigcaptionDetails6].join(' ')}>
-                                            <p>A chat app</p>
+                                            <p>{dataDeterminer("projectSixDesc")}</p>
                                             <br />
-                                            <p>Tags:</p>
+                                            <p>{dataDeterminer("projectTagsTitle")}:</p>
                                             <p>Advanced HTLM 5, CSS 3, SASS</p>
                                         </div> 
                                     </figcaption>

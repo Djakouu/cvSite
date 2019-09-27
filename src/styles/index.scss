@@ -1,4 +1,6 @@
 @import "./abstracts/variables.scss";
+@import "./abstracts/mixins.scss";
+
 *,
 *::before,
 *::after {
@@ -10,18 +12,18 @@
 html {
     font-family: Lato;
     font-size: 62.5%; //this defines what 1rem is (10px)
-   
-    // @include respond(tab-land) { 
-    //     font-size: 56.25%; //1rem=9px
-    // }
+    
+    @include respond(tab-land) { 
+        font-size: 56.25%; //1rem=9px
+    }
 
-    // @include respond(tab-port) {
-    //     font-size: 50%; //1rem=8px
-    // }
+    @include respond(tab-port) {
+        font-size: 50%; //1rem=8px
+    }
 
-    // @include respond(big-desktop) {
-    //     font-size: 75%; //1rem=12px
-    // }
+    @include respond(big-desktop) {
+        font-size: 75%; //1rem=12px
+    }
 }
 
 body {
@@ -34,9 +36,8 @@ body {
     //     padding: 0;
     // }
     
-::selection {
-    background-color: $color-primary-light;
-    color: white;
-}
-   
+    ::selection {
+        background-color: $color-primary-light;
+        color: white;
+    } 
 }

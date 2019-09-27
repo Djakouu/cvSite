@@ -1,17 +1,27 @@
 @import './variables.scss';
 @import './mixins.scss';
 
-.headingPrimaryMain {
-    color: $color-primary-light;
-    font-size: 5rem;
-    font-weight: 300;
-}
+.headingPrimary {
+    &Main {
+        color: $color-primary-light;
+        font-size: 5rem;
+        font-weight: 300;
 
-.headingPrimarySub {
-    color: $color-primary-light;
-    font-size: 3rem;
-    font-weight:300;
-    margin-bottom: 2rem;
+        @include respond(phone) { 
+            font-size: 4rem;
+        }
+    }
+
+    &Sub {
+        color: $color-primary-light;
+        font-size: 3rem;
+        font-weight:300;
+        margin-bottom: 2rem;
+
+        @include respond(phone) { 
+            font-size: 2rem;
+        }
+    }
 }
 
 p {
@@ -25,11 +35,24 @@ p {
     position: relative;
     display: flex;
     flex-direction: column;
+
+    @include respond(tab-land) { 
+        max-width: 75%;
+    }
+
+    @include respond(tab-port) { 
+        max-width: 85%;
+    }
+
+    @include respond(phone) { 
+        max-width: 95%;
+    }
 }
 
 .container {
     text-align: center;
     padding: 2rem 4rem;
+    
     &::after {
         @include separatorAfter;
     }
@@ -40,6 +63,10 @@ p {
     font-size: 2rem;
     font-weight: 300;
     font-style: italic;
+
+    @include respond(phone) { 
+        font-size: 1.5rem;
+    }
 }
 
 blockquote {
@@ -51,6 +78,7 @@ blockquote {
     width: max-content;
     margin-left: auto;
     margin-right: auto;
+    
 }
 
 blockquote:before {
@@ -60,4 +88,15 @@ blockquote:before {
     position: absolute;
     top: 1rem;
     left: .9rem;
+
+    @include respond(tab-port) { 
+        font-size: 185%;
+        top: .65rem;
+        left: .7rem;
+    }
+
+    @include respond(phone) { 
+        top: .1rem;
+        left: .2rem;
+    }
 }

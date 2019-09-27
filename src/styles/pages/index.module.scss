@@ -27,6 +27,11 @@
 .headerLogo {
     height: 7rem;
     width: 7rem;
+
+    @include respond(phone) { 
+        height: 5rem;
+        width: 5rem;
+    }
 }
 
 .container {
@@ -38,6 +43,10 @@
 .headerTitle {
     font-size: 5rem;
     font-weight: 400;
+
+    @include respond(phone) { 
+        font-size: 4rem;
+    }
     
 
     &::after {
@@ -54,5 +63,9 @@
     font-size: 2.5rem;
     font-weight: 300;
     opacity: 0.85;
+
+    @include respond(phone) { 
+        font-size: 2rem;
+    }
 }
 

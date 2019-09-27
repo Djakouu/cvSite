@@ -1,8 +1,14 @@
+@import "../abstracts/mixins.scss";
+
 .navbar  {
     position: sticky;
     float: right;
     margin-right: 3.4%;
     // margin-top: 2rem;
+    
+    @include respond(phone) { 
+        font-weight: 700;
+    }
 
     &Header {
         top: 2rem;
