@@ -1,5 +1,6 @@
 @import '../vendors/animate.scss';
-@import '../abstracts//variables.scss';
+@import '../abstracts/variables.scss';
+@import '../abstracts/mixins.scss';
 
 .ability {
     display: flex;
@@ -8,6 +9,11 @@
     flex-wrap: wrap;
     margin: 0 5%;
     align-items: center;
+
+    @include respond(phone) { 
+        width: 65%;
+        margin: 0 auto;
+    }
 
     &:hover {
         background-color: #F2F2F2;

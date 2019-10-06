@@ -3,6 +3,11 @@
 
 .educationCareer {
     padding-left: 4rem;
+
+    @include respond(phone) { 
+        padding-left: 2rem;
+        padding-right: 1rem;
+    }
 }
 
 .education::after,

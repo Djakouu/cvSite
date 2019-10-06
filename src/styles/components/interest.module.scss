@@ -6,6 +6,16 @@
 .jumbotron {
     margin: 0 12.5rem;
     max-width: 100%;
+
+    @include respond(tab-port) { 
+        margin: 0 14rem;
+        text-align: center;
+    }
+
+    @include respond(phone) { 
+        margin: 0 2rem;
+        text-align: center;
+    }
 }
 
 .interest {
@@ -15,11 +25,22 @@
         min-height: 75vh;
         display: flex;
         margin: 4rem 0;
+
+        @include respond(tab-port) { 
+            margin: 0;
+            flex-direction: column;
+        }
     
         &Txt {
             width: 50%;
             padding-right: 4rem;
             align-self: center;
+
+            @include respond(tab-port) {
+                padding-right: 0; 
+                margin-top: -4rem;
+                width: 100%;
+            }
         }
 
         &Composition {
@@ -29,6 +50,17 @@
             transition: opacity 1s;
             margin-top: 13%;
 
+            @include respond(tab-land) { 
+                margin-top: 35vh;
+            }
+
+            @include respond(tab-port) { 
+                display: flex;
+                align-items: baseline;
+                margin: 5rem auto 2rem auto;
+                width: 90%;
+            }
+
             &Pic {
                 width: 55%;
                 box-shadow: 0 1.5rem 4rem rgba(0,0,0, .4);
@@ -36,6 +68,15 @@
                 z-index: 10;
                 transition: all .3s;
                 outline-offset: 2rem;
+
+                @include respond(tab-port) {
+                    width: 33%; 
+                    position: unset;
+                }
+
+                @include respond(phone) { 
+                    width: 33%;
+                }
 
                 &:hover {
                     
@@ -55,6 +96,12 @@
         min-height: 75vh;
         display: flex;
         margin: 4rem 0;
+
+        @include respond(tab-port) { 
+            margin: 0;
+            min-height: 60vh;
+            flex-direction: column;
+        }
     
         &Composition {
             position: relative;
@@ -63,6 +110,18 @@
             transition: opacity 1s;
             margin-top: 10%;
 
+            @include respond(tab-land) { 
+                margin-top: 35vh;
+            }
+
+            @include respond(tab-port) { 
+                display: flex;
+                align-content: space-between;
+                margin: 3.5rem auto;
+                order: 1;
+                width: 90%;
+            }
+
             &Pic {
                 width: 55%;
                 box-shadow: 0 1.5rem 4rem rgba(0,0,0, .4);
@@ -70,6 +129,15 @@
                 z-index: 10;
                 transition: all .3s;
                 outline-offset: 2rem;
+
+                @include respond(tab-port) {
+                    width: 33%; 
+                    position: unset;
+                }
+
+                @include respond(phone) { 
+                    width: 33%;
+                }
 
                 &:hover {
                     
@@ -88,6 +156,12 @@
             width: 50%;
             padding-left: 4rem;
             align-self: center;
+
+            @include respond(tab-port) { 
+                order: 0;
+                width: 100%;
+                padding-left: 0;
+            }
         }
     }
 }
@@ -96,6 +170,10 @@
 #p1 {
     left: 0;
     top: -2rem;
+
+    @include respond(phone) { 
+        left: -3rem;
+    }
 
     &:hover {
         outline: 1.5rem solid #E60012;
@@ -106,6 +184,11 @@
     right: 0;
     top: 2rem;
 
+    @include respond(phone) { 
+        right: -3rem;
+        top: 3rem;
+    }
+
     &:hover {
         outline: 1.5rem solid #f7dd4c;
     }
@@ -114,6 +197,10 @@
 #p3 {
     left: 20%;
     top: 15rem;
+
+    @include respond(phone) { 
+        top: 11.3rem;
+    }
 
     &:hover {
         outline: 1.5rem solid $color-primary-light;
@@ -126,6 +213,10 @@
     left: 0;
     top: -2rem;
 
+    @include respond(phone) {
+        left: -4rem;
+    }
+
     &:hover {
         outline: 1.5rem solid #E60012;
     }
@@ -137,6 +228,11 @@
     right: 0;
     top: 2rem;
 
+    @include respond(phone) {
+        right: -4.5rem; 
+        top: 2rem;
+    }
+
     &:hover {
         outline: 1.5rem solid #f7dd4c;
     }
@@ -147,6 +243,11 @@
     // width: 60%;
     left: 13%;
     top: 15rem;
+
+    @include respond(phone) { 
+        left: 0%;
+        top: 7.3rem;
+    }
 
     &:hover {
         outline: 1.5rem solid $color-primary-light;

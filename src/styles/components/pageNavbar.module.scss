@@ -1,8 +1,14 @@
+@import '../abstracts/mixins.scss';
+
 .navbar  {
     position: fixed;
     // top: 90%;
     right: 2%;
     z-index: 99;
+
+    @include respond(phone) { 
+        display: none;
+    }
     
 
     &List {

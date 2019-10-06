@@ -10,6 +10,10 @@
 .skillsToolsLanguages {
     padding: 0 4rem 8rem 4rem;
     line-height: 290%;
+
+    @include respond(phone) { 
+        padding: 0 2rem 4rem 2rem;
+    }
 }
 
 .skills::after,

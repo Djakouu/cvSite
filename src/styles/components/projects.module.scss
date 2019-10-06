@@ -3,27 +3,55 @@
 @import '../vendors/animate.scss';
 @import '../abstracts/variables.scss';
 
-
+.jumbotron {
+    min-height: 0;
+}
 .projects {
     background-color: #F3EFE0;
     padding-bottom: 4rem;
     
+    
     &Cards {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        transform: translateX(3rem);
+        justify-content: space-evenly;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        // transform: translateX(-6.6rem);
+        @include respond(phone) { 
+            width: 96%;
+        }
     }
 
     &Card {
         position: relative;
         height: 29rem;
         width: 42rem;
-        margin-bottom: 3.6rem;
-        margin-left: 3.6rem;
-        transform: translateX(-6.6rem);
+        margin: 1.8rem 1.8rem 3.6rem 1.8rem ;
+        // transform: translateX(-10vw);
         overflow: hidden;
         transition: all .4s;
+
+        @include respond(tab-land) { 
+            height: 35rem;
+            width: 56rem;
+        }
+
+        // @include respond(tab-port) { 
+        //     transform: translateX(6.6rem);
+        //     height: 32rem;
+        //     width: 45rem;
+        // }
+
+        @include respond(phone) { 
+            height: 22rem;
+            width: 30rem;
+        }
+
+        // &Links {
+        //     width: 29rem;
+        // }
 
         &BgImg {
             height: 100%;
@@ -114,6 +142,15 @@
         display: flex;
         opacity: 0;
         transition: opacity 1s;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 100%;
+        // transform: translateX(4.6rem);
+
+
+        @include respond(tab-land) { 
+            flex-direction: column;
+        }
     }
 }
 
