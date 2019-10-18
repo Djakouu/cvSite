@@ -54,6 +54,10 @@ const Profile = ({ location }) => {
                                 <h2>{dataDeterminer('nameTitle')}:</h2>
                                 <p>Mohamed Kimouche</p>
                             </div>
+                            <div className={profileStyles.detailsInfoName}>
+                                <h2>{dataDeterminer('nicknameTitle')}:</h2>
+                                <p>Djakou Kim</p>
+                            </div>
                             <div className={profileStyles.detailsInfoAge}>
                                 <h2>{dataDeterminer('ageTitle')}:</h2>
                                 <p>28</p>

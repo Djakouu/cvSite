@@ -1,6 +1,8 @@
 .experience {
 
     &Piece {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         margin-bottom: 3rem;
     }

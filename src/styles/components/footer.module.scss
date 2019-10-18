@@ -3,11 +3,15 @@
 @import '../abstracts/variables.scss';
 
 .footer {
+    position: relative;
     background-color: #6b6b6e;
     padding-bottom: 4rem;
 
     @include respond(phone) { 
-        flex-direction: column;
+        -webkit-box-orient: vertical; 
+        -webkit-box-direction: normal; 
+            -ms-flex-direction: column; 
+                flex-direction: column;
      }
 }
 
@@ -31,12 +35,18 @@
 }
 
 .contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 0 4rem 2rem 4rem;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 
     @include respond(phone) { 
-       flex-direction: column;
+       -webkit-box-orient: vertical; 
+       -webkit-box-direction: normal; 
+           -ms-flex-direction: column; 
+               flex-direction: column;
     }
 
     &Group {
@@ -48,8 +58,12 @@
     }
 
     &Links {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         width: 50%;
         margin-bottom: 2.5rem;
         text-decoration: none;

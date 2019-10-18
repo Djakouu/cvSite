@@ -1,16 +1,17 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import Head from '../components/head'
 
+import pageNotFound from '../styles/pages/pageNotFound.module.scss'
+
+
 const NotFound = () => {
     return (
-        <Layout>
+        <div className={pageNotFound.div}>
             <Head title="404"/>
-            <h>Page not found</h>
-            <p><Link to=''>Head home</Link></p>
-        </Layout>
+            <img src={'404.png'} alt="404 PAGE NOT FOUND" className={pageNotFound.img} />
+        </div>
     )
 }
 

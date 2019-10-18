@@ -20,9 +20,7 @@ const FrenchPage = ({location}) => {
             <Head title="Français" />
             <Header subtitle="CV interactif"/>
             <Profile location={location} />
-            <Experience 
-                location={location}
-            />
+            <Experience location={location} />
             <Abilities location={location} />
             <Projects location= {location} />
             <Interest location={location} />

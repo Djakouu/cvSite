@@ -115,6 +115,10 @@ const data = {
     "nameTitleFr": "Nom",
     "nameTitleGr": "Name",
 
+    "nicknameTitleEn": "Nickname",
+    "nicknameTitleFr": "Surnom",
+    "nicknameTitleGr": "Spitzname",
+
     "ageTitleEn": "Age",
     "ageTitleFr": "Age",
     "ageTitleGr": "Alter",

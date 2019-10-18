@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Link, animateScroll as scroll } from "react-scroll"
 import Sticky from 'react-stickynode'
 
@@ -94,10 +95,11 @@ const PageNavbar = ({ location }) => {
                             {langDeterminer("pageNavbarSix", location)} 
                         </Link>
                     </li>
-                    <li className={pageNavbarStyles.navbarListItemBottom}></li>
+                    
+                </ul>
+                <ul >
                     <li className={[pageNavbarStyles.navbarListItem, pageNavbarStyles.navbarListItemCircleUp].join(' ')}> 
-                        <Link 
-                            onClick={scrollToTop}>
+                        <Link onClick={scrollToTop}>
                             <svg className={pageNavbarStyles.circleUp}>
                                 <use href={circleUp}></use>
                             </svg> 

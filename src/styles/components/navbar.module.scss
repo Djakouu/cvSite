@@ -1,11 +1,17 @@
 @import "../abstracts/mixins.scss";
 
 .navbar  {
+    position: -webkit-sticky;
     position: sticky;
     float: right;
     margin-right: 3.4%;
     // margin-top: 2rem;
     
+    @include respond(tab-port) { 
+        position: absolute;
+        right: 2rem;
+    }
+
     @include respond(phone) { 
         font-weight: 700;
     }

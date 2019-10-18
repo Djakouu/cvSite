@@ -1,7 +1,8 @@
 @mixin absCenter {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%)
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%)
 }
 
 @mixin absCenterTop {
@@ -9,7 +10,8 @@
     position: absolute;
     top: 45%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
 @mixin separatorAfter {

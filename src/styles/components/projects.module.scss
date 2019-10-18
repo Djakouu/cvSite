@@ -12,9 +12,14 @@
     
     
     &Cards {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
         margin-left: auto;
         margin-right: auto;
         width: 80%;
@@ -31,6 +36,7 @@
         margin: 1.8rem 1.8rem 3.6rem 1.8rem ;
         // transform: translateX(-10vw);
         overflow: hidden;
+        -webkit-transition: all .4s;
         transition: all .4s;
 
         @include respond(tab-land) { 
@@ -57,8 +63,11 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            transform: translateX(-3rem);
-            backface-visibility: hidden;
+            -webkit-transform: translateX(-3rem);
+                    transform: translateX(-3rem);
+            -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+            -webkit-transition: all .4s;
             transition: all .4s;
         }
 
@@ -92,11 +101,13 @@
                     display: block;
                     background-color: currentColor;
                     margin: -.5rem 0 .5rem 0;
+                    -webkit-transition: width .4s;
                     transition: width .4s;
                 }
             }
             
             &Details {
+                -webkit-transition: opacity .4s;
                 transition: opacity .4s;
                 font-weight: bold;
 
@@ -109,14 +120,17 @@
 
         &:hover &Icon {
             opacity: 1;
-            animation: flash .8s;
+            -webkit-animation: flash .8s;
+                    animation: flash .8s;
         }
 
         &:hover &BgImg {
-            transform: translateX(-2rem);
+            -webkit-transform: translateX(-2rem);
+                    transform: translateX(-2rem);
             -webkit-transition: all .4s;
             transition: all .4s;
-            filter: brightness(20%) blur(1px);
+            -webkit-filter: brightness(20%) blur(1px);
+                    filter: brightness(20%) blur(1px);
         }
 
         &:hover &Figcaption {
@@ -129,7 +143,9 @@
         }
 
         &:hover &FigcaptionDetails {
-            animation: bounceInRight .4s;
+            -webkit-animation: bounceInRight .4s;
+                    animation: bounceInRight .4s;
+            -webkit-transition: all .4s;
             transition: all .4s;
         }
     }
@@ -139,8 +155,11 @@
     &First,
     &Second,
     &Third {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         opacity: 0;
+        -webkit-transition: opacity 1s;
         transition: opacity 1s;
         margin-right: auto;
         margin-left: auto;
@@ -149,14 +168,18 @@
 
 
         @include respond(tab-land) { 
-            flex-direction: column;
+            -webkit-box-orient: vertical; 
+            -webkit-box-direction: normal; 
+                -ms-flex-direction: column; 
+                    flex-direction: column;
         }
     }
 }
 
 .jsWp1 {
     opacity: 1;
-    animation: fadeInUp 1s;
+    -webkit-animation: fadeInUp 1s;
+            animation: fadeInUp 1s;
 }
 
 .jsWp2 {

@@ -7,7 +7,12 @@
 
 .headerBgImg {
     height: 100vh;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba($color-primary-light, 0.5)), to($color-primary-dark, 0.5)), url(../../img/banner.png);
+    background-image: -webkit-gradient(
+        linear, 
+        left top, right bottom, 
+        from(rgba($color-primary-dark, 0.4)), 
+        to(rgba($color-primary-dark, 0.4))),
+        url(../../img/banner.png);
     background-image: linear-gradient(
         to right bottom, 
         rgba($color-primary-dark, 0.4), 
