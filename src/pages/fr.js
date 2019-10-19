@@ -1,4 +1,5 @@
 import React from "react"
+import ScriptTag from 'react-script-tag';
 
 import Layout from "../components/layout";
 import Head from '../components/head'
@@ -11,21 +12,23 @@ import Interest from "../components/interest";
 import Footer from "../components/footer";
 import restoreScrollPosition from '../functions/restoreScrollPosition'
 
-
 const FrenchPage = ({location}) => {
     restoreScrollPosition()
 
     return (
-        <Layout>
-            <Head title="Français" />
-            <Header subtitle="CV interactif"/>
-            <Profile location={location} />
-            <Experience location={location} />
-            <Abilities location={location} />
-            <Projects location= {location} />
-            <Interest location={location} />
-            <Footer location={location} />
-        </Layout>
+        <div>
+            <Layout>
+                <Head title="Français" />
+                <Header subtitle="CV interactif"/>
+                <Profile location={location} />
+                <Experience location={location} />
+                <Abilities location={location} />
+                <Projects location= {location} />
+                <Interest location={location} />
+                <Footer location={location} />
+            </Layout>
+            <ScriptTag src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></ScriptTag>
+        </div>
     )
 }
 

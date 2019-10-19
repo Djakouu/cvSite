@@ -250,12 +250,12 @@
     left: 0;
     top: -2rem;
 
-    @include respond(phone) {
-        left: -4rem;
-    }
-
     &:hover {
         outline: 1.5rem solid #E60012;
+    }
+
+    @include respond(phone) {
+        left: -4rem;
     }
 }
 

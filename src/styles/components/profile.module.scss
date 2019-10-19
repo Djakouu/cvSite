@@ -86,13 +86,19 @@
                 flex-wrap: wrap;
             -webkit-box-pack: space-evenly;
                 -ms-flex-pack: space-evenly;
-                    justify-content: space-evenly;
+                    justify-content: space-between;
         }
 
         &Name,
         &Age,
         &Adress {
             margin-left: 2rem;
+        }
+
+        &Name {
+            @include respond(phone) { 
+                margin-left: 0;
+            }
         }
     }
 }

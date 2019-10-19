@@ -17,19 +17,18 @@ const EnglishPage = ({ location }) => {
 
     return (
         <div>
-        <Layout>
-            <Head title="English" />
-            <Header subtitle="Interactive resume"/>
-            <Profile location={location} />
-            <Experience location={location} />
-            <Abilities location={location} />
-            <Projects location={location} />
-            <Interest location={location} />
-            <Footer location={location} />
-        </Layout>
-        <ScriptTag src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></ScriptTag>
+            <Layout>
+                <Head title="English" />
+                <Header subtitle="Interactive resume"/>
+                <Profile location={location} />
+                <Experience location={location} />
+                <Abilities location={location} />
+                <Projects location={location} />
+                <Interest location={location} />
+                <Footer location={location} />
+            </Layout>
+            <ScriptTag src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></ScriptTag>
         </div>
-        
     )
 }
 

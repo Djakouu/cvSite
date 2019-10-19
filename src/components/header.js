@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 
 const Header = ({ subtitle }) => {
     return (
-        <header className={indexStyles.header}>
+        <header className={indexStyles.header} id="header">
             <Navbar component='header' />
 
             <div className={indexStyles.headerBgImg}>
@@ -13,7 +13,7 @@ const Header = ({ subtitle }) => {
 
             <div className={indexStyles.headerText}>
                 <div className={indexStyles.headerLogoBox}>
-                    <img src={'logo.png'} alt="logo" className={indexStyles.headerLogo} />
+                    <img src={`../../logo.png`} alt="logo" className={indexStyles.headerLogo} />
                 </div>
 
                 <Link to="profile" 

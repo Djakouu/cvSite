@@ -52,7 +52,7 @@ const Projects = ({ location }) => {
                     <Waypoint onEnter={handleEnter1}
                               bottomOffset='50%'>
                         <div className={projectsStyles.projectsTwoFirst}>
-                            <a href='http://localhost:8000/fr' className={projectsStyles.projectsCardLinks} target='_blank' rel="noopener noreferrer">
+                            <a href='https://mohamedkimouche.com/' className={projectsStyles.projectsCardLinks} target='_blank' rel="noopener noreferrer">
                                 <figure className={[projectsStyles.projectsCard, projectsStyles.projectsCard1].join(' ')}>
                                     <img src={'cv.png'} alt="Online cv project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg1].join(' ')} />  
                                     <svg className={projectsStyles.projectsCardIcon}>

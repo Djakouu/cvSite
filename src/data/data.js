@@ -626,15 +626,15 @@ const data = {
 
     "interestFiveTextEn": <p>
                                Last but far from least I find programming fun, challenging and captivating. 
-                               So I meant to be a web developer
+                               So I meant to be a programmer
                           </p>,
     "interestFiveTextFr": <p>
                                Enfin, je trouve que la programmation est amusante, stimulante et captivante. 
-                               Donc je suis fait pour être un développeur web
+                               Donc je suis fait pour être un programmeur
                           </p>,
     "interestFiveTextGr": <p>
                                Schließlich finde ich, dass das Programmieren Spaß macht, anregend und fesselnd ist.
-                               Also bin ich zum Webentwickler gemacht
+                               Also bin ich zum Programmierer gemacht
                           </p>,
 }
 
