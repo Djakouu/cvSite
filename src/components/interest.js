@@ -43,9 +43,9 @@ const Interest = ({ title, location }) => {
                     <Waypoint onEnter={handleEnter1}
                               bottomOffset='70%'>
                         <div className={interestStyles.interestPartOneComposition}>
-                            <img src={'copenhagen.jpg'} alt="Copenhagen" className={interestStyles.interestPartOneCompositionPic} id={interestStyles.p1} />
-                            <img src={'remix.jpg'} alt="My association Remix" className={interestStyles.interestPartOneCompositionPic} id={interestStyles.p2} />
-                            <img src={'chelsea.png'} alt="Chelsea Football Club" className={interestStyles.interestPartOneCompositionPic} id={interestStyles.p3} />
+                            <img src={`../../copenhagen.jpg`} alt="Copenhagen" className={interestStyles.interestPartOneCompositionPic} id={interestStyles.p1} />
+                            <img src={`../../remix.jpg`} alt="My association Remix" className={interestStyles.interestPartOneCompositionPic} id={interestStyles.p2} />
+                            <img src={`../../chelsea.png`} alt="Chelsea Football Club" className={interestStyles.interestPartOneCompositionPic} id={interestStyles.p3} />
                         </div>
                     </Waypoint>
 
@@ -57,9 +57,9 @@ const Interest = ({ title, location }) => {
                     <Waypoint onEnter={handleEnter2}
                     bottomOffset='70%'>
                         <div className={interestStyles.interestPartTwoComposition}>
-                            <img src={'tv.jpg'} alt="TV" className={interestStyles.interestPartTwoCompositionPic} id={interestStyles.p4} />
-                            <img src={'games.jpg'} alt="Video games" className={interestStyles.interestPartTwoCompositionPic} id={interestStyles.p5} />
-                            <img src={'computer.jpg'} alt="Coding" className={interestStyles.interestPartTwoCompositionPic} id={interestStyles.p6} />
+                            <img src={`../../tv.jpg`} alt="TV" className={interestStyles.interestPartTwoCompositionPic} id={interestStyles.p4} />
+                            <img src={`../../games.jpg`} alt="Video games" className={interestStyles.interestPartTwoCompositionPic} id={interestStyles.p5} />
+                            <img src={`../../computer.jpg`} alt="Coding" className={interestStyles.interestPartTwoCompositionPic} id={interestStyles.p6} />
                         </div>
                     </Waypoint>
 

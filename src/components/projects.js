@@ -54,7 +54,7 @@ const Projects = ({ location }) => {
                         <div className={projectsStyles.projectsTwoFirst}>
                             <a href='https://mohamedkimouche.com/' className={projectsStyles.projectsCardLinks} target='_blank' rel="noopener noreferrer">
                                 <figure className={[projectsStyles.projectsCard, projectsStyles.projectsCard1].join(' ')}>
-                                    <img src={'cv.png'} alt="Online cv project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg1].join(' ')} />  
+                                    <img src={`../../cv.png`} alt="Online cv project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg1].join(' ')} />  
                                     <svg className={projectsStyles.projectsCardIcon}>
                                         <use href={newTab}></use>
                                     </svg>
@@ -73,7 +73,7 @@ const Projects = ({ location }) => {
                         
                             <a href='https://kim-nexter-site.herokuapp.com/' className={projectsStyles.projectsCardLinks} target='_blank' rel="noopener noreferrer">
                                 <figure className={[projectsStyles.projectsCard, projectsStyles.projectsCard2].join(' ')}>
-                                    <img src={'nexter.png'} alt="Nexter project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg2].join(' ')} />  
+                                    <img src={`../../nexter.png`} alt="Nexter project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg2].join(' ')} />  
                                     <svg className={projectsStyles.projectsCardIcon}>
                                         <use href={newTab}></use>
                                     </svg>
@@ -96,7 +96,7 @@ const Projects = ({ location }) => {
                         <div className={projectsStyles.projectsTwoSecond}>
                             <a href='https://kim-omnifood-site.herokuapp.com/' className={projectsStyles.projectsCardLinks} target='_blank' rel="noopener noreferrer">
                                 <figure className={[projectsStyles.projectsCard, projectsStyles.projectsCard3].join(' ')}>
-                                    <img src={'omnifood.png'} alt="Omnifood project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg3].join(' ')} />  
+                                    <img src={`../../omnifood.png`} alt="Omnifood project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg3].join(' ')} />  
                                     <svg className={projectsStyles.projectsCardIcon}>
                                         <use href={newTab}></use>
                                     </svg>
@@ -114,7 +114,7 @@ const Projects = ({ location }) => {
 
                             <a href='https://kim-expensify-app.herokuapp.com/' className={projectsStyles.projectsCardLinks} target='_blank' rel="noopener noreferrer">
                                 <figure className={[projectsStyles.projectsCard, projectsStyles.projectsCard4].join(' ')}>
-                                    <img src={'expensify.png'} alt="Expensify app project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg4].join(' ')} />  
+                                    <img src={`../../expensify.png`} alt="Expensify app project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg4].join(' ')} />  
                                     <svg className={projectsStyles.projectsCardIcon}>
                                         <use href={newTab}></use>
                                     </svg>
@@ -137,7 +137,7 @@ const Projects = ({ location }) => {
                         <div className={projectsStyles.projectsTwoThird}>
                             <a href='https://kim-forkify-app.herokuapp.com/' className={projectsStyles.projectsCardLinks} target='_blank' rel="noopener noreferrer">
                                 <figure className={[projectsStyles.projectsCard, projectsStyles.projectsCard5].join(' ')}>
-                                    <img src={'forkify.png'} alt="Forkify app project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg5].join(' ')} />  
+                                    <img src={`../../forkify.png`} alt="Forkify app project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg5].join(' ')} />  
                                     <svg className={projectsStyles.projectsCardIcon}>
                                         <use href={newTab}></use>
                                     </svg>
@@ -155,7 +155,7 @@ const Projects = ({ location }) => {
 
                             <a href='https://kim-chat-app.herokuapp.com/' className={projectsStyles.projectsCardLinks} target='_blank' rel="noopener noreferrer">
                                 <figure className={[projectsStyles.projectsCard, projectsStyles.projectsCard6].join(' ')}>
-                                    <img src={'chat.png'} alt="Chat app project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg6].join(' ')} />  
+                                    <img src={`../../chat.png`} alt="Chat app project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg6].join(' ')} />  
                                     <svg className={projectsStyles.projectsCardIcon}>
                                         <use href={newTab}></use>
                                     </svg>

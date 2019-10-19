@@ -37,7 +37,7 @@ const Profile = ({ location }) => {
                         <Waypoint onEnter={handleEnter}
                                   bottomOffset='50%'>
                             <figure className={profileStyles.figure} >
-                                <img src={'copenhagen.jpg'} alt="Profile pic" className={profileStyles.profilePic} />
+                                <img src={`../../copenhagen.jpg`} alt="Profile pic" className={profileStyles.profilePic} />
                                 <figcaption className={profileStyles.figCaption}>Mohamed Kimouche</figcaption>
                             </figure>
                         </Waypoint>
