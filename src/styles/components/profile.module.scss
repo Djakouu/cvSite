@@ -178,7 +178,8 @@
     }
 }
 
-.aboutDetails:hover .figCaption {
+// The following is not supported on chrome and safari yet (border-radius with overflow hidden, 11/2019)
+/*.aboutDetails:hover .figCaption {
     opacity: 1;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -190,6 +191,7 @@
     -webkit-filter: blur(.3rem) brightness(80%);
             filter: blur(.3rem) brightness(80%);
 }
+*/
 
 .media {
     display: -webkit-box;
