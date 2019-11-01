@@ -52,8 +52,6 @@ const Interest = ({ title, location }) => {
                 </div>
 
                 <div className={interestStyles.interestPartTwo}>
-                    
-
                     <Waypoint onEnter={handleEnter2}
                     bottomOffset='70%'>
                         <div className={interestStyles.interestPartTwoComposition}>

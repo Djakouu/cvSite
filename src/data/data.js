@@ -123,7 +123,7 @@ const data = {
     "ageTitleFr": "Age",
     "ageTitleGr": "Alter",
 
-    "adressTitleEn": "Adress",
+    "adressTitleEn": "Address",
     "adressTitleFr": "Adresse",
     "adressTitleGr": "Anschrift",
 
@@ -174,7 +174,7 @@ const data = {
     "educationTwoPurposeFr": "Cours d'anglais, d'allemand et de développement web",
     "educationTwoPurposeGr": "Englisch, Deutsch & Webentwicklungskurse",
 
-    "educationTwoDescriptionEn": "These years have been invested in learning English (C1 level reached), and German (level A2 reached) at the university and web development, that became myfirst passion, by taking online courses. Udemy, W3Schools and openClassrooms are the main educational platforms behind the skills listed in the abilities section below.",
+    "educationTwoDescriptionEn": "These years have been invested in learning English (C1 level reached), and German (level A2 reached) at the university and web development, that became my first passion, by taking online courses. Udemy, W3Schools and openClassrooms are the main educational platforms behind the skills listed in the abilities section below.",
     "educationTwoDescriptionFr": "Ces années ont été investies dans l'apprentissage de l'anglais (niveau C1 atteint), et de l'allemand (niveau A2 atteint) à l'université et du développement Web, qui est devenu ma première passion, en suivant des cours en ligne. Udemy, W3Schools et openClassrooms sont les principales plates-formes éducatives derrière les compétences énumérées dans la section correspondante ci-dessous.",
     "educationTwoDescriptionGr": "Diese Jahre wurden in das Erlernen von Englisch (Stufe C1 erreicht) und Deutsch (Stufe A2 erreicht) an der Universität und in die Webentwicklung investiert, die zu meiner ersten Leidenschaft wurden, indem Online-Kurse besucht wurden. Udemy, W3Schools und openClassrooms sind die wichtigsten Bildungsplattformen für die im entsprechenden Abschnitt aufgeführten Fähigkeiten.",
 
@@ -186,7 +186,7 @@ const data = {
     "educationThreePurposeFr": "Master en économie de l'énergie",
     "educationThreePurposeGr": "Master in Energiewirtschaft",
 
-    "educationThreeDescriptionEn": "My knowledge has been expaded to the renewalbe energy and electricity markets, the environmental economics and I have deepened my knowlege of energy accounting, finance, trading and investments",
+    "educationThreeDescriptionEn": "My knowledge has been expanded to the renewable energy and electricity markets, the environmental economics and I have deepened my knowledge of energy accounting, finance, trading and investments",
     "educationThreeDescriptionFr": "Mes connaissances ont été étendues aux marchés de l’énergie renouvelable et de l’électricité, à l’économie de l’environnement et j’ai pu approfondir mes connaissances de comptabilité énergétique, de la finance, du trading et des investissements.",
     "educationThreeDescriptionGr": "Mein Wissen wurde auf die Märkte für erneuerbare Energien und Strom sowie auf die Umweltökonomie ausgeweitet und ich habe meine Kenntnisse in den Bereichen Energiebuchhaltung, Finanzen, Handel und Investitionen vertieft.",
 
@@ -198,7 +198,7 @@ const data = {
     "educationFourPurposeFr": "Master en économie de l'énergie",
     "educationFourPurposeGr": "Master in Energiewirtschaft",
 
-    "educationFourDescriptionEn": "This program led me to master the fondamentals of energy economics: energy markets, fincance, trading, project management and feasibility study. Besides, the program included marketing, general and cost accounting, advanced statistics and more. As a last note, I got the first taste for programming as I learned mainly C++",
+    "educationFourDescriptionEn": "This program led me to master the fondamentals of energy economics: energy markets, finance, trading, project management and feasibility study. Besides, the program included marketing, general and cost accounting, advanced statistics and more. As a last note, I got the first taste for programming as I learned mainly C++",
     "educationFourDescriptionFr": "Ce programme m'a amené à maîtriser les fondamentaux de l'économie énergétique: marchés de l'énergie, finance, trading, gestion de projet et étude de faisabilité. En outre, le programme comprenait le marketing, la comptabilité générale et analytique, les statistiques avancées et plus encore. C'est aussi ici que j'ai eu le premier goût pour la programmation, principalement en C ++.",
     "educationFourDescriptionGr": "Dieses Programm brachte mich dazu, die Grundlagen der Energiewirtschaft zu beherrschen: Energiemärkte, Finanzen, Handel, Projektmanagement und Machbarkeitsstudie. Außerdem umfasste das Programm Marketing, allgemeine und Kostenrechnung, erweiterte Statistiken und vieles mehr. Als letzte Anmerkung bekam ich den ersten Einblick in das Programmieren, da ich hauptsächlich C ++ lernte",
 
@@ -300,9 +300,9 @@ const data = {
     "activityThreePurposeFr": "Employé de café et assistant de directeur de bibliothèque",
     "activityThreePurposeGr": "Mitarbeiter im Café und Assistent des Bibliotheksleiters",
 
-    "activityThreeDescriptionEn": "I was honored to serve other students both in a café as a server and cashier and in a library as managment assistant (handle the books, printers, computers...)",
+    "activityThreeDescriptionEn": "I was honored to serve other students both in a café as a waiter and cashier and in a library as managment assistant (handle the books, printers, computers...)",
     "activityThreeDescriptionFr": "J'ai eu l'honneur de servir d'autres étudiants dans un café en tant que serveur et caissier, ainsi que dans une bibliothèque en tant qu'assistant de gestion (gérer les livres, les imprimantes, les ordinateurs, etc.).",
-    "activityThreeDescriptionGr": "Es war mir eine Ehre, anderen Studenten sowohl in einem Café als Server und Kassierer als auch in einer Bibliothek als Verwaltungsassistent zu dienen (Umgang mit Büchern, Druckern, Computern ...)",
+    "activityThreeDescriptionGr": "Es war mir eine Ehre, anderen Studenten sowohl in einem Café als Kellner und Kassierer als auch in einer Bibliothek als Verwaltungsassistent zu dienen (Umgang mit Büchern, Druckern, Computern ...)",
 
     "activityFourLocationEn": "RGIS (international inventory company) - Grenoble, France",
     "activityFourLocationFr": "RGIS (société internationale d'inventaire) - Grenoble, France",
@@ -316,7 +316,7 @@ const data = {
     "activityFourPurposeFr": "Chef d'équipe d'inventaire",
     "activityFourPurposeGr": "Inventar Teamleiter",
 
-    "activityFourDescriptionEn": "As a team leader (of 3 to 20 people) I was flatterd every evening employees were looking forward to be in my team again. That was a sign of the success of my misson and my leadership talent, and the main reason of my satisfaction",
+    "activityFourDescriptionEn": "As a team leader (of 3 to 20 people) I was flattered every evening employees were looking forward to be in my team again. That was a sign of the success of my mission and my leadership talent, and the main reason of my satisfaction",
     "activityFourDescriptionFr": "En tant que chef d'équipe (de 3 à 20 personnes), j'étais flatté tous les soirs où les employés étaient impatients de faire partie de mon équipe. C’était le signe du succès de ma mission et de mon talent en leadership, et la raison principale de ma satisfaction",
     "activityFourDescriptionGr": "Als Teamleiter (von 3 bis 20 Personen) fühlte ich mich jeden Abend geschmeichelt, dass die Mitarbeiter Teil meines Teams sein wollten. Es war ein Zeichen für den Erfolg meiner Mission und meines Führungstalents und der Hauptgrund für meine Zufriedenheit",
 
@@ -433,12 +433,12 @@ const data = {
     "langFourFr": "Allemand-(4 étoiles d'ici 2021)",
     "langFourGr": "Deutsch-(4 Sterne bis 2021)",
 
-    "langFiveEn": "Spanish-(Plans of the futur)",
-    "langFiveFr": "Espagnol-(Dans les plans du futur)",
+    "langFiveEn": "Spanish-(Plans of the future)",
+    "langFiveFr": "Espagnol-(Dans les plans futur)",
     "langFiveGr": "Spanisch-(Plänen der Zukunft)",
 
     "langSixEn": "Italian-(Plans of the future)",
-    "langSixFr": "Italien-(Dans les plans du futur)",
+    "langSixFr": "Italien-(Dans les plans futur)",
     "langSixGr": "Italienisch-(Plänen der Zukunft)",
 
     // PROJECTS SECTION
@@ -527,10 +527,10 @@ const data = {
     "interestTwoTitleGr": "Freiwilligenarbeit",
 
     "interestTwoTextEn": <p>
-                            One of my other interests is to volonteer as a helper for people around. 
+                            One of my other interests is to volunteer as a helper for people around. 
                             I've spent most of my free time with the Remix Student Association
                             in Grenoble participating into the adjustment of students to their new city, 
-                            organising envents and parties for cultural exchange.
+                            organising events and parties for cultural exchange.
                             <br />
                             <br />
                             I've also got the opportunity to help refugees settle in the city, 
@@ -605,8 +605,8 @@ const data = {
     "interestFourTitleGr": "Sporte",
 
     "interestFourTextEn": <p>
-                               Besides that, I would be watching football games
-                               playing football on video games or practicing football in real life 
+                               Besides that, I would be watching football on TV,
+                               playing football video games or practicing football in real life 
                                (That's a lot of football but I also enjoy the gym and swimming)
                           </p>,
     "interestFourTextFr": <p>

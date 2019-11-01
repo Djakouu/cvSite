@@ -84,11 +84,8 @@
 
                 @include respond(tab-port) {
                     width: 33%; 
+                    height: max-content;
                     position: unset;
-                }
-
-                @include respond(phone) { 
-                    width: 33%;
                 }
 
                 &:hover {
@@ -162,11 +159,8 @@
 
                 @include respond(tab-port) {
                     width: 33%; 
+                    height: max-content;
                     position: unset;
-                }
-
-                @include respond(phone) { 
-                    width: 33%;
                 }
 
                 &:hover {

@@ -17,11 +17,11 @@ const PageNavbar = ({ location }) => {
 
     const bottomBoundary = (location) => {
         if (location.pathname === "/")
-            return 8370
+            return 8450
         else if (location.pathname === "/fr")
-            return 8625
+            return 8600
         else 
-            return 8780
+            return 8650
     }
 
     return(
