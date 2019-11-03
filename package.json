@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "env-cmd": "^9.0.3",
+    "gatsby-plugin-google-analytics": "^2.1.23",
     "gatsby-plugin-remove-trailing-slashes": "^2.1.12",
     "prettier": "^1.18.2"
   },
