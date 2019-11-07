@@ -14,6 +14,7 @@ module.exports = {
         trackingId: "UA-151421144-1",
       },
     },
+    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-remove-trailing-slashes`,
