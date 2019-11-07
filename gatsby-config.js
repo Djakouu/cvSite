@@ -8,13 +8,13 @@ module.exports = {
     linkedInUrl: 'linkedin.com/in/mohamed-kimouche'
   },
   plugins: [
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-151421144-1",
       },
     },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-remove-trailing-slashes`,
