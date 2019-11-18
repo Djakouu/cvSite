@@ -51,6 +51,10 @@ const Abilities = ({ location }) => {
                                 starsFull="4"
                             />
                             <Ability 
+                                ability="SQL"
+                                starsFull="3"
+                            />
+                            <Ability 
                                 ability="C++"
                                 starsFull="2"
                             />
@@ -60,15 +64,11 @@ const Abilities = ({ location }) => {
                             />
                             <Ability 
                                 ability="Java"
-                                starsFull="1"
+                                starsFull="2"
                             />
                             <Ability 
                                 ability="PHP"
-                                starsFull="0"
-                            />
-                            <Ability 
-                                ability="SQL"
-                                starsFull="0"
+                                starsFull="2"
                             />
                             
                         </div>
@@ -91,7 +91,7 @@ const Abilities = ({ location }) => {
                                 starsFull="3"
                             />
                             <Ability 
-                                ability="Socket.IO"
+                                ability="Socket.io"
                                 starsFull="3"
                             />
                             <Ability 
@@ -103,10 +103,6 @@ const Abilities = ({ location }) => {
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Express.js"
-                                starsFull="3"
-                            />
-                            <Ability 
-                                ability="Jest"
                                 starsFull="3"
                             />
                             <Ability 
@@ -125,6 +121,17 @@ const Abilities = ({ location }) => {
                                 starsFull="3"
                             />
                         </div>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillFourBis')}</p>
+                        <div className={abilitiesStyles.abilityGroups}>
+                            <Ability 
+                                ability="Jest"
+                                starsFull="3"
+                            />
+                            <Ability 
+                                ability="JUnit"
+                                starsFull="2"
+                            />
+                        </div>
                         <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillFive')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
@@ -139,7 +146,7 @@ const Abilities = ({ location }) => {
                                 starsFull="2"
                             />
                             <Ability 
-                                ability="firebase"
+                                ability="Firebase"
                                 starsFull="2"
                             />
                             <Ability 
@@ -205,6 +212,17 @@ const Abilities = ({ location }) => {
                             <Ability 
                                 ability="Atom"
                                 starsFull="4"
+                            />
+                        </div>
+                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('toolOneBis')}</p>
+                        <div className={abilitiesStyles.abilityGroups}>
+                            <Ability 
+                                ability="IntelliJ"
+                                starsFull="2"
+                            />
+                            <Ability 
+                                ability="Eclipse"
+                                starsFull="2"
                             />
                         </div>
                         <p className={abilitiesStyles.separationTitle}>{dataDeterminer('toolTwo')}</p>

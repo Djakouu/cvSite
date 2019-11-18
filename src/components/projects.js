@@ -124,7 +124,7 @@ const Projects = ({ location }) => {
                                             <p>{dataDeterminer("projectFourDesc")}</p>
                                             <br />
                                             <p>{dataDeterminer("projectTagsTitle")}:</p>
-                                            <p>Advanced HTLM 5, CSS 3, SASS</p>
+                                            <p>REACT, REDUX, FIREBASE, JEST, WEBPACK, GIT</p>
                                         </div> 
                                     </figcaption>
                                 </figure>
@@ -147,7 +147,7 @@ const Projects = ({ location }) => {
                                             <p>{dataDeterminer("projectFiveDesc")}</p>
                                             <br />
                                             <p>{dataDeterminer("projectTagsTitle")}:</p>
-                                            <p>Advanced HTLM 5, CSS 3, SASS</p>
+                                            <p>VANILLA JAVASCRIPT ES6, NPM, BABEL, WEBPACK</p>
                                         </div> 
                                     </figcaption>
                                 </figure>
@@ -165,7 +165,7 @@ const Projects = ({ location }) => {
                                             <p>{dataDeterminer("projectSixDesc")}</p>
                                             <br />
                                             <p>{dataDeterminer("projectTagsTitle")}:</p>
-                                            <p>Advanced HTLM 5, CSS 3, SASS</p>
+                                            <p>NODE.JS, EXPRESS, SOCKET.IO, MONGODB, POSTMAN, GIT</p>
                                         </div> 
                                     </figcaption>
                                 </figure>

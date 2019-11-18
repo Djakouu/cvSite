@@ -162,9 +162,9 @@ const data = {
     "educationOnePurposeFr": "Master 2 en mathématiques et informatique",
     "educationOnePurposeGr": "Master Mathematik und Informatik",
 
-    "educationOneDescriptionEn": "This coming school year I will be, mainly, learnig and putting in practice the following: computer systems and networks, software engineering, SQL databases, PHP, JAVA EE, DOT NET",
-    "educationOneDescriptionFr": "Cette année universitaire, je vais principalement apprendre et mettre en pratique les éléments suivants: systèmes et réseaux informatiques, génie logiciel, bases de données SQL, PHP, JAVA EE, DOT NET",
-    "educationOneDescriptionGr": "Im kommenden Schuljahr werde ich hauptsächlich lernen und in die Praxis umsetzen: Computersysteme und Netzwerke, Software-Engineering, SQL-Datenbanken, PHP, JAVA EE, DOT NET",
+    "educationOneDescriptionEn": "This coming school year I will be, mainly, learnig and putting in practice the following: algorithms, computer systems (Linux and Windows) and networks, software engineering, SQL databases, PHP, JAVA, .NET",
+    "educationOneDescriptionFr": "Cette année universitaire, je vais principalement apprendre et mettre en pratique les éléments suivants: algorithmique, systèmes (Linux et Windows) et réseaux informatiques, génie logiciel, bases de données SQL, PHP, JAVA, .NET",
+    "educationOneDescriptionGr": "Im kommenden Schuljahr werde ich hauptsächlich lernen und in die Praxis umsetzen: Algorithmen, Computersysteme (Linux und Windows) und Netzwerke, Software-Engineering, SQL-Datenbanken, PHP, JAVA, .NET",
 
     "educationTwoLocationEn": <p>Grenoble-Alpes University - France <br /> & Online courses</p>,
     "educationTwoLocationFr": <p>Université Grenoble-Alpes - France <br /> & cours en ligne</p>,
@@ -336,18 +336,22 @@ const data = {
     "skillTwoGr": "JavaScript-Laufzeitumgebung und Bibliotheken",
 
     "skillThreeEn": "JS frameworks",
-    "skillThreeFr": "frameworks JS",
+    "skillThreeFr": "Frameworks JS",
     "skillThreeGr": "JS Frameworks",
 
     "skillFourEn": "CSS frameworks",
-    "skillFourFr": "frameworks CSS",
+    "skillFourFr": "Frameworks CSS",
     "skillFourGr": "CSS Frameworks",
+
+    "skillFourBisEn": "Testing frameworks",
+    "skillFourBisFr": "Frameworks de tests",
+    "skillFourBisGr": " Frameworks testen",
 
     "skillFiveEn": "Site generators",
     "skillFiveFr": "Générateurs de sites",
     "skillFiveGr": "Website-Generatoren",
 
-    "skillSixEn": "dev platform",
+    "skillSixEn": "Dev platform",
     "skillSixFr": "Plate-formes de développement",
     "skillSixGr": "Entwicklerplattform",
 
@@ -375,6 +379,10 @@ const data = {
     "toolOneEn": "Code editors",
     "toolOneFr": "Editeurs de code",
     "toolOneGr": "Quelltext-Editoren",
+
+    "toolOneBisEn": "Development environment",
+    "toolOneBisFr": "Environnement de développement",
+    "toolOneBisGr": "Entwicklungsumgebung",
 
     "toolTwoEn": "DevTools",
     "toolTwoFr": "Outils de développement",
