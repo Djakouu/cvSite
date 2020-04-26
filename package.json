@@ -10,8 +10,7 @@
     "dev": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
     "start": "node src/server.js",
-    "heroku-postbuild": "npm run build",
-    "gatsby build": "npm run build"
+    "heroku-postbuild": "npm run build"
   },
   "author": "Mohamed kimouche",
   "license": "ISC",
