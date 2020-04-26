@@ -10,13 +10,13 @@ if (process.env.NODE_ENV === 'development')
 module.exports = {
     entry: ['babel-polyfill', './src/js/index.js'],
     output: {
-        path: path.resolve(__dirname,'dist'),
+        path: path.resolve(__dirname,'public'),
         publicPath: '/',
         filename: 'js/bundle.js'
     },
     //mode: 'development' (put in package.json)
     devServer: {
-        contentBase: './dist'
+        contentBase: './public'
     },
     plugins: [
         new HtmlWebpackPlugin({
