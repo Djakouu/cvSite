@@ -15,8 +15,9 @@
 // Transition fade in start  done
 // Responsive done
 // Change robot speed ! done
-
-// Stop on resize window
+// Stop on resize window done
+//
+// Press "escape to pause" message flash infinite 
 // Sound effects
 // Heroku/ mywebsite
 // Comments 
@@ -87,6 +88,14 @@ export const game = new class {
   }
 
   stop() {
+    // Show the controlPanel if hidden (afte a window resize)
+    if (elements("controlPanel").style.width == "0vw") {
+      elements("controlPanel").style.width = "20vw";
+      elements("playground").style.width = "80vw";
+      setTimeout(() => {
+        elements("controlPanel").style.display = "flex";
+      }, 400);
+    }
     game.run=false;
     // Remove the robot
     if (this.robot) {
@@ -490,3 +499,6 @@ const getRadioCheckedValue = radio_name => {
   return '';
 }
 
+window.onresize = () => {
+  game.stop();
+}
