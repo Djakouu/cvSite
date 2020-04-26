@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"> -->
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+        <title>Star Wars</title>
+    </head>
+
+    <body>
+        <div id="rules">
+            <img id="rulesImg" src="./img/sw1.png" />
+            <h1 id="rulesAdTitle">The rules of the Game:</h1>
+            <div id="rulesText">
+                <div id="rulesAd">
+                    <div id="ruleAd1">
+                        <p class="ruleAdLine">
+                            You are 
+                            <img class="rulesSpritesImg" src="./img/R2D2.png" />
+                            and your goal is to tear down all your enemies within <b>2 minutes</b> flat
+                        </p>
+                        <p class="ruleAdLine">
+                            Your <b>enemies</b> are : Anakin
+                            <img class="rulesSpritesImg" src="./img/anakin_starfighter.png" />
+                            , Naboo
+                            <img class="rulesSpritesImg" src="./img/naboo_starfighter.png" />
+                            , Obi_wan
+                            <img class="rulesSpritesImg" src="./img/obi_wan_starfighter.png" />
+                            and X_Wing
+                            <img class="rulesSpritesImg" src="./img/x_wing.png" />
+                        </p>
+                        <p class="ruleAdLine">Once you catch one of them, he <b>vanishes</b> and you mark <b>3 points</b></p>
+                        <p class="ruleAdLine">
+                            Your worst enemy is <b>DarthVader</b>
+                            <img class="rulesSpritesImg" src="./img/darthvader.png" />
+                        </p>
+                        <p class="ruleAdLine">
+                            Try to catch it and you will go green for a sec
+                            <img class="rulesSpritesImg" id="rulesSpritesSickImg" src="./img/R2D2.png" />
+                            and lose <b>5 points</b>. Plus, he is <b>Immortal</b>
+                        </p>    
+                    </div>
+                    <div id="ruleAd2">
+                        <p class="ruleAdLine">If you do not <b>exterminate</b> your enemies before the <b>time is up</b> you lose</p>
+                        <p class="ruleAdLine">If you do <b>exterminate</b> them <b>within the time</b> your final score will be:</p>
+                        <p class="ruleAdLine">The <b>points marked</b> + <b>the third of the remaining time</b></p>
+                        <p class="ruleAdLine">You got it! <b>3 seconds are worht 1 point</b></p>
+                        <p class="ruleAdLine">If your final score is <b>negative</b> or <b>equals to zero</b>, you <b>lose</b></p>
+                        <p class="ruleAdLine">If it is <b>posivite</b>, you can guess, you <b>win!</b></p>
+                    </div>
+                    <div id="ruleAd3">
+                        <p class="ruleAdLine"><b>Examples:</b></p>
+                        <p class="ruleAdLineNoBreak">You marked <b>10 points</b> and the remaining time is <b>30 seconds</b></p>
+                        <p class="ruleAdLine">Your final score is (10 + 30/3) = <b>20 points</b></p>
+                        <p class="ruleAdLineNoBreak">You marked <b>-8 points</b> and the remaining time is <b>35 seconds</b></p>
+                        <p class="ruleAdLine">Your final score is (-8 + 35/3) = <b>3 points</b></p>
+                        <p class="ruleAdLineNoBreak">You marked <b>-4 points</b> and the remaining time is <b>10 seconds</b></p>
+                        <p class="ruleAdLine">Your final score is (-4 + 10/3) = <b>-1 point</b></p>
+                    </div>
+                    <div id="ruleAd4">
+                        <div id="pickLevel">
+                            <h1 id="pickLevelTitle">Pick a level:</h1>
+                            <br />
+                            <form>
+                                <div class="pickLevelRadio">
+                                    <input type="radio" class="pickLevelRadioInput" id="easy" name="level" value="1" checked>
+                                    <label for="easy" class="pickLevelRadioLable">
+                                        <span class="pickLevelRadioButton"></span>
+                                        Level 1, easy
+                                    </label>
+                                </div>
+                                <br />
+                                <div class="pickLevelRadio">
+                                    <input type="radio" class="pickLevelRadioInput" id="peasy" name="level" value="2">
+                                    <label for="peasy" class="pickLevelRadioLable">
+                                        <span class="pickLevelRadioButton"></span>
+                                        Level 2, peasy
+                                    </label>
+                                </div>
+                                <br />
+                                <div class="pickLevelRadio">
+                                    <input type="radio" class="pickLevelRadioInput" id="lemon_squeezy" name="level" value="3">
+                                    <label for="lemon_squeezy" class="pickLevelRadioLable">
+                                        <span class="pickLevelRadioButton"></span>
+                                        Level 3, lemon squeezy
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="animated tada" id="ready">
+                            <button id="ready">Ready!</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="rulesNb">
+                    <h1 class="ruleNb" id="ruleNb">1</h1>
+                    <h1 class="ruleNb">/3</h1>
+                </div>
+                
+            </div>
+            <div id="rulesButtons">
+                <button id="previousRule" disabled>Previous</button>
+                <button id="skipRules">Skip</button>
+                <button id="nextRule">Next</button>
+            </div>
+        </div>
+        <div id="game">
+            <div id="playground">
+                <!-- <img id="R2D2" src="./img/favicon.png" /> -->
+                <div id="endGame">
+                    <h1 id="you"></h1>
+                    <p>&nbsp;</p>
+                    <h2 id="your"></h2>
+                    <p>&nbsp;</p>
+                    <h2 id="finalScore"></h2>
+                </div>
+                <div id="copyright"> &copy; by Mohamed Kimouche, 04/2020 </div>
+            </div>
+            <div id="controlPanel">
+                <div>
+                    <button id="previousLevel">Previous level</button>
+                </div>
+                <div>
+                    <h1  id="level" >Level:</h1>
+                    <input type="text" id="levelInput" value="" autocomplete="off">
+                    <h1  id="timeLeft" >Time left:</h1>
+                    <input type="text" id="timeLeftInput" value="02:00" autocomplete="off">
+                    <h1 id="score">Score:</h1>
+                    <input type="text" id="scoreInput" value="0" autocomplete="off">
+                    <div id="startPauseDiv">
+                        <button id="start" class="animated heartBeat">Start</button>
+                        <button id="pause" class="animated">Pause</button>
+                    </div>
+                </div>
+                <div>
+                    <button id="nextLevel">Next level</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
