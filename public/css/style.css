@@ -16,7 +16,8 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 62.5%; }
+  font-size: 62.5%; 
+  font-weight: 200; }
   @media only screen and (max-width: 68.75em) {
     html {
       font-size: 50%; } }
@@ -117,10 +118,13 @@ body {
         line-height: 2;
     }
 }
+b {
+  font-weight: bold;
+}
 
 .ruleAdLineNoBreak {
   display: inline;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-size-adjust: .51;
   margin-bottom: -1rem;
 }
@@ -303,14 +307,25 @@ body {
   font-size: 5.5rem;
 }
 
-#copyright {
+#esc, #copyright {
   color: #fff;
   font-size: 15px;
   margin-bottom: 5px;
-  margin-right: 5px;
   position: absolute;
-  right: 0;
   bottom: 0;
+}
+
+#esc {
+  animation-duration: 30s;
+  animation-timing-function: ease-in-out;
+  margin-left: 5px;
+  left: 0;
+  visibility: hidden;
+}
+
+#copyright {
+  margin-right: 5px;
+  right: 0;
 }
 
 #controlPanel {
@@ -407,7 +422,7 @@ body {
 
 #start, #pause {
   background-color: rgb(226, 184, 76);
-  margin-top: 3rem;
+  margin-top: 2rem;
   }
   @media only screen and (max-width: 56.25em) {
     #start, #pause {

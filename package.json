@@ -1,7 +1,7 @@
 {
-  "name": "forkify",
+  "name": "starwarsgame",
   "version": "1.0.0",
-  "description": "forkify project",
+  "description": "starwarsgame project",
   "engines": {
     "node": "11.12.0"
   },

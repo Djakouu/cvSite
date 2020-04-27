@@ -11,18 +11,21 @@
 // end of the Game : done
     // time out done
     // 0 enemies done
-//
 // Transition fade in start  done
 // Responsive done
 // Change robot speed ! done
 // Stop on resize window done
+// Press "escape to pause" message flash infinite done
+// Heroku/ mywebsite done
 //
-// Press "escape to pause" message flash infinite 
 // Sound effects
-// Heroku/ mywebsite
+// mobile game
+// player folder
+// onclick folder
 // Comments 
 // Orga
 // Robot class
+// Delete yt-player
 
 
 
@@ -34,6 +37,7 @@ import * as controlPanelView from "./views/controlPanelView"
 import * as startGame from "./controlers/startGame"
 import * as transition from "./views/transition"
 import { elements } from "./views/base"
+import * as musicControler from "./controlers/music"
 
 export const game = new class {
   constructor(
@@ -45,7 +49,8 @@ export const game = new class {
           level=1,
           enemies=[],
           score=0,
-          time=181999
+          time=181999,
+          music="RGwaGzIp7T8"
       ) {
     this.nom = nom;
     this.arrowLeft = arrowLeft;
@@ -60,6 +65,7 @@ export const game = new class {
     this.touched=false // A lock for updating score after collision with darthvader.
     this.score=score;
     this.time=time;
+    this.music=music;
   }
   async start() {
     // Hide the control panel and widen the playgound if window.innerWidth < 900
@@ -68,6 +74,7 @@ export const game = new class {
         // transition.hideElements(["controlPanel"], "fadeOutRight")
         elements("controlPanel").style.width = "0vw";
         elements("playground").style.width = "100vw";
+        elements("esc").style.visibility = "visible";
         setTimeout(() => {
           elements("controlPanel").style.display = "none";
         }, 200);
@@ -92,6 +99,7 @@ export const game = new class {
     if (elements("controlPanel").style.width == "0vw") {
       elements("controlPanel").style.width = "20vw";
       elements("playground").style.width = "80vw";
+      elements("esc").style.visibility = "hidden";
       setTimeout(() => {
         elements("controlPanel").style.display = "flex";
       }, 400);
@@ -124,6 +132,11 @@ export const game = new class {
   }
 
   startOver() {
+    // Switch music
+    if (this.music != "RGwaGzIp7T8") {
+      musicControler.switchMusic("RGwaGzIp7T8")
+      this.music = "RGwaGzIp7T8"
+    }
     transition.hideElements(["endGame"], "fadeOut");
     if (elements("timeLeftInput").value == "TIME'S UP!")
       elements("timeLeftInput").value = "02:00"
@@ -139,6 +152,7 @@ export const game = new class {
         // transition.hideElements(["controlPanel"], "fadeOutRight")
         elements("controlPanel").style.width = "20vw";
         elements("playground").style.width = "80vw";
+        elements("esc").style.visibility = "hidden";
         setTimeout(() => {
           elements("controlPanel").style.display = "flex";
         }, 400);
@@ -162,6 +176,7 @@ export const game = new class {
         // transition.hideElements(["controlPanel"], "fadeOutRight")
         elements("controlPanel").style.width = "0vw";
         elements("playground").style.width = "100vw";
+        elements("esc").style.visibility = "visible";
         setTimeout(() => {
           elements("controlPanel").style.display = "none";
         }, 200);
@@ -182,6 +197,8 @@ export const game = new class {
   update(tFrame) {
     // Stop the game if time out
     if (elements("timeLeftInput").value == "TIME'S UP!") {
+      musicControler.switchMusic('NZruHFBBi6Q');
+      this.music = "NZruHFBBi6Q"
       this.stop();
       elements("you").innerHTML = "GAME OVER!";
       elements("your").innerHTML = "Time's up";
@@ -190,13 +207,14 @@ export const game = new class {
     }
 
     // Stop the game if no more enemies
-    if (this.robot && this.enemies.length <= ((this.level-1)*2)+1) {
+    if (this.run && this.robot && this.enemies.length <= ((this.level-1)*2)+1) {
     //((this.level-1)*2)+1): means 1 darthvader left for level 1,
     // Three darthvader for level 2 and 5 darthvader for level 3
       let lastTime = elements("timeLeftInput").value
       const lastScore = elements("scoreInput").value
+      this.stop();
       setTimeout(() => {
-        this.stop();
+        
         elements("timeLeftInput").value = lastTime;
         elements("scoreInput").value = lastScore;
         let finalScore; // equals to (lastScore + lastTime div 3) so every 3 seconds make a point
@@ -208,18 +226,53 @@ export const game = new class {
         }
         else //lastTime < 30 seconds
           finalScore = parseInt(lastScore) + Math.trunc(parseInt(lastTime)/3);
+          const random = Math.random();
+          if (random < 0.33) {
+            elements("you").innerHTML = "w   a   i   t";
+            elements("your").innerHTML = " f    o    r"
+            elements("finalScore").innerHTML = "i  t  .  .  . ";
+          }
+          else if (random < 0.66) {
+            elements("you").innerHTML = "------------";
+            elements("your").innerHTML = "  Drumroll  ";
+            elements("finalScore").innerHTML = "------------";
+          }
+          else {
+            elements("you").innerHTML = "And here is";
+            elements("your").innerHTML = "your hard's work";
+            elements("finalScore").innerHTML = "result";
+          }
         if (finalScore > 0) {
-          elements("you").innerHTML = "YOU WON!"
-          elements("your").innerHTML = "Final score:"
-          elements("finalScore").innerHTML = finalScore
+          musicControler.switchMusic('Y7vJVKsDfn4');
+          this.music = "Y7vJVKsDfn4";
           transition.showElements(["endGame"], "fadeIn");
-
+          const currentLevel = this.level;
+          setTimeout(() => {
+            // If the player didn't hit startOver or next/previous level less than 2sec ago
+            if (!this.run && currentLevel == this.level) {
+              transition.hideElements(["endGame"], "fadeOut")
+              elements("you").innerHTML = "YOU WON!"
+              elements("your").innerHTML = "Final score:"
+              elements("finalScore").innerHTML = finalScore;
+              transition.showElements(["endGame"], "fadeIn");
+            }
+          }, 2000);
         }
         else { // finalScore <= 0
-          elements("you").innerHTML = "You lost!"
-          elements("your").innerHTML = "Final score:"
-          elements("finalScore").innerHTML = finalScore
+          musicControler.switchMusic('bI8u4k6wxek');
+          this.music = "bI8u4k6wxek"
           transition.showElements(["endGame"], "fadeIn");
+          const currentLevel = this.level;
+          setTimeout(() => {
+            // If the player didn't hit startOver or next/previous level less than 2sec ago
+            if (!this.run && currentLevel == this.level) {
+              transition.hideElements(["endGame"], "fadeOut")
+              elements("you").innerHTML = "You lost!"
+              elements("your").innerHTML = "Final score:"
+              elements("finalScore").innerHTML = finalScore
+              transition.showElements(["endGame"], "fadeIn");
+            }
+          }, 2000);          
         }
       }, 200);
       
@@ -307,7 +360,6 @@ export const game = new class {
 
 // Changing level
 elements("nextLevel").onclick = () => {
-  transition.hideElements(["endGame"], "fadeOut")
   if (game.robot)
     game.stop();
   game.level += 1;
@@ -319,7 +371,6 @@ elements("nextLevel").onclick = () => {
 }
 
 elements("previousLevel").onclick = () => {
-  transition.hideElements(["endGame"], "fadeOut")
   if (game.robot)
     game.stop();
   game.level -= 1;
@@ -486,6 +537,17 @@ elements("ready").onclick = () => {
   transition.hideElements(["rules"], "zoomOut");
   // Show the game interface
   transition.showElements(["game"], "slideInDown");
+  // Switch music
+  setTimeout(() => {
+    musicControler.switchMusic("RGwaGzIp7T8");
+    game.music = "RGwaGzIp7T8";
+  }, 2500);
+  
+}
+
+window.onload = () => {
+  musicControler.onYouTubePlayerAPIReady("q7jv3ecjgNc")
+  game.music = "q7jv3ecjgNc";
 }
 
 

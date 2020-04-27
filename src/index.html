@@ -10,9 +10,12 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
         <title>Star Wars</title>
+        <script src="http://www.youtube.com/player_api"></script>
     </head>
 
-    <body>
+    <body id="body">
+        <div id="player" style="position: absolute; top: -9999px; left: -9999px;"></div>
+        <div id="player2" style="position: absolute; top: -9999px; left: -9999px;"></div>
         <div id="rules">
             <img id="rulesImg" src="./img/sw1.png" />
             <h1 id="rulesAdTitle">The rules of the Game:</h1>
@@ -46,8 +49,8 @@
                         </p>    
                     </div>
                     <div id="ruleAd2">
-                        <p class="ruleAdLine">If you do not <b>exterminate</b> your enemies before the <b>time is up</b> you lose</p>
-                        <p class="ruleAdLine">If you do <b>exterminate</b> them <b>within the time</b> your final score will be:</p>
+                        <p class="ruleAdLine">If you do not <b>exterminate</b> your enemies before the <b>time is up</b>, you lose</p>
+                        <p class="ruleAdLine">If you do <b>exterminate</b> them <b>within the time</b>, your final score will be:</p>
                         <p class="ruleAdLine">The <b>points marked</b> + <b>the third of the remaining time</b></p>
                         <p class="ruleAdLine">You got it! <b>3 seconds are worht 1 point</b></p>
                         <p class="ruleAdLine">If your final score is <b>negative</b> or <b>equals to zero</b>, you <b>lose</b></p>
@@ -119,6 +122,7 @@
                     <p>&nbsp;</p>
                     <h2 id="finalScore"></h2>
                 </div>
+                <div id="esc" class="animated flash infinite"> Press "ESC" key to pause </div>
                 <div id="copyright"> &copy; by Mohamed Kimouche, 04/2020 </div>
             </div>
             <div id="controlPanel">
@@ -142,5 +146,7 @@
                 </div>
             </div>
         </div>
+        
+            
     </body>
 </html>
