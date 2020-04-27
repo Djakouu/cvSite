@@ -17,15 +17,15 @@
 // Stop on resize window done
 // Press "escape to pause" message flash infinite done
 // Heroku/ mywebsite done
+// Sound effects done
+// player folder done
 //
-// Sound effects
 // mobile game
-// player folder
 // onclick folder
 // Comments 
 // Orga
+// ask audio permission
 // Robot class
-// Delete yt-player
 
 
 
@@ -42,7 +42,13 @@ import * as musicControler from "./controlers/music"
 export const game = new class {
   constructor(
           nom,
-          arrowLeft=false, arrowUp=false, arrowRight=false, arrowDown=false,
+          arrows={
+            arrowLeft:false, 
+            arrowUp:false, 
+            arrowRight:false, 
+            arrowDown:false
+          },
+          lastRobotDirection="ArrowLeft", // Could be left or up because the robot starts at (0,0)
           robot,
           run=true,
           tFrameLast=0,
@@ -53,10 +59,8 @@ export const game = new class {
           music="RGwaGzIp7T8"
       ) {
     this.nom = nom;
-    this.arrowLeft = arrowLeft;
-    this.arrowUp = arrowUp;
-    this.arrowRight = arrowRight;
-    this.arrowDown = arrowDown;
+    this.arrows=arrows;
+    this.lastRobotDirection=lastRobotDirection;
     this.robot = robot;
     this.run = run;
     this.tFrameLast= tFrameLast;
@@ -117,10 +121,12 @@ export const game = new class {
     })
     this.enemies=[];
     // reset Arrows
-    this.arrowLeft = false;
-    this.arrowUp = false;
-    this.arrowRight = false;
-    this.arrowDown = false;
+    this.arrows={
+      arrowLeft: false, 
+      arrowUp: false, 
+      arrowRight: false, 
+      arrowDown: false
+    }
     // Reset the score
     this.score=0;
     controlPanelView.updateScore(this.score);
@@ -145,28 +151,21 @@ export const game = new class {
     this.start(); 
   }
 
-  async pause() {
-    // Show the control panel if hidden and tighten the playgound
-    let promise = new Promise((res, rej) => {
-      if (elements("controlPanel").style.width == "0vw") {
-        // transition.hideElements(["controlPanel"], "fadeOutRight")
-        elements("controlPanel").style.width = "20vw";
-        elements("playground").style.width = "80vw";
-        elements("esc").style.visibility = "hidden";
-        setTimeout(() => {
-          elements("controlPanel").style.display = "flex";
-        }, 400);
-        setTimeout(() => {
-          res(true);
-        }, 1000);
-      }
-      else res(false);
-    });
-    await promise;
-
+  pause() {
     this.run = false;
     // Pause the time
     controlPanelView.pauseTime();
+    // Show the control panel if hidden and tighten the playgound
+    if (elements("controlPanel").style.width == "0vw") {
+      // transition.hideElements(["controlPanel"], "fadeOutRight")
+      elements("controlPanel").style.width = "20vw";
+      elements("playground").style.width = "80vw";
+      elements("esc").style.visibility = "hidden";
+      setTimeout(() => {
+        elements("controlPanel").style.display = "flex";
+      }, 400);
+    }
+   
   }
 
   async resume() {
@@ -246,10 +245,10 @@ export const game = new class {
           musicControler.switchMusic('Y7vJVKsDfn4');
           this.music = "Y7vJVKsDfn4";
           transition.showElements(["endGame"], "fadeIn");
-          const currentLevel = this.level;
+          const lastLevel = this.level;
           setTimeout(() => {
             // If the player didn't hit startOver or next/previous level less than 2sec ago
-            if (!this.run && currentLevel == this.level) {
+            if (!this.run && lastLevel == this.level) {
               transition.hideElements(["endGame"], "fadeOut")
               elements("you").innerHTML = "YOU WON!"
               elements("your").innerHTML = "Final score:"
@@ -262,10 +261,10 @@ export const game = new class {
           musicControler.switchMusic('bI8u4k6wxek');
           this.music = "bI8u4k6wxek"
           transition.showElements(["endGame"], "fadeIn");
-          const currentLevel = this.level;
+          const lastLevel = this.level;
           setTimeout(() => {
             // If the player didn't hit startOver or next/previous level less than 2sec ago
-            if (!this.run && currentLevel == this.level) {
+            if (!this.run && lastLevel == this.level) {
               transition.hideElements(["endGame"], "fadeOut")
               elements("you").innerHTML = "You lost!"
               elements("your").innerHTML = "Final score:"
@@ -275,36 +274,35 @@ export const game = new class {
           }, 2000);          
         }
       }, 200);
-      
-      
-    }
-    // Update the game according to the time
-    let lap = tFrame - this.tFrameLast ;//< 20 ? tFrame - this.tFrameLast : 17;
-    
-    // Update Arrows values on keydown
-    document.addEventListener('keydown', event => {
-      if (event.key === "ArrowLeft" || event.key === "ArrowUp" || event.key === "ArrowRight" || event.key === "ArrowDown"){
-        const arrowsValues = positionView.updateArrowsValues(event.key);
-        this.arrowLeft = arrowsValues[0];
-        this.arrowUp = arrowsValues[1];
-        this.arrowRight = arrowsValues[2];
-        this.arrowDown = arrowsValues[3];
-      }
-    });
+    };
 
-    //
-    document.addEventListener('keydown', event => {
-      if (window.innerWidth < 900 && event.key === "Escape") {
+    // Pause the game if "ESC" key is pressed (if window.innerWidth is < 900)
+    document.onkeydown = k => {
+      if (window.innerWidth < 900 && k.key === "Escape") {
         game.pause();
         // Toggle buttons
         controlPanelView.toggleButtons("pause");
       }
-    });
+    };
+
+    // Update the game according to the time
+    let lap = tFrame - this.tFrameLast ;
+    
+    // Update this.arrows on keydown
+    window.onkeydown = k => {
+      if (this.arrows[k.key] != true && 
+          (k.key === "ArrowLeft" ||
+           k.key === "ArrowUp" ||
+           k.key === "ArrowRight" || 
+           k.key === "ArrowDown")
+        ) {
+        this.arrows = positionView.updateArrowsValues(k.key);
+      }
+    };
 
     // Update the robot position
     if (this.robot) {
-        const arrows = [this.arrowLeft, this.arrowUp, this.arrowRight, this.arrowDown]
-        const {stepX, stepY} = positionView.updateRobotPosition(arrows, this.robot)
+        const {stepX, stepY} = positionView.updateRobotPosition(this.arrows, this.robot)
         this.robot.moveRel(new Position(stepX, stepY));
     }
 

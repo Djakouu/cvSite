@@ -4,15 +4,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+        <link rel="stylesheet" type="text/css" href="https://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
         <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"> -->
         <link rel="stylesheet" href="css/animate.min.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
         <title>Star Wars</title>
+        <script src="https://www.youtube.com/player_api"></script>
     </head>
 
-    <body>
+    <body id="body">
+        <audio id="player" style="position: absolute; top: -9999px; left: -9999px;" onplay=alert></audio>
         <div id="rules">
             <img id="rulesImg" src="./img/sw1.png" />
             <h1 id="rulesAdTitle">The rules of the Game:</h1>
@@ -46,8 +48,8 @@
                         </p>    
                     </div>
                     <div id="ruleAd2">
-                        <p class="ruleAdLine">If you do not <b>exterminate</b> your enemies before the <b>time is up</b> you lose</p>
-                        <p class="ruleAdLine">If you do <b>exterminate</b> them <b>within the time</b> your final score will be:</p>
+                        <p class="ruleAdLine">If you do not <b>exterminate</b> your enemies before the <b>time is up</b>, you lose</p>
+                        <p class="ruleAdLine">If you do <b>exterminate</b> them <b>within the time</b>, your final score will be:</p>
                         <p class="ruleAdLine">The <b>points marked</b> + <b>the third of the remaining time</b></p>
                         <p class="ruleAdLine">You got it! <b>3 seconds are worht 1 point</b></p>
                         <p class="ruleAdLine">If your final score is <b>negative</b> or <b>equals to zero</b>, you <b>lose</b></p>
@@ -119,6 +121,7 @@
                     <p>&nbsp;</p>
                     <h2 id="finalScore"></h2>
                 </div>
+                <div id="esc" class="animated flash infinite"> Press "ESC" key to pause </div>
                 <div id="copyright"> &copy; by Mohamed Kimouche, 04/2020 </div>
             </div>
             <div id="controlPanel">
@@ -142,5 +145,7 @@
                 </div>
             </div>
         </div>
-    <script type="text/javascript" src="/js/bundle.js"></script></body>
+        
+            
+    </body>
 </html>

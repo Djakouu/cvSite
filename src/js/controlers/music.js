@@ -6,7 +6,10 @@ export let player1, player2;
     loop: true,
     events: {
         onReady: e => {
+            console.log(e.target.playVideo())
+
           e.target.playVideo();
+          console.log(e.target.playVideo())
         },
         onStateChange: e => {
             if (event.data === 1) {
