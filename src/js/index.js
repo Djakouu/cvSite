@@ -95,21 +95,19 @@ export const game = new class {
           }, 200);
         }, 200);
         setTimeout(() => {
-          res(true);
+          res(1);
         }, 1000);
       }
-      else res(false);
+      else res(0);
     });
-    await promise
+    await promise;
     // Demarrage du jeux  
     this.run = true;    
-    startGame.startLevel(this.level)
+    startGame.startLevel(this.level);
     // Lunch time
     controlPanelView.lunchTime(); 
     // Toggle buttons
-    controlPanelView.toggleButtons("start")
-    if (this.tFrameLast == 0)
-      main(0, true)
+    controlPanelView.toggleButtons("start");
   }
 
   stop() {
@@ -136,7 +134,7 @@ export const game = new class {
     }
     // Remove enemies
     this.enemies.forEach(enemy => {
-      spriteView.removeSprite(enemy.id)
+      spriteView.removeSprite(enemy.id);
     })
     this.enemies=[];
     // reset Arrows
@@ -153,23 +151,23 @@ export const game = new class {
     // Reset the controlPanel time
     controlPanelView.stopTime();
     // Toggle buttons
-    controlPanelView.toggleButtons("stop")
+    controlPanelView.toggleButtons("stop");
   }
 
   startOver() {
     // Switch music
     if (this.music != "RGwaGzIp7T8") {
-      musicControler.switchMusic("RGwaGzIp7T8")
-      this.music = "RGwaGzIp7T8"
+      musicControler.switchMusic("RGwaGzIp7T8");
+      this.music = "RGwaGzIp7T8";
     }
     transition.hideElements(["endGame"], "fadeOut");
     if (elements("timeLeftInput").value == "00") {
-      elements("timeLeftInput").value = "02:00"
-      elements("dashboardTimeLeftInput").value = "02:00"
+      elements("timeLeftInput").value = "02:00";
+      elements("dashboardTimeLeftInput").value = "02:00";
 
     }
     this.run=true;
-    main(0, true)
+    main(0, true);
     this.start(); 
   }
 
@@ -229,7 +227,7 @@ export const game = new class {
     // Stop the game if time out
     if (elements("timeLeftInput").value == "00") {
       musicControler.switchMusic('NZruHFBBi6Q');
-      this.music = "NZruHFBBi6Q"
+      this.music = "NZruHFBBi6Q";
       this.stop();
       elements("you").innerHTML = "GAME OVER!";
       elements("your").innerHTML = "Time's up";
@@ -241,8 +239,8 @@ export const game = new class {
     if (this.run && this.robot && this.enemies.length <= ((this.level-1)*2)+1) {
     //((this.level-1)*2)+1): means 1 darthvader left for level 1,
     // Three darthvader for level 2 and 5 darthvader for level 3
-      let lastTime = elements("timeLeftInput").value
-      const lastScore = elements("scoreInput").value
+      let lastTime = elements("timeLeftInput").value;
+      const lastScore = elements("scoreInput").value;
       this.stop();
       setTimeout(() => {
         
@@ -281,8 +279,8 @@ export const game = new class {
           setTimeout(() => {
             // If the player didn't hit startOver or next/previous level less than 2sec ago
             if (!this.run && lastLevel == this.level) {
-              transition.hideElements(["endGame"], "fadeOut")
-              elements("you").innerHTML = "YOU WON!"
+              transition.hideElements(["endGame"], "fadeOut");
+              elements("you").innerHTML = "YOU WON!";
               elements("your").innerHTML = "Final score:"
               elements("finalScore").innerHTML = finalScore;
               transition.showElements(["endGame"], "fadeIn");
@@ -291,16 +289,16 @@ export const game = new class {
         }
         else { // finalScore <= 0
           musicControler.switchMusic('bI8u4k6wxek');
-          this.music = "bI8u4k6wxek"
+          this.music = "bI8u4k6wxek";
           transition.showElements(["endGame"], "fadeIn");
           const lastLevel = this.level;
           setTimeout(() => {
             // If the player didn't hit startOver or next/previous level less than 2sec ago
             if (!this.run && lastLevel == this.level) {
-              transition.hideElements(["endGame"], "fadeOut")
-              elements("you").innerHTML = "You lost!"
-              elements("your").innerHTML = "Final score:"
-              elements("finalScore").innerHTML = finalScore
+              transition.hideElements(["endGame"], "fadeOut");
+              elements("you").innerHTML = "You lost!";
+              elements("your").innerHTML = "Final score:";
+              elements("finalScore").innerHTML = finalScore;
               transition.showElements(["endGame"], "fadeIn");
             }
           }, 2000);          
@@ -320,11 +318,11 @@ export const game = new class {
     document.ontouchstart = () => {
       game.pause();
       // Toggle buttons
-      controlPanelView.toggleButtons("pause")
+      controlPanelView.toggleButtons("pause");
     };
 
     // Update the game according to the time
-    let lap = tFrame - this.tFrameLast ;
+    let lap = tFrame - this.tFrameLast;
     
     if (!isMobileDevice()) {
       // Update this.arrows on keydown
@@ -347,13 +345,13 @@ export const game = new class {
           let x = orientation.gamma; // In degree in the range [0,360]
           let y = orientation.beta;  // In degree in the range [-180,180]
           if (y < -15)
-            this.arrows = positionView.updateArrowsValues("ArrowLeft")
+            this.arrows = positionView.updateArrowsValues("ArrowLeft");
           else if (y > 15)
-            this.arrows = positionView.updateArrowsValues("ArrowRight")
+            this.arrows = positionView.updateArrowsValues("ArrowRight");
           else if (x > 15) // -30 < y < 30
-            this.arrows = positionView.updateArrowsValues("ArrowUp")
+            this.arrows = positionView.updateArrowsValues("ArrowUp");
           else if (x < -15) // -30 < y < 30
-            this.arrows = positionView.updateArrowsValues("ArrowDown")
+            this.arrows = positionView.updateArrowsValues("ArrowDown");
         }
       }
       else { // orientation.includes("portrait")
@@ -361,20 +359,20 @@ export const game = new class {
           let x = orientation.gamma; // In degree in the range [0,360]
           let y = orientation.beta;  // In degree in the range [-180,180]
           if (y < -15)
-            this.arrows = positionView.updateArrowsValues("ArrowUp")
+            this.arrows = positionView.updateArrowsValues("ArrowUp");
           else if (y > 15)
-            this.arrows = positionView.updateArrowsValues("ArrowDown")
+            this.arrows = positionView.updateArrowsValues("ArrowDown");
           else if (x > 15) // -30 < y < 30
-            this.arrows = positionView.updateArrowsValues("ArrowRight")
+            this.arrows = positionView.updateArrowsValues("ArrowRight");
           else if (x < -15) // -30 < y < 30
-            this.arrows = positionView.updateArrowsValues("ArrowLeft")
+            this.arrows = positionView.updateArrowsValues("ArrowLeft");
         }
       }
     }
 
     // Update the robot position
     if (this.robot) {
-        const {stepX, stepY} = positionView.updateRobotPosition(this.arrows, this.robot)
+        const {stepX, stepY} = positionView.updateRobotPosition(this.arrows, this.robot);
         this.robot.moveRel(new Position(stepX, stepY));
     }
     
@@ -383,14 +381,14 @@ export const game = new class {
     // Update enemies positions then check possible collision 
     this.enemies.forEach(enemy => {
     // 1. update enemies position
-      const {stepX, stepY} = positionView.updateEnemiesPosition(enemy, lap)
+      const {stepX, stepY} = positionView.updateEnemiesPosition(enemy, lap);
       enemy.moveRel(new Position(stepX, stepY));
     // 2. Check possible collision
-      const collisionEnemy = positionView.checkCollision(enemy, this.robot)
+      const collisionEnemy = positionView.checkCollision(enemy, this.robot);
       if (collisionEnemy) {
         if (!collisionEnemy.id.includes("darthvader")) {
           // Remove sprite from the view
-            spriteView.removeSprite(collisionEnemy.id)
+            spriteView.removeSprite(collisionEnemy.id);
           // Remove enemy from the array
             this.enemies.splice(this.enemies.indexOf(collisionEnemy), 1);
           // Update score
@@ -435,8 +433,8 @@ elements("nextLevel").onclick = () => {
   if (game.robot)
     game.stop();
   game.level += 1;
-  elements("levelInput").value = game.level + "/3"
-  elements("dashboardLevelInput").value = game.level + "/3"
+  elements("levelInput").value = game.level + "/3";
+  elements("dashboardLevelInput").value = game.level + "/3";
   if (game.level == 3)
     transition.hideButton("nextLevel");
   if (game.level > 1)
@@ -447,8 +445,8 @@ elements("previousLevel").onclick = () => {
   if (game.robot)
     game.stop();
   game.level -= 1;
-  elements("levelInput").value = game.level + "/3"
-  elements("dashboardLevelInput").value = game.level + "/3"
+  elements("levelInput").value = game.level + "/3";
+  elements("dashboardLevelInput").value = game.level + "/3";
   if (game.level == 1)
     transition.hideButton("previousLevel");
   if (game.level < 3)
@@ -459,7 +457,7 @@ elements("previousLevel").onclick = () => {
 
 // Starting and stopping the game by clicking on the button "Start" or "Stop"
 elements("start").onclick = () => {
-  const innerHTML = elements("start").innerHTML
+  const innerHTML = elements("start").innerHTML;
   if (innerHTML == "Start") {
     // Start the game
     game.start(); 
@@ -531,7 +529,7 @@ let lastLap; // Stores the last lp between tFrame and game.tFrameLast to be redu
           lock = true;
       }
       // Stores the last lap
-      lastLap = tFrame - game.tFrameLast
+      lastLap = tFrame - game.tFrameLast;
       // Runs game.update
       game.update(tFrame);
     // Cancels the animation if the "stop" button in clicked
@@ -562,12 +560,12 @@ window.onkeyup = (k) => {
 elements("nextRule").onclick = () => {
   const ruleNb = parseInt(elements("ruleNb").innerHTML);
   // Show "previousRule" button
-  transition.showButton("previousRule")
+  transition.showButton("previousRule");
   // Update rules number and its animation
   transition.updateAndAnimate(ruleNb+1, "Down");
   // Toggle rule page
-  transition.hideElements(["ruleAd"+ruleNb], "zoomOut")
-  transition.showElements(["ruleAd"+(ruleNb+1)], "slideInLeft")
+  transition.hideElements(["ruleAd"+ruleNb], "zoomOut");
+  transition.showElements(["ruleAd"+(ruleNb+1)], "slideInLeft");
   // skip rule if last page
   if (ruleNb+1 == 4) {
     transition.skipRules();
@@ -583,16 +581,16 @@ elements("previousRule").onclick = () => {
     transition.hideButton("previousRule");
   }
   // Toggle rule page
-  transition.hideElements(["ruleAd"+ruleNb], "slideOutLeft")
-  transition.showElements(["ruleAd"+(ruleNb-1)], "zoomIn")
+  transition.hideElements(["ruleAd"+ruleNb], "slideOutLeft");
+  transition.showElements(["ruleAd"+(ruleNb-1)], "zoomIn");
   // Show "nextRule" button, "skipRules" button, "rulesAd title" and "rulesNb" if last page
   if (ruleNb-1 == 3) {
     // Show "nextRule" button
     transition.showButton("nextRule");
     // Show "skipRules" button
-    transition.showButton("skipRules")
+    transition.showButton("skipRules");
     // Show "rulesAdTilte" and "rulesNb"
-    transition.showElements(["rulesAdTitle", "rulesNb"], "zoomIn")
+    transition.showElements(["rulesAdTitle", "rulesNb"], "zoomIn");
   }
 }
 
@@ -601,8 +599,8 @@ elements("skipRules").onclick = () => transition.skipRules();
 elements("ready").onclick = () => {
   // Set game.level according to the form
   game.level = parseInt(getRadioCheckedValue("level"));
-  elements("levelInput").value = game.level + "/3"
-  elements("dashboardLevelInput").value = game.level + "/3"
+  elements("levelInput").value = game.level + "/3";
+  elements("dashboardLevelInput").value = game.level + "/3";
   //Hide "previousLevel" or "nextLevel" buttons if game.level = 1 or 3 respectively
   if (game.level == 1)
     transition.hideButton("previousLevel");
@@ -621,7 +619,7 @@ elements("ready").onclick = () => {
 }
 
 window.onload = () => {
-  musicControler.onYouTubePlayerAPIReady("q7jv3ecjgNc")
+  musicControler.onYouTubePlayerAPIReady("q7jv3ecjgNc");
   game.music = "q7jv3ecjgNc";
 }
 
