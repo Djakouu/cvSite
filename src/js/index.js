@@ -31,6 +31,11 @@ const isMobileDevice = () => {
   return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 };
 
+if (!isMobileDevice) 
+  document.getElementById("esc").innerHTML = " Press 'ESC' key to pause ";
+else 
+  document.getElementById("esc").innerHTML = " Tap the 'screen' to pause ";
+
 import Position from "./models/Position"
 import Robot from "./models/Robot"
 import * as spriteView from "./views/spriteView"
@@ -146,7 +151,7 @@ export const game = new class {
       this.music = "RGwaGzIp7T8"
     }
     transition.hideElements(["endGame"], "fadeOut");
-    if (elements("timeLeftInput").value == "TIME'S UP!")
+    if (elements("timeLeftInput").value == "00")
       elements("timeLeftInput").value = "02:00"
     this.run=true;
     main(0, true)
@@ -197,7 +202,7 @@ export const game = new class {
 
   update(tFrame) {
     // Stop the game if time out
-    if (elements("timeLeftInput").value == "TIME'S UP!") {
+    if (elements("timeLeftInput").value == "00") {
       musicControler.switchMusic('NZruHFBBi6Q');
       this.music = "NZruHFBBi6Q"
       this.stop();
@@ -279,12 +284,18 @@ export const game = new class {
     };
 
     // Pause the game if "ESC" key is pressed (if window.innerWidth is < 900)
+    // or ontouchstart for mobile diveces
     document.onkeydown = k => {
       if (window.innerWidth < 900 && k.key === "Escape") {
         game.pause();
         // Toggle buttons
         controlPanelView.toggleButtons("pause");
       }
+    };
+    document.ontouchstart = () => {
+      game.pause();
+        // Toggle buttons
+        controlPanelView.toggleButtons("pause")
     };
 
     // Update the game according to the time
