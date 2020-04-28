@@ -306,15 +306,15 @@ export const game = new class {
     else { // isMobileDevice
       // Update this.arrows on keydown according to the mobile orientation
       window.ondeviceorientation = orientation => {
-        let x = orientation.beta;  // In degree in the range [-180,180]
-        let y = orientation.gamma; // In degree in the range [-90,90]
-        if (x < 0)
-          this.arrows = positionView.updateArrowsValues("ArrowLeft")
-        else if (x > 0)
-          this.arrows = positionView.updateArrowsValues("ArrowRight")
-        else if (x = 0 && y > 0)
+        let x = orientation.alpha; // In degree in the range [0,360]
+        let y = orientation.beta;  // In degree in the range [-180,180]
+        if (y < 0)
           this.arrows = positionView.updateArrowsValues("ArrowUp")
-        else if (x = 0 && y < 0)
+        else if (y > 0)
+          this.arrows = positionView.updateArrowsValues("ArrowDown")
+        else if (x > 0)
+          this.arrows = positionView.updateArrowsValues("ArrowUp")
+        else if (x < 0)
           this.arrows = positionView.updateArrowsValues("ArrowDown")
       }
     }
