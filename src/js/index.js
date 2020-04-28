@@ -27,7 +27,9 @@
 // ask audio permission
 // Robot class
 
-
+const isMobileDevice = () => {
+  return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+};
 
 import Position from "./models/Position"
 import Robot from "./models/Robot"
@@ -288,23 +290,42 @@ export const game = new class {
     // Update the game according to the time
     let lap = tFrame - this.tFrameLast ;
     
-    // Update this.arrows on keydown
-    window.onkeydown = k => {
-      if (this.arrows[k.key] != true && 
-          (k.key === "ArrowLeft" ||
-           k.key === "ArrowUp" ||
-           k.key === "ArrowRight" || 
-           k.key === "ArrowDown")
-        ) {
-        this.arrows = positionView.updateArrowsValues(k.key);
+    if (!isMobileDevice()) {
+      // Update this.arrows on keydown
+      window.onkeydown = k => {
+        if (this.arrows[k.key] != true && 
+            (k.key === "ArrowLeft" ||
+            k.key === "ArrowUp" ||
+            k.key === "ArrowRight" || 
+            k.key === "ArrowDown")
+          ) {
+          this.arrows = positionView.updateArrowsValues(k.key);
+        }
+      };
+    }
+    else { // isMobileDevice
+      // Update this.arrows on keydown according to the mobile orientation
+      window.ondeviceorientation = orientation => {
+        let x = orientation.beta;  // In degree in the range [-180,180]
+        let y = orientation.gamma; // In degree in the range [-90,90]
+        if (x < 0)
+          this.arrows = positionView.updateArrowsValues("ArrowLeft")
+        else if (x > 0)
+          this.arrows = positionView.updateArrowsValues("ArrowRight")
+        else if (x = 0 && y > 0)
+          this.arrows = positionView.updateArrowsValues("ArrowUp")
+        else if (x = 0 && y < 0)
+          this.arrows = positionView.updateArrowsValues("ArrowDown")
       }
-    };
+    }
 
     // Update the robot position
     if (this.robot) {
         const {stepX, stepY} = positionView.updateRobotPosition(this.arrows, this.robot)
         this.robot.moveRel(new Position(stepX, stepY));
     }
+    
+    
 
     // Update enemies positions then check possible collision 
     this.enemies.forEach(enemy => {
