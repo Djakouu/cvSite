@@ -28,6 +28,14 @@ html {
 body {
   position: relative;
 }
+
+#player {
+  height: 1rem;
+  left: -9999px;
+  position: absolute;
+  top: -9999px; 
+  width: 1rem;
+}
   
 #rules {
   background-color: #ccc;
@@ -309,10 +317,15 @@ b {
 
 #esc, #copyright {
   color: #fff;
-  font-size: 15px;
+  font-size: 1.5rem;
   margin-bottom: 5px;
   position: absolute;
   bottom: 0;
+  }
+  @media only screen and (max-width: 27.5em) {
+    #esc, #copyright {
+      font-size: 1.2rem;
+    }
 }
 
 #esc {
@@ -348,16 +361,18 @@ b {
   z-index: 99;
 }
 
-#timeLeft {
-  
+#level, #timeLeft, #score {
+  font-size: 1.8rem;
+  font-weight: 100;
+  }
+  @media only screen and (max-width: 56.25em) {
+  #level, #timeLeft, #score {
+    font-size: 1.5rem;
+  }
 }
 
 #timeLeftInput {
   color: green;
-}
-
-#score {
-
 }
 
 #scoreInput, #timeLeftInput, #levelInput {
@@ -378,6 +393,11 @@ b {
       font-size: 1.2rem;
       margin: 1rem auto 1rem auto;
       padding: 1.5rem 1rem;
+    }
+  }
+  @media only screen and (max-width: 37.5em) {
+    #timeLeftInput {
+      font-size: 1rem;
     }
 }
 
@@ -446,6 +466,7 @@ b {
     }
 }
   
+
 #previousLevel, #nextLevel {
   font-size: 1.5rem;
   /* width: 50%; */
