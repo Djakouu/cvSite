@@ -342,7 +342,7 @@ export const game = new class {
     else { // isMobileDevice
       // Update this.arrows on keydown according to the mobile orientation
       let orientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
-      if (orientation.includes("portrait")) {
+      if (orientation.includes("landscape")) {
         window.ondeviceorientation = orientation => {
           let x = orientation.gamma; // In degree in the range [0,360]
           let y = orientation.beta;  // In degree in the range [-180,180]
@@ -356,7 +356,7 @@ export const game = new class {
             this.arrows = positionView.updateArrowsValues("ArrowDown")
         }
       }
-      else { // orientation.includes("landscape")
+      else { // orientation.includes("portrait")
         window.ondeviceorientation = orientation => {
           let x = orientation.gamma; // In degree in the range [0,360]
           let y = orientation.beta;  // In degree in the range [-180,180]
