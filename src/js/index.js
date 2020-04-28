@@ -84,10 +84,15 @@ export const game = new class {
       if (window.innerWidth < 900) {
         // transition.hideElements(["controlPanel"], "fadeOutRight")
         elements("controlPanel").style.width = "0vw";
-        elements("playground").style.width = "100vw";
+        elements("playgroundAndDashboard").style.width = "100vw";
         elements("esc").style.visibility = "visible";
         setTimeout(() => {
           elements("controlPanel").style.display = "none";
+          elements("playground").style.height = "90%";
+          elements("touchDevicesDashboard").style.height = "10%";
+          setTimeout(() => {
+            elements("touchDevicesDashboard").style.display = "flex";
+          }, 200);
         }, 200);
         setTimeout(() => {
           res(true);
@@ -108,12 +113,17 @@ export const game = new class {
   stop() {
     // Show the controlPanel if hidden (afte a window resize)
     if (elements("controlPanel").style.width == "0vw") {
-      elements("controlPanel").style.width = "20vw";
-      elements("playground").style.width = "80vw";
-      elements("esc").style.visibility = "hidden";
+      elements("playground").style.height = "100%";
+        elements("touchDevicesDashboard").style.height = "0%";
       setTimeout(() => {
-        elements("controlPanel").style.display = "flex";
-      }, 400);
+        elements("touchDevicesDashboard").style.display = "none";
+        elements("controlPanel").style.width = "20vw";
+        elements("playgroundAndDashboard").style.width = "80vw";
+        elements("esc").style.visibility = "hidden";
+        setTimeout(() => {
+          elements("controlPanel").style.display = "flex";
+        }, 400);
+      }, 200);
     }
     game.run=false;
     // Remove the robot
@@ -151,8 +161,11 @@ export const game = new class {
       this.music = "RGwaGzIp7T8"
     }
     transition.hideElements(["endGame"], "fadeOut");
-    if (elements("timeLeftInput").value == "00")
+    if (elements("timeLeftInput").value == "00") {
       elements("timeLeftInput").value = "02:00"
+      elements("dashboardTimeLeftInput").value = "02:00"
+
+    }
     this.run=true;
     main(0, true)
     this.start(); 
@@ -165,12 +178,17 @@ export const game = new class {
     // Show the control panel if hidden and tighten the playgound
     if (elements("controlPanel").style.width == "0vw") {
       // transition.hideElements(["controlPanel"], "fadeOutRight")
-      elements("controlPanel").style.width = "20vw";
-      elements("playground").style.width = "80vw";
-      elements("esc").style.visibility = "hidden";
+      elements("playground").style.height = "100%";
+      elements("touchDevicesDashboard").style.height = "0%";
       setTimeout(() => {
-        elements("controlPanel").style.display = "flex";
-      }, 400);
+        elements("touchDevicesDashboard").style.display = "none";
+        elements("controlPanel").style.width = "20vw";
+        elements("playgroundAndDashboard").style.width = "80vw";
+        elements("esc").style.visibility = "hidden";
+        setTimeout(() => {
+          elements("controlPanel").style.display = "flex";
+        }, 400);
+      }, 200);
     }
    
   }
@@ -181,10 +199,15 @@ export const game = new class {
       if (window.innerWidth < 900) {
         // transition.hideElements(["controlPanel"], "fadeOutRight")
         elements("controlPanel").style.width = "0vw";
-        elements("playground").style.width = "100vw";
+        elements("playgroundAndDashboard").style.width = "100vw";
         elements("esc").style.visibility = "visible";
         setTimeout(() => {
           elements("controlPanel").style.display = "none";
+          elements("playground").style.height = "90%";
+          elements("touchDevicesDashboard").style.height = "10%";
+          setTimeout(() => {
+            elements("touchDevicesDashboard").style.display = "flex";
+          }, 200);
         }, 200);
         setTimeout(() => {
           res(true);
@@ -284,7 +307,7 @@ export const game = new class {
     };
 
     // Pause the game if "ESC" key is pressed (if window.innerWidth is < 900)
-    // or ontouchstart for mobile diveces
+    // or ontouchstart for touch diveces
     document.onkeydown = k => {
       if (window.innerWidth < 900 && k.key === "Escape") {
         game.pause();
@@ -294,8 +317,8 @@ export const game = new class {
     };
     document.ontouchstart = () => {
       game.pause();
-        // Toggle buttons
-        controlPanelView.toggleButtons("pause")
+      // Toggle buttons
+      controlPanelView.toggleButtons("pause")
     };
 
     // Update the game according to the time
@@ -394,6 +417,7 @@ elements("nextLevel").onclick = () => {
     game.stop();
   game.level += 1;
   elements("levelInput").value = game.level + "/3"
+  elements("dashboardLevelInput").value = game.level + "/3"
   if (game.level == 3)
     transition.hideButton("nextLevel");
   if (game.level > 1)
@@ -405,6 +429,7 @@ elements("previousLevel").onclick = () => {
     game.stop();
   game.level -= 1;
   elements("levelInput").value = game.level + "/3"
+  elements("dashboardLevelInput").value = game.level + "/3"
   if (game.level == 1)
     transition.hideButton("previousLevel");
   if (game.level < 3)
@@ -558,6 +583,7 @@ elements("ready").onclick = () => {
   // Set game.level according to the form
   game.level = parseInt(getRadioCheckedValue("level"));
   elements("levelInput").value = game.level + "/3"
+  elements("dashboardLevelInput").value = game.level + "/3"
   //Hide "previousLevel" or "nextLevel" buttons if game.level = 1 or 3 respectively
   if (game.level == 1)
     transition.hideButton("previousLevel");

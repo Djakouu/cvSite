@@ -1,11 +1,20 @@
+import { elements } from "./base"
+
 export const updateScore = score => {
-    document.getElementById("scoreInput").value = score;
-    if (score > 0)
-        document.getElementById("scoreInput").style.color = "green";
-    else if (score < 0)
-        document.getElementById("scoreInput").style.color = "red";
-    else 
-        document.getElementById("scoreInput").style.color = "black";
+    elements("scoreInput").value = score;
+    elements("dashboardScoreInput").value = score;
+    if (score > 0) {
+        elements("scoreInput").style.color = "green";
+        elements("dashboardScoreInput").style.color = "green";
+    }
+    else if (score < 0) {
+        elements("scoreInput").style.color = "red";
+        elements("dashboardScoreInput").style.color = "red";
+    }
+    else {
+        elements("scoreInput").style.color = "black";
+        elements("dashboardScoreInput").style.color = "black";
+    }
 }
 
 let countDownTime;
@@ -18,10 +27,12 @@ export const lunchTime = (time=121000) => {
 }
 
 export const stopTime = () => {
-    if (document.getElementById("timeLeftInput").value != "TIME'S UP!") {
+    if (elements("timeLeftInput").value != "00") {
         clearInterval(timer);
-        document.getElementById("timeLeftInput").value = "02:00"
-        document.getElementById("timeLeftInput").style.color = "green"
+        elements("timeLeftInput").value = "02:00"
+        elements("dashboardTimeLeftInput").value = "02:00"
+        elements("timeLeftInput").style.color = "green"
+        elements("dashboardTimeLeftInput").style.color = "green"
     }
 }
 
@@ -45,77 +56,91 @@ const myTimer = () => {
     // If the count down is over, write some text 
     if (timeLeft <= 0) {
         clearInterval(timer);
-        document.getElementById("timeLeftInput").value = "TIME'S UP!";
+        elements("timeLeftInput").value = "00";
+        elements("dashboardTimeLeftInput").value = "00";
     } 
     else {
         // Output the result 
-        if (seconds<10) 
-        document.getElementById("timeLeftInput").value = "0" + minutes + ":0" + seconds;
-        else 
-        document.getElementById("timeLeftInput").value = "0" + minutes + ":" + seconds;
-
+        if (seconds<10) {
+            elements("timeLeftInput").value = "0" + minutes + ":0" + seconds;
+            elements("dashboardTimeLeftInput").value = "0" + minutes + ":0" + seconds;
+        }
+        else {
+            elements("timeLeftInput").value = "0" + minutes + ":" + seconds;
+            elements("dashboardTimeLeftInput").value = "0" + minutes + ":" + seconds;
+        }
         // If the time is less than 30 seconds change : take off the miuntes, change the color to red 
         // and make the font size bigger
         if (minutes < 1 && seconds < 30) {
         // Take off the minutes
-        if(seconds < 10)
-            document.getElementById("timeLeftInput").value = "0" + seconds;
-        else
-            document.getElementById("timeLeftInput").value = seconds;
+        if(seconds < 10) {
+            elements("timeLeftInput").value = "0" + seconds;
+            elements("dashboardTimeLeftInput").value = "0" + seconds;
+        }
+        else {
+            elements("timeLeftInput").value = seconds;
+            elements("dashboardTimeLeftInput").value = seconds;
+        }
         // Change color to red
-        document.getElementById("timeLeftInput").style.color = "red";
+        elements("timeLeftInput").style.color = "red";
+        elements("dashboardTimeLeftInput").style.color = "red";
         // Make the front size bigger
-        document.getElementById("timeLeftInput").style.border = "none";
-        document.getElementById("timeLeftInput").style.padding = "0";
-        document.getElementById("timeLeftInput").style.fontSize = "2.4rem";
+        elements("timeLeftInput").style.border = "none";
+        elements("dashboardTimeLeftInput").style.border = "none";
+        elements("timeLeftInput").style.padding = "0";
+        elements("dashboardTimeLeftInput").style.padding = "0";
+        elements("timeLeftInput").style.fontSize = "2.4rem";
+        elements("dashboardTimeLeftInput").style.fontSize = "2.4rem";
         }
         // If the time is less than 1 minute change color to orange
-        else if (minutes < 1)
-        document.getElementById("timeLeftInput").style.color = "orange";
+        else if (minutes < 1) {
+            elements("timeLeftInput").style.color = "orange";
+            elements("dashboardTimeLeftInput").style.color = "orange";
+        }
     }
 }
 
 export const toggleButtons = action => {
     if (action == "start" || action == "startOver") {
         // Stop button  animation
-        document.getElementById("start").style.animation = "none";
+        elements("start").style.animation = "none";
         // Toggle to "Stop" button
-        document.getElementById("start").innerHTML = "Stop";
+        elements("start").innerHTML = "Stop";
         // Show pause button
-        document.getElementById("pause").style.animation = "none";
-        document.getElementById("pause").style.display = "flex";
+        elements("pause").style.animation = "none";
+        elements("pause").style.display = "flex";
         setTimeout(() => {
-            document.getElementById("pause").style.opacity = "1";
+            elements("pause").style.opacity = "1";
         }, 300);
 
     }
     else if (action == "stop") {
        
         // Toggle to Pause button and hide it
-        document.getElementById("pause").innerHTML = "Pause";
-        document.getElementById("pause").style.opacity = "0";
+        elements("pause").innerHTML = "Pause";
+        elements("pause").style.opacity = "0";
         setTimeout(() => {
-            document.getElementById("pause").style.display = "none";
+            elements("pause").style.display = "none";
         }, 300);
         
          // Toogle to "Start over" button
          setTimeout(() => {
-            document.getElementById("start").innerHTML = "Start over";
-            document.getElementById("start").style.animation = "heartBeat 5s infinite";
+            elements("start").innerHTML = "Start over";
+            elements("start").style.animation = "heartBeat 5s infinite";
         }, 300);
         // Reset animation
     }
     else if (action == "pause") {
         // Chenge innerHTML
-        document.getElementById("pause").innerHTML = "Resume";
+        elements("pause").innerHTML = "Resume";
         // Animate "Resume button"
-        document.getElementById("pause").style.animation = "bounce 3s infinite 0s ease-in-out";
+        elements("pause").style.animation = "bounce 3s infinite 0s ease-in-out";
     }
     else { // action == "resume"
         // Stop animation 
-        document.getElementById("pause").style.animation = "none";
+        elements("pause").style.animation = "none";
         // Chenge innerHTML
-        document.getElementById("pause").innerHTML = "Pause";
+        elements("pause").innerHTML = "Pause";
     }
 }
 

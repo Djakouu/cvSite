@@ -283,12 +283,18 @@ b {
   opacity: 0;
 }
 
+#playgroundAndDashboard {
+  height: 100vh;
+  width: 80vw;
+  transition: width 1s;
+}
+
 #playground  {
   background-image: url("/img/sw3.jpg");
-  height: 100vh;
+  height: 100%;
   position: relative;
+  transition: height 1s;
   transition: width 1s;
-  width: 80vw;
 }
 
 #endGame {
@@ -347,6 +353,32 @@ b {
   right: 0;
 }
 
+#touchDevicesDashboard {
+  display: none;
+  height: 0%;
+  justify-content: space-evenly;
+  width: 100%;
+  transition: height 1s;
+}
+
+.dashboardInputs {
+  align-items: center;
+  display: flex;
+  font-size: .8rem;
+}
+
+#dashboardLevelInput, #dashboardTimeLeftInput, #dashboardScoreInput {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  padding: .8rem;
+  text-align: center;
+  width: 7rem;
+}
+
 #controlPanel {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -356,7 +388,7 @@ b {
       -ms-flex-direction: column;
           flex-direction: column;
   font-size: large;
-  height: 100vh;
+  height: 90vh;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -377,7 +409,7 @@ b {
   }
 }
 
-#timeLeftInput {
+#timeLeftInput, #dashboardTimeLeftInput {
   color: green;
 }
 
