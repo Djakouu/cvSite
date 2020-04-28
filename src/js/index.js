@@ -308,13 +308,13 @@ export const game = new class {
       window.ondeviceorientation = orientation => {
         let x = orientation.alpha; // In degree in the range [0,360]
         let y = orientation.beta;  // In degree in the range [-180,180]
-        if (y < 0)
+        if (y < -30)
           this.arrows = positionView.updateArrowsValues("ArrowUp")
-        else if (y > 0)
+        else if (y > 30)
           this.arrows = positionView.updateArrowsValues("ArrowDown")
-        else if (x > 0)
+        else if (x > 0) // -30 < y < 30
           this.arrows = positionView.updateArrowsValues("ArrowUp")
-        else if (x < 0)
+        else if (x < 0) // -30 < y < 30
           this.arrows = positionView.updateArrowsValues("ArrowDown")
       }
     }
