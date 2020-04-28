@@ -14,8 +14,7 @@
     </head>
 
     <body id="body">
-        <div id="player" style="position: absolute; top: -9999px; left: -9999px;"></div>
-        <div id="player2" style="position: absolute; top: -9999px; left: -9999px;"></div>
+        <audio id="player"></audio>
         <div id="rules">
             <img id="rulesImg" src="./img/sw1.png" />
             <h1 id="rulesAdTitle">The rules of the Game:</h1>
@@ -113,17 +112,33 @@
             </div>
         </div>
         <div id="game">
-            <div id="playground">
-                <!-- <img id="R2D2" src="./img/favicon.png" /> -->
-                <div id="endGame">
-                    <h1 id="you"></h1>
-                    <p>&nbsp;</p>
-                    <h2 id="your"></h2>
-                    <p>&nbsp;</p>
-                    <h2 id="finalScore"></h2>
+            <div id="playgroundAndDashboard">
+                <div id="playground">
+                    <!-- <img id="R2D2" src="./img/favicon.png" /> -->
+                    <div id="endGame">
+                        <h1 id="you"></h1>
+                        <p>&nbsp;</p>
+                        <h2 id="your"></h2>
+                        <p>&nbsp;</p>
+                        <h2 id="finalScore"></h2>
+                    </div>
+                    <div id="esc" class="animated flash infinite"></div>
+                    <div id="copyright"> &copy; by Mohamed Kimouche, 04/2020 </div>
                 </div>
-                <div id="esc" class="animated flash infinite"> Press "ESC" key to pause </div>
-                <div id="copyright"> &copy; by Mohamed Kimouche, 04/2020 </div>
+                <div id="touchDevicesDashboard">
+                    <div class="dashboardInputs">
+                        <h1  id="dashboardLevel" >Level:</h1>
+                        <input type="text" id="dashboardLevelInput" class="levelInputsValues" value="" autocomplete="off">
+                    </div>
+                    <div class="dashboardInputs">
+                        <h1  id="dashboardTimeLeft" >Time left:</h1>
+                        <input type="text" id="dashboardTimeLeftInput" value="02:00" autocomplete="off">
+                    </div>
+                    <div class="dashboardInputs">
+                        <h1 id="dashboardScore">Score:</h1>
+                        <input type="text" id="dashboardScoreInput" value="0" autocomplete="off">    
+                    </div>
+                </div>
             </div>
             <div id="controlPanel">
                 <div>
@@ -131,7 +146,7 @@
                 </div>
                 <div>
                     <h1  id="level" >Level:</h1>
-                    <input type="text" id="levelInput" value="" autocomplete="off">
+                    <input type="text" id="levelInput" class="levelInputsValues" value="" autocomplete="off">
                     <h1  id="timeLeft" >Time left:</h1>
                     <input type="text" id="timeLeftInput" value="02:00" autocomplete="off">
                     <h1 id="score">Score:</h1>
