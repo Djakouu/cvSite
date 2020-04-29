@@ -342,8 +342,8 @@ export const game = new class {
       }
       else { // isMobileDevice
         // pause on screen touch
-        if (orientation.includes("landscape")) {
-          document.ontouchstart = () => {
+        if (!orientation.includes("landscape")) {
+          window.ontouchstart = () => {
             game.pause();
             // Toggle buttons
             controlPanelView.toggleButtons("pause");
