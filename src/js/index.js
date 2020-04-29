@@ -27,16 +27,8 @@
 // ask audio permission
 // Robot class
 
-const isMobileDevice = () => {
-  return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-};
-let orientation = "";
-if (!isMobileDevice()) 
-  document.getElementById("esc").innerHTML = " Press 'ESC' key to pause ";
-else {
-  document.getElementById("esc").innerHTML = " Tap the 'screen' to pause ";
-  orientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
-}
+
+
 
 import Position from "./models/Position"
 import Robot from "./models/Robot"
@@ -47,6 +39,17 @@ import * as startGame from "./controlers/startGame"
 import * as transition from "./views/transition"
 import { elements } from "./views/base"
 import * as musicControler from "./controlers/music"
+
+const isMobileDevice = () => {
+  return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+};
+if (!isMobileDevice()) 
+  document.getElementById("esc").innerHTML = " Press 'ESC' key to pause ";
+else {
+  document.getElementById("esc").innerHTML = " Tap the 'screen' to pause ";
+}
+
+let orientation = "";
 
 export const game = new class {
   constructor(
@@ -81,6 +84,8 @@ export const game = new class {
     this.music=music;
   }
   async start() {
+    if (isMobileDevice())
+      orientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
     // Hide the control panel and widen the playgound if window.innerWidth < 900
     let promise = new Promise((res, rej) => {
       if (window.innerWidth < 900 && !orientation.includes("landscape")) {
