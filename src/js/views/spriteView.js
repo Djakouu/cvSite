@@ -7,7 +7,6 @@ export const renderSprite = ({id, imgPath, pos, insideDOM}) => {
     newImg.setAttribute("id", id);
     insideDOM.appendChild(newImg);
     // style the sprite depending on the window innerWidth
-    console.log(windowInnerWidth)
     let style = document.getElementById(id).style;
     style.height = "75px";
     style.width = "75px";

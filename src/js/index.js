@@ -306,20 +306,8 @@ export const game = new class {
       }, 200);
     };
 
-    // Pause the game if "ESC" key is pressed (if window.innerWidth is < 900)
-    // or ontouchstart for touch diveces
-    document.onkeydown = k => {
-      if (window.innerWidth < 900 && k.key === "Escape") {
-        game.pause();
-        // Toggle buttons
-        controlPanelView.toggleButtons("pause");
-      }
-    };
-    document.ontouchstart = () => {
-      game.pause();
-      // Toggle buttons
-      controlPanelView.toggleButtons("pause");
-    };
+    
+    
 
     // Update the game according to the time
     let lap = tFrame - this.tFrameLast;
@@ -335,9 +323,22 @@ export const game = new class {
           ) {
           this.arrows = positionView.updateArrowsValues(k.key);
         }
+        // Pause the game if "ESC" key is pressed (if window.innerWidth is < 900)
+        else if (window.innerWidth < 900 && k.key === "Escape") {
+          // or ontouchstart for touch diveces
+          game.pause();
+          // Toggle buttons
+          controlPanelView.toggleButtons("pause");
+        }
       };
     }
     else { // isMobileDevice
+      // pause on screen touch
+      document.ontouchstart = () => {
+        game.pause();
+        // Toggle buttons
+        controlPanelView.toggleButtons("pause");
+      };
       // Update this.arrows on keydown according to the mobile orientation
       let orientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
       if (orientation.includes("landscape")) {
