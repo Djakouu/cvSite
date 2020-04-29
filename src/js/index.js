@@ -342,11 +342,13 @@ export const game = new class {
       }
       else { // isMobileDevice
         // pause on screen touch
-        document.ontouchstart = () => {
-          game.pause();
-          // Toggle buttons
-          controlPanelView.toggleButtons("pause");
-        };
+        if (orientation.includes("landscape")) {
+          document.ontouchstart = () => {
+            game.pause();
+            // Toggle buttons
+            controlPanelView.toggleButtons("pause");
+          };
+        }
         // Update this.arrows on keydown according to the mobile orientation
         if (orientation.includes("landscape")) {
           window.ondeviceorientation = orientation => {
