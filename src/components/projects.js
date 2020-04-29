@@ -35,6 +35,13 @@ const Projects = ({ location }) => {
             $(`.${projectsStyles.projectsTwoThird}`).addClass(`${projectsStyles.jsWp2}`)
     }
 
+    const handleEnter4 = ({ previousPosition }) => {
+        if (previousPosition === 'below' & !$(`.${projectsStyles.projectsTwoFirst}`).hasClass(`${projectsStyles.jsWp2}`))
+            $(`.${projectsStyles.projectsTwoFourth}`).addClass(`${projectsStyles.jsWp1}`)
+        else
+            $(`.${projectsStyles.projectsTwoFourth}`).addClass(`${projectsStyles.jsWp2}`)
+    }
+
     return (
         <div className={projectsStyles.projects} id="projects">
 
@@ -70,20 +77,19 @@ const Projects = ({ location }) => {
                                 </figure>
                             </a>
                         
-                        
-                            <a href='https://kim-nexter-site.herokuapp.com/' className={projectsStyles.projectsCardLinks} target='_blank' rel="noopener noreferrer">
-                                <figure className={[projectsStyles.projectsCard, projectsStyles.projectsCard2].join(' ')}>
-                                    <img src={`../../nexter.png`} alt="Nexter project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg2].join(' ')} />  
+                            <a href='https://starwarsgame.mohamedkimouche.com' className={projectsStyles.projectsCardLinks} target='_blank' rel="noopener noreferrer">
+                                <figure className={[projectsStyles.projectsCard, projectsStyles.projectsCard7].join(' ')}>
+                                    <img src={`../../starwarsgame.png`} alt="Star-wars game" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg8].join(' ')} />  
                                     <svg className={projectsStyles.projectsCardIcon}>
                                         <use href={newTab}></use>
                                     </svg>
-                                    <figcaption className={[projectsStyles.projectsCardFigcaption, projectsStyles.projectsCardFigcaption2].join(' ')}>
-                                        <h1 className={[projectsStyles.projectsCardFigcaptionTitle, projectsStyles.projectsCardFigcaptionTitle2].join(' ')}>Nexter</h1>
-                                        <div className={[projectsStyles.projectsCardFigcaptionDetails, projectsStyles.projectsCardFigcaptionDetails2].join(' ')}>
-                                            <p className={projectsStyles.projectsCardFigcaptionDetailsDesc}>{dataDeterminer("projectTwoDesc")}</p>
+                                    <figcaption className={[projectsStyles.projectsCardFigcaption, projectsStyles.projectsCardFigcaption7].join(' ')}>
+                                        <h1 className={[projectsStyles.projectsCardFigcaptionTitle, projectsStyles.projectsCardFigcaptionTitle7].join(' ')}>Star-Wars</h1>
+                                        <div className={[projectsStyles.projectsCardFigcaptionDetails, projectsStyles.projectsCardFigcaptionDetails7].join(' ')}>
+                                            <p>{dataDeterminer("projectSevenDesc")}</p>
                                             <br />
                                             <p>{dataDeterminer("projectTagsTitle")}:</p>
-                                            <p className={projectsStyles.projectsCardFigcaptionDetailsTags}>Advanced HTLM 5, CSS 3, SASS</p>
+                                            <p className={projectsStyles.projectsCardFigcaptionDetailsTags}>VANILLA JAVASCRIPT ES6, HTML, CSS, BABEL, WEBPACK</p>
                                         </div> 
                                     </figcaption>
                                 </figure>
@@ -106,7 +112,7 @@ const Projects = ({ location }) => {
                                             <p>{dataDeterminer("projectThreeDesc")}</p>
                                             <br />
                                             <p>{dataDeterminer("projectTagsTitle")}:</p>
-                                            <p>Advanced HTLM 5, CSS 3, SASS</p>
+                                            <p className={projectsStyles.projectsCardFigcaptionDetailsTags}>Advanced HTLM 5, CSS 3, SASS</p>
                                         </div> 
                                     </figcaption>
                                 </figure>
@@ -124,7 +130,7 @@ const Projects = ({ location }) => {
                                             <p>{dataDeterminer("projectFourDesc")}</p>
                                             <br />
                                             <p>{dataDeterminer("projectTagsTitle")}:</p>
-                                            <p>REACT, REDUX, FIREBASE, JEST, WEBPACK, GIT</p>
+                                            <p className={projectsStyles.projectsCardFigcaptionDetailsTags}>REACT, REDUX, FIREBASE, JEST, WEBPACK, GIT</p>
                                         </div> 
                                     </figcaption>
                                 </figure>
@@ -147,7 +153,7 @@ const Projects = ({ location }) => {
                                             <p>{dataDeterminer("projectFiveDesc")}</p>
                                             <br />
                                             <p>{dataDeterminer("projectTagsTitle")}:</p>
-                                            <p>VANILLA JAVASCRIPT ES6, NPM, BABEL, WEBPACK</p>
+                                            <p className={projectsStyles.projectsCardFigcaptionDetailsTags}>VANILLA JAVASCRIPT ES6, NPM, BABEL, WEBPACK</p>
                                         </div> 
                                     </figcaption>
                                 </figure>
@@ -165,7 +171,30 @@ const Projects = ({ location }) => {
                                             <p>{dataDeterminer("projectSixDesc")}</p>
                                             <br />
                                             <p>{dataDeterminer("projectTagsTitle")}:</p>
-                                            <p>NODE.JS, EXPRESS, SOCKET.IO, MONGODB, POSTMAN, GIT</p>
+                                            <p className={projectsStyles.projectsCardFigcaptionDetailsTags}>NODE.JS, EXPRESS, SOCKET.IO, MONGODB, POSTMAN, GIT</p>
+                                        </div> 
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </Waypoint>
+
+                    <Waypoint onEnter={handleEnter4}
+                              bottomOffset='50%'>
+                        <div className={projectsStyles.projectsTwoFourth}>                           
+                           <a href='https://kim-nexter-site.herokuapp.com/' className={projectsStyles.projectsCardLinks} target='_blank' rel="noopener noreferrer">
+                                <figure className={[projectsStyles.projectsCard, projectsStyles.projectsCard2].join(' ')}>
+                                    <img src={`../../nexter.png`} alt="Nexter project" className={[projectsStyles.projectsCardBgImg, projectsStyles.projectsCardBgImg2].join(' ')} />  
+                                    <svg className={projectsStyles.projectsCardIcon}>
+                                        <use href={newTab}></use>
+                                    </svg>
+                                    <figcaption className={[projectsStyles.projectsCardFigcaption, projectsStyles.projectsCardFigcaption2].join(' ')}>
+                                        <h1 className={[projectsStyles.projectsCardFigcaptionTitle, projectsStyles.projectsCardFigcaptionTitle2].join(' ')}>Nexter</h1>
+                                        <div className={[projectsStyles.projectsCardFigcaptionDetails, projectsStyles.projectsCardFigcaptionDetails2].join(' ')}>
+                                            <p className={projectsStyles.projectsCardFigcaptionDetailsDesc}>{dataDeterminer("projectTwoDesc")}</p>
+                                            <br />
+                                            <p>{dataDeterminer("projectTagsTitle")}:</p>
+                                            <p className={projectsStyles.projectsCardFigcaptionDetailsTags}>Advanced HTLM 5, CSS 3, SASS</p>
                                         </div> 
                                     </figcaption>
                                 </figure>

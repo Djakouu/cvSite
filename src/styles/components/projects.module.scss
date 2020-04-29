@@ -110,9 +110,10 @@
                 -webkit-transition: opacity .4s;
                 transition: opacity .4s;
                 font-weight: bold;
-
+                
                 &Desc,
                 &Tags {
+                    font-size: 1.35rem;
                     font-weight: 200;
                 }
             }
@@ -154,7 +155,8 @@
 .projectsTwo {
     &First,
     &Second,
-    &Third {
+    &Third,
+    &Fourth {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -165,7 +167,6 @@
         margin-left: auto;
         max-width: 100%;
         // transform: translateX(4.6rem);
-
 
         @include respond(tab-land) { 
             -webkit-box-orient: vertical; 
