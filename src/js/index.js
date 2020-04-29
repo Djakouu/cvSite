@@ -312,61 +312,63 @@ export const game = new class {
     // Update the game according to the time
     let lap = tFrame - this.tFrameLast;
     
-    if (!isMobileDevice()) {
-      // Update this.arrows on keydown
-      window.onkeydown = k => {
-        if (this.arrows[k.key] != true && 
-            (k.key === "ArrowLeft" ||
-            k.key === "ArrowUp" ||
-            k.key === "ArrowRight" || 
-            k.key === "ArrowDown")
-          ) {
-          this.arrows = positionView.updateArrowsValues(k.key);
-        }
-        // Pause the game if "ESC" key is pressed (if window.innerWidth is < 900)
-        else if (window.innerWidth < 900 && k.key === "Escape") {
-          // or ontouchstart for touch diveces
+    if (this.run && this.robot) {
+      if (!isMobileDevice()) {
+        // Update this.arrows on keydown
+        window.onkeydown = k => {
+          if (this.arrows[k.key] != true && 
+              (k.key === "ArrowLeft" ||
+              k.key === "ArrowUp" ||
+              k.key === "ArrowRight" || 
+              k.key === "ArrowDown")
+            ) {
+            this.arrows = positionView.updateArrowsValues(k.key);
+          }
+          // Pause the game if "ESC" key is pressed (if window.innerWidth is < 900)
+          else if (window.innerWidth < 900 && k.key === "Escape") {
+            // or ontouchstart for touch diveces
+            game.pause();
+            // Toggle buttons
+            controlPanelView.toggleButtons("pause");
+          }
+        };
+      }
+      else { // isMobileDevice
+        // pause on screen touch
+        document.ontouchstart = () => {
           game.pause();
           // Toggle buttons
           controlPanelView.toggleButtons("pause");
+        };
+        // Update this.arrows on keydown according to the mobile orientation
+        let orientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
+        if (orientation.includes("landscape")) {
+          window.ondeviceorientation = orientation => {
+            let x = orientation.gamma; // In degree in the range [0,360]
+            let y = orientation.beta;  // In degree in the range [-180,180]
+            if (y < -15)
+              this.arrows = positionView.updateArrowsValues("ArrowLeft");
+            else if (y > 15)
+              this.arrows = positionView.updateArrowsValues("ArrowRight");
+            else if (x > 15) // -30 < y < 30
+              this.arrows = positionView.updateArrowsValues("ArrowUp");
+            else if (x < -15) // -30 < y < 30
+              this.arrows = positionView.updateArrowsValues("ArrowDown");
+          }
         }
-      };
-    }
-    else { // isMobileDevice
-      // pause on screen touch
-      document.ontouchstart = () => {
-        game.pause();
-        // Toggle buttons
-        controlPanelView.toggleButtons("pause");
-      };
-      // Update this.arrows on keydown according to the mobile orientation
-      let orientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
-      if (orientation.includes("landscape")) {
-        window.ondeviceorientation = orientation => {
-          let x = orientation.gamma; // In degree in the range [0,360]
-          let y = orientation.beta;  // In degree in the range [-180,180]
-          if (y < -15)
-            this.arrows = positionView.updateArrowsValues("ArrowLeft");
-          else if (y > 15)
-            this.arrows = positionView.updateArrowsValues("ArrowRight");
-          else if (x > 15) // -30 < y < 30
-            this.arrows = positionView.updateArrowsValues("ArrowUp");
-          else if (x < -15) // -30 < y < 30
-            this.arrows = positionView.updateArrowsValues("ArrowDown");
-        }
-      }
-      else { // orientation.includes("portrait")
-        window.ondeviceorientation = orientation => {
-          let x = orientation.gamma; // In degree in the range [0,360]
-          let y = orientation.beta;  // In degree in the range [-180,180]
-          if (y < -15)
-            this.arrows = positionView.updateArrowsValues("ArrowUp");
-          else if (y > 15)
-            this.arrows = positionView.updateArrowsValues("ArrowDown");
-          else if (x > 15) // -30 < y < 30
-            this.arrows = positionView.updateArrowsValues("ArrowRight");
-          else if (x < -15) // -30 < y < 30
-            this.arrows = positionView.updateArrowsValues("ArrowLeft");
+        else { // orientation.includes("portrait")
+          window.ondeviceorientation = orientation => {
+            let x = orientation.gamma; // In degree in the range [0,360]
+            let y = orientation.beta;  // In degree in the range [-180,180]
+            if (y < -15)
+              this.arrows = positionView.updateArrowsValues("ArrowUp");
+            else if (y > 15)
+              this.arrows = positionView.updateArrowsValues("ArrowDown");
+            else if (x > 15) // -30 < y < 30
+              this.arrows = positionView.updateArrowsValues("ArrowRight");
+            else if (x < -15) // -30 < y < 30
+              this.arrows = positionView.updateArrowsValues("ArrowLeft");
+          }
         }
       }
     }
