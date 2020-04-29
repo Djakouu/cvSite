@@ -30,11 +30,13 @@
 const isMobileDevice = () => {
   return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 };
-
+let orientation = "";
 if (!isMobileDevice()) 
   document.getElementById("esc").innerHTML = " Press 'ESC' key to pause ";
-else 
+else {
   document.getElementById("esc").innerHTML = " Tap the 'screen' to pause ";
+  orientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
+}
 
 import Position from "./models/Position"
 import Robot from "./models/Robot"
@@ -81,7 +83,7 @@ export const game = new class {
   async start() {
     // Hide the control panel and widen the playgound if window.innerWidth < 900
     let promise = new Promise((res, rej) => {
-      if (window.innerWidth < 900) {
+      if (window.innerWidth < 900 && !orientation.includes("landscape")) {
         // transition.hideElements(["controlPanel"], "fadeOutRight")
         elements("controlPanel").style.width = "0vw";
         elements("playgroundAndDashboard").style.width = "100vw";
@@ -196,7 +198,7 @@ export const game = new class {
   async resume() {
     // Hide the control panel if window.innerWidth < 900
     let promise = new Promise((res, rej) => {
-      if (window.innerWidth < 900) {
+      if (window.innerWidth < 900 && !orientation.includes("landscape")) {
         // transition.hideElements(["controlPanel"], "fadeOutRight")
         elements("controlPanel").style.width = "0vw";
         elements("playgroundAndDashboard").style.width = "100vw";
@@ -341,7 +343,6 @@ export const game = new class {
           controlPanelView.toggleButtons("pause");
         };
         // Update this.arrows on keydown according to the mobile orientation
-        let orientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
         if (orientation.includes("landscape")) {
           window.ondeviceorientation = orientation => {
             let x = orientation.gamma; // In degree in the range [0,360]
