@@ -27,7 +27,7 @@ export const lunchTime = (time=121000) => {
 }
 
 export const stopTime = () => {
-    if (elements("timeLeftInput").value != "00") {
+    if (elements("timeLeftInput").value != "UP!") {
         clearInterval(timer);
         elements("timeLeftInput").value = "02:00"
         elements("dashboardTimeLeftInput").value = "02:00"
@@ -56,8 +56,8 @@ const myTimer = () => {
     // If the count down is over, write some text 
     if (timeLeft <= 0) {
         clearInterval(timer);
-        elements("timeLeftInput").value = "00";
-        elements("dashboardTimeLeftInput").value = "00";
+        elements("timeLeftInput").value = "UP!";
+        elements("dashboardTimeLeftInput").value = "UP!";
     } 
     else {
         // Output the result 

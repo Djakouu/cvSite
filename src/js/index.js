@@ -161,7 +161,7 @@ export const game = new class {
       this.music = "RGwaGzIp7T8";
     }
     transition.hideElements(["endGame"], "fadeOut");
-    if (elements("timeLeftInput").value == "00") {
+    if (elements("timeLeftInput").value == "UP!") {
       elements("timeLeftInput").value = "02:00";
       elements("dashboardTimeLeftInput").value = "02:00";
 
@@ -225,7 +225,7 @@ export const game = new class {
 
   update(tFrame) {
     // Stop the game if time out
-    if (elements("timeLeftInput").value == "00") {
+    if (elements("timeLeftInput").value == "UP!") {
       musicControler.switchMusic('NZruHFBBi6Q');
       this.music = "NZruHFBBi6Q";
       this.stop();
@@ -542,19 +542,8 @@ let lastLap; // Stores the last lp between tFrame and game.tFrameLast to be redu
     // Updates game.tFrameLast after every game.update
     game.tFrameLast = tFrame;
     }
-  main(0); // Lunch cycle
+  main(0, false); // Lunch cycle
 })();
-
-// Stop game if 's' pressed
-window.onkeyup = (k) => {
-  if (k.key == "s")
-      game.stop();
-  if (k.key == "x") {
-      game.stop();
-      game.run=false;
-  }
-}
-
 
 ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////
