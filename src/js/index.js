@@ -271,7 +271,8 @@ export const game = new class {
             arrow = 270; // Up
           else if (x < -15) // -30 < y < 30
             arrow = 90 // Down
-          if (this.orientation.includes("portrait")) 
+          else
+          if (arrow && this.orientation.includes("portrait")) 
             arrow = (arrow + 90)%360;
           this.arrows = positionView.updateArrowsValues(arrow);
         }

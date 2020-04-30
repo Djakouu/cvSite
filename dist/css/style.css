@@ -40,7 +40,6 @@ body {
   height: 90vh;
   margin: 5vh auto 0 auto;
   width: 62vw;
-  display: none;
   } 
   @media only screen and (max-width: 77em) {
     #rules {
@@ -278,8 +277,8 @@ b {
 }
 
 #game {
-  display: flex;
-  opacity: 1;
+  display: none;
+  opacity: 0;
 }
 
 #playgroundAndDashboard {
