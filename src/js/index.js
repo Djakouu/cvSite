@@ -69,14 +69,14 @@ export const game = new class {
     this.score=score;
     this.time=time;
     this.music=music;
-    this.orientation=orientation
+    this.orientation=orientation;
   }
 
   start() {
     if (isMobileDevice())
       this.orientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
     // Hide the control panel and widen the playgound if window.innerWidth < 900
-    if (window.innerWidth < 900 && !this.orientation.includes("landscape"))
+    if (window.innerWidth < 900 && this.orientation.includes("landscape"))
       transition.hideControlPanel();
     // Demarrage du jeux  
     this.run = true;    
@@ -273,9 +273,10 @@ export const game = new class {
           else if (x < -15) // -30 < y < 30
             arrow = 90; // Down
           else
-          if (arrow != -1 && this.orientation.includes("portrait")) 
+          if (arrow != -1 && !this.orientation.includes("landscape")) 
             arrow = (arrow + 90)%360;
-          this.arrows = positionView.updateArrowsValues(arrow);
+          if (arrow!=-1)
+            this.arrows = positionView.updateArrowsValues(arrow);
         }
       }
     }
