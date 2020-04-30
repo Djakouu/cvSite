@@ -69,6 +69,7 @@ export const game = new class {
     this.score=score;
     this.time=time;
     this.music=music;
+    this.orientation=orientation
   }
 
   start() {
@@ -261,7 +262,7 @@ export const game = new class {
         window.ondeviceorientation = o => {
           let x = o.gamma; // In degree in the range [0,360]
           let y = o.beta;  // In degree in the range [-180,180]
-          let arrow;
+          let arrow=-1;
           // values if orientation.includes("landscape")
           if (y < -15)
             arrow = 180; // Left
@@ -270,9 +271,9 @@ export const game = new class {
           else if (x > 15) // -30 < y < 30
             arrow = 270; // Up
           else if (x < -15) // -30 < y < 30
-            arrow = 90 // Down
+            arrow = 90; // Down
           else
-          if (arrow && this.orientation.includes("portrait")) 
+          if (arrow != -1 && this.orientation.includes("portrait")) 
             arrow = (arrow + 90)%360;
           this.arrows = positionView.updateArrowsValues(arrow);
         }
