@@ -1,3 +1,12 @@
+// File content 
+// class Sprite {
+    // constructor()
+    // getPos()
+    // moveTo()
+    // moveRel()
+    // moveFrame()
+// }
+
 import Position from "./Position"
 
 class Sprite {
@@ -70,6 +79,5 @@ class Sprite {
         this.moveRel(new Position(x, y))
     }
 }
-
 
 export default Sprite;

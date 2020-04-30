@@ -1,3 +1,7 @@
+// File content 
+// renderSprite()
+// removeSprite()
+
 export const renderSprite = ({id, imgPath, pos, insideDOM}) => {
     // Get window innerWidth
     const windowInnerWidth = window.innerWidth;
@@ -32,7 +36,6 @@ export const renderSprite = ({id, imgPath, pos, insideDOM}) => {
     setTimeout(() => {
         style.opacity = "1";
     }, 17);
-    
 }
 
 export const removeSprite = id => {

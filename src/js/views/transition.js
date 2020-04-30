@@ -1,3 +1,15 @@
+// File content
+// showButton()
+// hideButton()
+// toggleButtons()
+// showElements()
+// hideElements()
+// updateAndAnimate()
+// skipRules()
+// showControlPanel()
+// hideControlPanel()
+// setEndGameAd()
+
 import { elements } from "./base"
 
 export const showButton = buttonId => {
@@ -12,10 +24,53 @@ export const hideButton = buttonId => {
     elements(buttonId).style.opacity = "0";
 }
 
+export const toggleButtons = action => {
+    if (action == "start" || action == "startOver") {
+        // Stop button  animation
+        elements("start").style.animation = "none";
+        // Toggle to "Stop" button
+        elements("start").innerHTML = "Stop";
+        // Show pause button
+        elements("pause").style.animation = "none";
+        elements("pause").style.display = "flex";
+        setTimeout(() => {
+            elements("pause").style.opacity = "1";
+        }, 300);
+
+    }
+    else if (action == "stop") { 
+        // Toggle to Pause button and hide it
+        elements("pause").innerHTML = "Pause";
+        elements("pause").style.opacity = "0";
+        setTimeout(() => {
+            elements("pause").style.display = "none";
+        }, 300);
+         // Toogle to "Start over" button
+         setTimeout(() => {
+            elements("start").innerHTML = "Start over";
+            elements("start").style.animation = "heartBeat 5s infinite";
+        }, 300);
+    }
+    else if (action == "pause") {
+        // Chenge innerHTML
+        elements("pause").innerHTML = "Resume";
+        // Animate "Resume button"
+        elements("pause").style.animation = "bounce 3s infinite 0s ease-in-out";
+    }
+    else { // action == "resume"
+        // Stop animation 
+        elements("pause").style.animation = "none";
+        // Chenge innerHTML
+        elements("pause").innerHTML = "Pause";
+    }
+}
+
 export const showElements = (elementsIds, sens) => {
     elementsIds.forEach(elementId => {
+        // Reset animation
         elements(elementId).style.animation = sens + " 0.75s ease-out 0.75s";
         elements(elementId).style.animationFillMode = "backwards";
+        // Set dispaly and animation depending on the element
         if (elementId.includes("rulesAdTitle"))
             elements(elementId).style.opacity = "1";
         else if (elementId == "endGame" || elementId == "controlPanel") {
@@ -36,12 +91,12 @@ export const showElements = (elementsIds, sens) => {
 
 export const hideElements = (elementsIds, sens) => {
     elementsIds.forEach(elementId => {
+        // Reset animation
         elements(elementId).style.animation = sens + " 0.75s ease-out 0.75s";
         elements(elementId).style.animationFillMode = "backwards"; 
+        // Set display and opacity depending on the element
         if (sens == "zoomOut" || sens.includes("fadeOut"))
             elements(elementId).style.opacity = "0";
-        // if (elementId == "controlPanel")
-        //     elements(elementId).style.display = "none";
         if (sens.includes("fadeOut"))
             elements(elementId).style.animation = sens + " 0.75s ease-out 0s";
         if (elementId.includes("ruleAd") || elementId == "rules") {
@@ -62,11 +117,6 @@ export const updateAndAnimate = (ruleNb, sens) => {
     else {
         elements("ruleNb").style.animation = "fadeOut" + sens + " 0.75s ease-out 0.75s";
         elements("ruleNb").style.animationFillMode = "backwards"; 
-        // the 3 commented code lines below had to exist with document.getElemntById("ruleNb")
-        // But had to be removed with elments.ruleNb !!
-        // let elm = elements(ruleNb);
-        // let newone = elm.cloneNode(true);
-        // elm.parentNode.replaceChild(newone, elm);
         setTimeout(() => {
             elements("ruleNb").style.animation = "fadeIn" + sens + " 0.75s ease-out 0.75s";
             elements("ruleNb").style.animationFillMode = "backwards"; 
@@ -93,7 +143,6 @@ export const skipRules = () =>  {
 
 export const hideControlPanel = async () => {
     let promise = new Promise((res, rej) => {
-    // transition.hideElements(["controlPanel"], "fadeOutRight")
     elements("controlPanel").style.width = "0vw";
     elements("playgroundAndDashboard").style.width = "100vw";
     elements("esc").style.visibility = "visible";

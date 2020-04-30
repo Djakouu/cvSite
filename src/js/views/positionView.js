@@ -1,3 +1,9 @@
+// File content
+// updateArrowsValues()
+// updateRobotPosition()
+// updateEnemiesPosition()
+// checkCollision()
+
 export const updateArrowsValues = k => {
 return {
     ArrowLeft: k == "ArrowLeft" || k == 180,
@@ -9,12 +15,13 @@ return {
 
 export const updateRobotPosition = (arrows, robot) => {
     const PGstyle = window.getComputedStyle(document.getElementById("playground"));
+    // Get the robot four corners' coordinates
     const robotX1 = robot.getPos().x;
     const robotX2 = robotX1 + parseInt(document.getElementById(robot.id).style.width);
     const robotY1 = robot.getPos().y;
     const robotY2 = robotY1 + parseInt(document.getElementById(robot.id).style.height);
     let move;
-    const step = 10;
+    const step = 1;
     if (arrows["ArrowLeft"]) {
         if (robotX1 - step >= 0)
             move = {stepX: -step, stepY: 0}
@@ -42,7 +49,7 @@ export const updateEnemiesPosition = (enemy, lap) => {
 
     let stepX = parseInt(enemy.speedX) * lap/1000;
     let stepY = parseInt(enemy.speedY) * lap/1000;
-
+    // Get the enemy four coordinates
     let enemyX1 = enemy.getPos().x;
     let enemyX2 = enemyX1 + parseInt(document.getElementById((enemy).id).style.width);
     let enemyY1 = enemy.getPos().y;

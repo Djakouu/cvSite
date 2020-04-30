@@ -1,3 +1,11 @@
+// File content
+// updateScore()
+// lunchTime()
+// stopTime()
+// pauseTime()
+// resumeTime()
+// myTimer()
+
 import { elements } from "./base"
 
 export const updateScore = score => {
@@ -11,7 +19,7 @@ export const updateScore = score => {
         elements("scoreInput").style.color = "red";
         elements("dashboardScoreInput").style.color = "red";
     }
-    else {
+    else {  // score = 0
         elements("scoreInput").style.color = "black";
         elements("dashboardScoreInput").style.color = "black";
     }
@@ -21,7 +29,7 @@ let countDownTime;
 let timer;
 let timeLeft;
 
-export const lunchTime = (time=11000) => {
+export const lunchTime = (time=121000) => {
     countDownTime = new Date().getTime() + time;
     timer = setInterval(myTimer, 1000);
 }
@@ -99,48 +107,3 @@ const myTimer = () => {
         }
     }
 }
-
-export const toggleButtons = action => {
-    if (action == "start" || action == "startOver") {
-        // Stop button  animation
-        elements("start").style.animation = "none";
-        // Toggle to "Stop" button
-        elements("start").innerHTML = "Stop";
-        // Show pause button
-        elements("pause").style.animation = "none";
-        elements("pause").style.display = "flex";
-        setTimeout(() => {
-            elements("pause").style.opacity = "1";
-        }, 300);
-
-    }
-    else if (action == "stop") {
-       
-        // Toggle to Pause button and hide it
-        elements("pause").innerHTML = "Pause";
-        elements("pause").style.opacity = "0";
-        setTimeout(() => {
-            elements("pause").style.display = "none";
-        }, 300);
-        
-         // Toogle to "Start over" button
-         setTimeout(() => {
-            elements("start").innerHTML = "Start over";
-            elements("start").style.animation = "heartBeat 5s infinite";
-        }, 300);
-        // Reset animation
-    }
-    else if (action == "pause") {
-        // Chenge innerHTML
-        elements("pause").innerHTML = "Resume";
-        // Animate "Resume button"
-        elements("pause").style.animation = "bounce 3s infinite 0s ease-in-out";
-    }
-    else { // action == "resume"
-        // Stop animation 
-        elements("pause").style.animation = "none";
-        // Chenge innerHTML
-        elements("pause").innerHTML = "Pause";
-    }
-}
-

@@ -1,9 +1,26 @@
-import { game } from "../index"
-import { elements } from "../views/base"
-import * as transition from "../views/transition"
-import * as controlPanelView from "../views/controlPanelView"
-import * as musicControler from "./music"
+// File content
 
+/////////////////////////////////////
+// The rules' interface //
+/////////////////////////////////////
+// elements("nextRule").onclick()
+// elements("previousRule").onclick()
+// elements("skipRules").onclick()
+// elements("ready").onclick()
+// getRadioCheckedValue()
+
+/////////////////////////////////////
+// The game' interface //
+/////////////////////////////////////
+// elements("nextLevel").onclick()
+// elements("previousLevel").onclick()
+// elements("start").onclick()
+// elements("pause").onclick()
+
+import { game } from "../index"
+import { elements, isMobileDevice } from "../views/base"
+import * as transition from "../views/transition"
+import * as musicControler from "./music"
 
 /////////////////////////////////////
 // The rules' interface //
@@ -61,6 +78,11 @@ elements("ready").onclick = () => {
     transition.hideElements(["rules"], "zoomOut");
     // Show the game interface
     transition.showElements(["game"], "slideInDown");
+    // Set the message to show to pause the game according to the device
+    if (!isMobileDevice()) 
+      elements("esc").innerHTML = " Press 'ESC' key to pause ";
+    else
+      elements("esc").innerHTML = " Tap the 'screen' to pause ";
     // Switch music
     setTimeout(() => {
         musicControler.switchMusic("RGwaGzIp7T8");
@@ -132,7 +154,7 @@ elements("pause").onclick = () => {
         // Pause the game
         game.pause();
         // Toggle buttons
-        controlPanelView.toggleButtons("pause");
+        transition.toggleButtons("pause");
       }
     }
     else {
@@ -141,7 +163,7 @@ elements("pause").onclick = () => {
         // Resume the game
         game.resume();
         // Toggle buttons
-        controlPanelView.toggleButtons("resume");
+        transition.toggleButtons("resume");
       }
     }
 }

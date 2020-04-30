@@ -1,31 +1,16 @@
-// TODO
-// score handler done
-// time handler done
-// start/stop/ start_over button effects done
-// pause/resume button done
-// game.startover() function done
-// toggle buttons on buttons handler done
-// "next/previous level" buttons done
-// Git done
-// Rules done
-// end of the Game : done
-    // time out done
-    // 0 enemies done
-// Transition fade in start  done
-// Responsive done
-// Change robot speed ! done
-// Stop on resize window done
-// Press "escape to pause" message flash infinite done
-// Heroku/ mywebsite done
-// Sound effects done
-// player folder done
-// mobile game done
-//
-// onclick folder done
-// Comments 
-// Orga
-// ask audio permission done
-// Robot class
+// File content 
+// game {
+    // start()
+    // stop()
+    // startover()
+    // pause()
+    // resume()
+    // update()
+//}
+// main {
+    // window.requestAnimationFrame
+    // window.cancelAnimationFrame
+//}
 
 import "./controlers/onclickEvents"
 import * as spriteView from "./views/spriteView"
@@ -36,29 +21,22 @@ import * as transition from "./views/transition"
 import * as musicControler from "./controlers/music"
 import Position from "./models/Position"
 import Robot from "./models/Robot"
-import { elements } from "./views/base"
+import { elements, isMobileDevice } from "./views/base"
 
-
+// Start music
 window.onload = () => {
   musicControler.onYouTubePlayerAPIReady("q7jv3ecjgNc");
   game.music = "q7jv3ecjgNc";
 }
 
+// Stop the game onresize
 window.onresize = () => {
   game.stop();
 }
 
-const isMobileDevice = () => {
-  return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-};
-if (!isMobileDevice()) 
-  elements("esc").innerHTML = " Press 'ESC' key to pause ";
-else {
-  elements("esc").innerHTML = " Tap the 'screen' to pause ";
-}
-
-let orientation = "";
-
+//////////////////////////////////////
+// Set the game class
+//////////////////////////////////////
 export const game = new class {
   constructor(
           nom,
@@ -76,7 +54,8 @@ export const game = new class {
           enemies=[],
           score=0,
           time=181999,
-          music="RGwaGzIp7T8"
+          music="RGwaGzIp7T8",
+          orientation="", // For mobile devices
       ) {
     this.nom = nom;
     this.arrows=arrows;
@@ -91,11 +70,12 @@ export const game = new class {
     this.time=time;
     this.music=music;
   }
+
   start() {
     if (isMobileDevice())
-      orientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
+      this.orientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
     // Hide the control panel and widen the playgound if window.innerWidth < 900
-    if (window.innerWidth < 900 && !orientation.includes("landscape"))
+    if (window.innerWidth < 900 && !this.orientation.includes("landscape"))
       transition.hideControlPanel();
     // Demarrage du jeux  
     this.run = true;    
@@ -103,7 +83,7 @@ export const game = new class {
     // Lunch time
     controlPanelView.lunchTime(); 
     // Toggle buttons
-    controlPanelView.toggleButtons("start");
+    transition.toggleButtons("start");
   }
 
   stop() {
@@ -136,7 +116,7 @@ export const game = new class {
     // Reset the controlPanel time
     controlPanelView.stopTime();
     // Toggle buttons
-    controlPanelView.toggleButtons("stop");
+    transition.toggleButtons("stop");
   }
 
   startOver() {
@@ -168,7 +148,7 @@ export const game = new class {
 
   resume() {
     // Hide the control panel if window.innerWidth < 900
-      if (window.innerWidth < 900 && !orientation.includes("landscape")) 
+      if (window.innerWidth < 900 && !this.orientation.includes("landscape")) 
         transition.hideControlPanel();
     // Resume the game animation
     this.run = true;
@@ -218,10 +198,9 @@ export const game = new class {
           musicControler.switchMusic('Y7vJVKsDfn4');
           this.music = "Y7vJVKsDfn4";
           // Sow result
-          const lastLevel = this.level;
           setTimeout(() => {
-            // If the player didn't hit startOver or next/previous level less than 2sec ago
-            if (!this.run && lastLevel == this.level) {
+            // If the player didn't hit startOver less than 2sec ago
+            if (!this.run) {
               transition.hideElements(["endGame"], "fadeOut");
               transition.setEndGameAd("YOU WON!", "Final score:", finalScore);
             }
@@ -265,17 +244,17 @@ export const game = new class {
             // or ontouchstart for touch diveces
             game.pause();
             // Toggle buttons
-            controlPanelView.toggleButtons("pause");
+            transition.toggleButtons("pause");
           }
         };
       }
       else { // isMobileDevice
         // pause on screen touch
-        if (!orientation.includes("landscape")) {
+        if (!this.orientation.includes("landscape")) {
           window.ontouchstart = () => {
             game.pause();
             // Toggle buttons
-            controlPanelView.toggleButtons("pause");
+            transition.toggleButtons("pause");
           };
         }
         // Update this.arrows on keydown according to the mobile orientation
@@ -292,7 +271,7 @@ export const game = new class {
             arrow = 270; // Up
           else if (x < -15) // -30 < y < 30
             arrow = 90 // Down
-          if (orientation.includes("portrait")) 
+          if (this.orientation.includes("portrait")) 
             arrow = (arrow + 90)%360;
           this.arrows = positionView.updateArrowsValues(arrow);
         }
@@ -345,11 +324,10 @@ export const game = new class {
 }('Star-Wars');
 
 
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
+//////////////////////////////////////
 // Game animation
+//////////////////////////////////////
+
 let main; // Main animation function to run on browser lunch then  bu clicking the button start over
 let lock=false; // Allows the update of game.tFrameLast after a restart
 let lastLap; // Stores the last lp between tFrame and game.tFrameLast to be reduced from the new tFrame after restart
