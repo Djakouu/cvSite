@@ -279,9 +279,9 @@ export const game = new class {
           };
         }
         // Update this.arrows on keydown according to the mobile orientation
-        window.ondeviceorientation = orientation => {
-          let x = orientation.gamma; // In degree in the range [0,360]
-          let y = orientation.beta;  // In degree in the range [-180,180]
+        window.ondeviceorientation = o => {
+          let x = o.gamma; // In degree in the range [0,360]
+          let y = o.beta;  // In degree in the range [-180,180]
           let arrow;
           // values if orientation.includes("landscape")
           if (y < -15)
