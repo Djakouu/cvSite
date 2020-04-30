@@ -90,3 +90,47 @@ export const skipRules = () =>  {
     // Show last rule page
     showElements(["ruleAd4"], "slideInLeft");
 }
+
+export const hideControlPanel = async () => {
+    let promise = new Promise((res, rej) => {
+    // transition.hideElements(["controlPanel"], "fadeOutRight")
+    elements("controlPanel").style.width = "0vw";
+    elements("playgroundAndDashboard").style.width = "100vw";
+    elements("esc").style.visibility = "visible";
+    setTimeout(() => {
+        elements("controlPanel").style.display = "none";
+        elements("playground").style.height = "90%";
+        elements("touchDevicesDashboard").style.height = "10%";
+        setTimeout(() => {
+            elements("touchDevicesDashboard").style.display = "flex";
+        }, 200);
+    }, 200);
+    setTimeout(() => {
+        res();
+    }, 1000);
+    });
+    await promise;
+}
+
+export const showControlPanel = () => {
+    elements("playground").style.height = "100%";
+    elements("touchDevicesDashboard").style.height = "0%";
+    setTimeout(() => {
+        elements("touchDevicesDashboard").style.display = "none";
+        elements("controlPanel").style.width = "20vw";
+        elements("playgroundAndDashboard").style.width = "80vw";
+        elements("esc").style.visibility = "hidden";
+        setTimeout(() => {
+          elements("controlPanel").style.display = "flex";
+        }, 400);
+    }, 200);
+}
+
+export const setEndGameAd = (you, your, finlaScore) => {
+    // Set the ad
+    elements("you").innerHTML = you;
+    elements("your").innerHTML = your;
+    elements("finalScore").innerHTML = finlaScore;
+    // Render the ad
+    showElements(["endGame"], "fadeIn");
+}

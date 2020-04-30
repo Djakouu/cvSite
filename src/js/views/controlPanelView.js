@@ -21,7 +21,7 @@ let countDownTime;
 let timer;
 let timeLeft;
 
-export const lunchTime = (time=121000) => {
+export const lunchTime = (time=11000) => {
     countDownTime = new Date().getTime() + time;
     timer = setInterval(myTimer, 1000);
 }

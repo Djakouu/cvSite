@@ -1,5 +1,3 @@
-/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
-
 @import "./mediaQuery.css";
 
 * {
@@ -146,7 +144,8 @@ b {
 }
 
 #rulesSpritesSickImg {
-  filter: saturate(8);
+  -webkit-filter: saturate(8);
+          filter: saturate(8);
 }
 
 .pickLevelRadioInput {
@@ -237,7 +236,6 @@ b {
   font-size: 7rem;
 }
 
-
 #rulesButtons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -286,6 +284,8 @@ b {
 #playgroundAndDashboard {
   height: 100vh;
   width: 80vw;
+  -webkit-transition: width 1s;
+  -o-transition: width 1s;
   transition: width 1s;
 }
 
@@ -293,7 +293,11 @@ b {
   background-image: url("/img/sw3.jpg");
   height: 100%;
   position: relative;
+  -webkit-transition: height 1s;
+  -o-transition: height 1s;
   transition: height 1s;
+  -webkit-transition: width 1s;
+  -o-transition: width 1s;
   transition: width 1s;
 }
 
@@ -341,8 +345,10 @@ b {
 }
 
 #esc {
-  animation-duration: 30s;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
   margin-left: 5px;
   left: 0;
   visibility: hidden;
@@ -356,13 +362,21 @@ b {
 #touchDevicesDashboard {
   display: none;
   height: 0%;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   width: 100%;
+  -webkit-transition: height 1s;
+  -o-transition: height 1s;
   transition: height 1s;
 }
 
 .dashboardInputs {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: .8rem;
 }
@@ -370,7 +384,8 @@ b {
 #dashboardLevelInput, #dashboardTimeLeftInput, #dashboardScoreInput {
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-weight: bold;
   font-size: 1.2rem;
   margin-left: 1rem;
@@ -394,6 +409,8 @@ b {
           justify-content: space-between;
   margin: auto;
   text-align: center;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
   transition: all 1s;
   width: 20vw;
   z-index: 99;
@@ -450,13 +467,17 @@ b {
   }
   @media only screen and (max-width: 56.25em) {
     #startPauseDiv {
-      flex-direction: column;
-      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       width: 75%;
       margin: auto;
     }
 }
-
 
 #start, #pause, #previousLevel, #nextLevel {
   -webkit-animation-duration: 5s;
@@ -504,10 +525,8 @@ b {
     }
 }
   
-
 #previousLevel, #nextLevel {
   font-size: 1.5rem;
-  /* width: 50%; */
 }
   
 #start:hover, #pause:hover, #previousLevel:hover, #nextLevel:hover {

@@ -1,44 +1,11 @@
-// export const updateRobotPosition = (k, robot) => {
-//     const PGstyle = window.getComputedStyle(document.getElementById("playground"));
-//     const robotX1 = robot.getPos().x;
-//     const robotX2 = robotX1 + parseInt(document.getElementById(robot.id).style.width);
-//     const robotY1 = robot.getPos().y;
-//     const robotY2 = robotY1 + parseInt(document.getElementById(robot.id).style.height);
-//     let move;
-//     const step = 25;
-//     if (k.key == "ArrowLeft") {
-//         if (robotX1 - step >= 0)
-//                 move = {stepX: -step, stepY: 0}
-//             // robot.moveRel(new Position(-step, 0));
-//     }
-//     else if (k.key == "ArrowUp") {
-//         if (robotY1 - step >= 0)
-//             move = {stepX: 0, stepY: -step}
-//             // robot.moveRel(new Position(0, -step));
-//     }
-//     else if (k.key == "ArrowRight") {
-//         if (robotX2 + step <= parseInt(PGstyle.width)) 
-//             move = {stepX: step, stepY: 0}
-//             // robot.moveRel(new Position(step, 0));
-//     }
-//     else if (k.key == "ArrowDown") {
-//         if (robotY2 + step <= parseInt(PGstyle.height))
-//             move = {stepX: 0, stepY: step}
-//             // robot.moveRel(new Position(0, step));
-//     }
-//     else move={stepX:0, stepY:0}
-//     return move;
-// }
 export const updateArrowsValues = k => {
 return {
-    ArrowLeft: k == "ArrowLeft",
-    ArrowUp: k == "ArrowUp",
-    ArrowRight: k == "ArrowRight",
-    ArrowDown: k == "ArrowDown"
+    ArrowLeft: k == "ArrowLeft" || k == 180,
+    ArrowUp: k == "ArrowUp" || k == 270,
+    ArrowRight: k == "ArrowRight" || k == 0,
+    ArrowDown: k == "ArrowDown" || k == 90
     }
-    
 }
-
 
 export const updateRobotPosition = (arrows, robot) => {
     const PGstyle = window.getComputedStyle(document.getElementById("playground"));
@@ -47,7 +14,7 @@ export const updateRobotPosition = (arrows, robot) => {
     const robotY1 = robot.getPos().y;
     const robotY2 = robotY1 + parseInt(document.getElementById(robot.id).style.height);
     let move;
-    const step = 1;
+    const step = 10;
     if (arrows["ArrowLeft"]) {
         if (robotX1 - step >= 0)
             move = {stepX: -step, stepY: 0}
@@ -121,7 +88,6 @@ export const checkCollision = (enemy, robot) => {
         ((robotY1  + 28 >= enemyY1 && robotY1 + 28 <= enemyY2) || (robotY2 - 28 >= enemyY1 && robotY2 - 28 <= enemyY2))
         ) {
         return (enemy)
-        
     }
 }
 

@@ -2,7 +2,7 @@ import Sprite from "../models/Sprite"
 import Position from "../models/Position"
 import * as spriteView from "../views/spriteView"
 import * as positionView from "../views/positionView"
-import {game} from "../index"
+import { game } from "../index"
 
 export const startLevel = level => {
     const elem = document.getElementById("playground");

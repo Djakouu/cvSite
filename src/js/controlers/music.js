@@ -1,7 +1,5 @@
-export let player1, player2;
-
- export function onYouTubePlayerAPIReady(id) {
-    player1 = new YT.Player('player', {
+export function onYouTubePlayerAPIReady(id) {
+    let player1 = new YT.Player('player', {
     videoId: id, // this is the id of the video at youtube (the stuff after "?v=")
     loop: true,
     events: {
