@@ -272,7 +272,9 @@ export const game = new class {
             arrow = 270; // Up
           else if (x < -15) // -30 < y < 30
             arrow = 90; // Down
-         if (arrow!=-1)
+          if (arrow != -1 && !this.orientation.includes("landscape")) 
+            arrow = (arrow + 180) % 360;
+          if (arrow!=-1)
             this.arrows = positionView.updateArrowsValues(arrow);
         }
       }
