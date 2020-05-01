@@ -77,7 +77,7 @@ export const game = new class {
     if (isMobileDevice())
       this.orientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
     // Hide the control panel and widen the playgound if window.innerWidth < 900
-    if (window.innerWidth < 900 && this.orientation.includes("landscape"))
+    if (window.innerWidth < 900 && !this.orientation.includes("landscape"))
       transition.hideControlPanel();
     // Demarrage du jeux  
     this.run = true;    
