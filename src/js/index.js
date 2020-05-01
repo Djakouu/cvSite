@@ -1,4 +1,6 @@
 // File content 
+// window.onload = () => startmusic
+// window.onresize = () => game.stop()
 // game {
     // start()
     // stop()
@@ -13,14 +15,13 @@
 //}
 
 import "./controlers/onclickEvents"
-import * as spriteView from "./views/spriteView"
 import * as positionView from "./views/positionView"
 import * as controlPanelView from "./views/controlPanelView"
 import * as startGame from "./controlers/startGame"
 import * as transition from "./views/transition"
 import * as musicControler from "./controlers/music"
 import Position from "./models/Position"
-import Robot from "./models/Robot"
+import Sprite from "./models/Sprite"
 import { elements, isMobileDevice } from "./views/base"
 
 // Start music
@@ -101,7 +102,7 @@ export const game = new class {
     }
     // Remove enemies
     this.enemies.forEach(enemy => {
-      spriteView.removeSprite(enemy.id);
+      Sprite.removeSprite(enemy.id); // static methode from abstract class Sprite
     })
     this.enemies=[];
     // reset Arrows
@@ -296,7 +297,7 @@ export const game = new class {
       if (collisionEnemy) {
         if (!collisionEnemy.id.includes("darthvader")) {
           // Remove sprite from the view
-            spriteView.removeSprite(collisionEnemy.id);
+            Sprite.removeSprite(collisionEnemy.id); // static methode from abstract class Sprite
           // Remove enemy from the array
             this.enemies.splice(this.enemies.indexOf(collisionEnemy), 1);
           // Update score

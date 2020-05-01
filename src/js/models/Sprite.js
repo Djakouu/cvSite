@@ -4,58 +4,22 @@
     // getPos()
     // moveTo()
     // moveRel()
-    // moveFrame()
+    // static renderSprite()
+    // static removeSprite()
 // }
 
-import Position from "./Position"
-
-class Sprite {
-    constructor(id, pos, level, insideDOM=window.document.getElementById("playground")) {
+class Sprite { // abstract class
+    constructor(id, pos, insideDOM=window.document.getElementById("playground")) {
+        if (this === Sprite) {
+            // Error: Abstract class can not be constructed.
+            throw new TypeError("Can not construct abstract class.");
+        }
         this.id=id+Math.random();
         this.imgPath="./img/" + id + ".png";
         this.pos=pos,
         this.insideDOM=insideDOM;
-        let speedX, speedY;
-        if (id == "anakin_starfighter") {
-          speedX = 20;
-          speedY = 0;
-        }
-        else if (id == "naboo_starfighter") {
-          speedX = 0;
-          speedY = 40;
-        }
-        else if (id == "obi_wan_starfighter") {
-          speedX = 60;
-          speedY = 60;
-        }
-        else if (id == "x_wing") {
-          speedX = 80;
-          speedY = 20;
-        }
-        else if (id == "darthvader") {
-          speedX = 100;
-          speedY = 120;
-        }
-        if (level == 2) {
-          this.speedX=speedX*2 + "px/s";
-          this.speedY=speedY*2 + "px/s";
-        }
-        else if (level == 3) {
-          if (window.innerWidth > 600) {
-            this.speedX=speedX*4 + "px/s";
-            this.speedY=speedY*4 + "px/s";
-          }
-          else { // window.innerWidth < 600
-            this.speedX=speedX + "px/s";
-            this.speedY=speedY + "px/s";
-          }
-        }
-        else {
-          this.speedX=speedX + "px/s";
-          this.speedY=speedY + "px/s";
-        }
     }
-        
+
     getPos()  {
         return this.pos
     }
@@ -73,11 +37,52 @@ class Sprite {
         this.moveTo(this.pos)
     }
 
-    moveFrame(duration) {
-        let x = parseInt(this.speedX) * duration/1000;
-        let y = parseInt(this.speedY) * duration/1000;
-        this.moveRel(new Position(x, y))
+    // Add static methode to abstract class Sprite
+    static renderSprite({id, imgPath, pos, insideDOM}) {
+        // Get window innerWidth
+        const windowInnerWidth = window.innerWidth;
+        // Create new Image
+        let newImg = document.createElement("img");
+        newImg.setAttribute("src", imgPath);
+        newImg.setAttribute("id", id);
+        insideDOM.appendChild(newImg);
+        // style the sprite depending on the window innerWidth
+        let style = document.getElementById(id).style;
+        style.height = "75px";
+        style.width = "75px";
+        if (windowInnerWidth < 1200) {
+            style.height = "60px";
+            style.width = "60px";
+        }
+        if (windowInnerWidth < 900) {
+            style.height = "45px";
+            style.width = "45px";
+        }
+        if (windowInnerWidth < 600) {
+            style.height = "30px";
+            style.width = "30px";
+        }
+        style.left = pos.x + "px";
+        style.opacity = "0"
+        style.position = "absolute";
+        style.top = pos.y + "px"; 
+        style.transition = "all 0.017s";  
+        style.transition = "opacity 1s"     
+
+        setTimeout(() => {
+            style.opacity = "1";
+        }, 17);
+    }
+
+    // Add static methode to abstract class Sprite
+    static removeSprite(id) {
+        document.getElementById(id).style.opacity = "0";
+        setTimeout(() => {
+            const elem = document.getElementById(id);
+            elem.parentNode.removeChild(elem);
+        }, 200);
     }
 }
 
 export default Sprite;
+

@@ -1,9 +1,13 @@
+// File content 
+// class Robot extends Sprite {
+    // constructor()
+//}
+
 import Sprite from "./Sprite"
 
 class Robot extends Sprite {
-    constructor(id, imgPath="../data/R2D2.png",insideDOM=window.document.getElementById("playground"), pod, speedX, speedY) {
-      // Appel au constructeurde Personne
-      super(id, imgPath, insideDOM, pos, speedX, speedY);
+    constructor(id, pos, insideDOM=window.document.getElementById("playground")) {
+        super(id, pos, insideDOM)
     }
 }
 
