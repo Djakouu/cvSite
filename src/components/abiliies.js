@@ -31,75 +31,76 @@ const Abilities = ({ location }) => {
                         <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillOne')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
-                                ability="HTML 5"
+                                ability="HTML5"
                                 starsFull="5"
                             />
                             <Ability 
-                                ability="CSS 3"
+                                ability="CSS3/Sass"
                                 starsFull="5"
                             />
-                            <Ability 
+                            {/* <Ability 
                                 ability="SASS"
                                 starsFull="5"
-                            />
+                            /> */}
                             <Ability 
                                 ability="Javascript"
                                 starsFull="4"
-                            />
+                            /> 
                             <Ability 
-                                ability="GraphQL"
-                                starsFull="4"
-                            />
-                            <Ability 
-                                ability="SQL"
+                                ability="SQL/NoSQL"
                                 starsFull="3"
                             />
                             <Ability 
+                                ability="GraphQL"
+                                starsFull="2"
+                            />
+                           
+                            {/* <Ability 
                                 ability="C++"
                                 starsFull="2"
                             />
                             <Ability 
                                 ability="Python"
                                 starsFull="2"
-                            />
+                            /> */}
                             <Ability 
                                 ability="Java"
                                 starsFull="2"
                             />
-                            <Ability 
+                            {/* <Ability 
                                 ability="PHP"
                                 starsFull="2"
-                            />
+                            /> */}
                             
                         </div>
                         <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillTwo')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
+                                ability="React, Redux"
+                                starsFull="3"
+                            />
+                            <Ability 
                                 ability="Node.js"
-                                starsFull="4"
+                                starsFull="3"
                             />
                             <Ability 
                                 ability="jQuery"
                                 starsFull="3"
                             />
-                            <Ability 
-                                ability="React"
-                                starsFull="3"
-                            />
-                            <Ability 
+                            {/* <Ability 
                                 ability="Apollo Client"
                                 starsFull="3"
                             />
                             <Ability 
                                 ability="Socket.io"
                                 starsFull="3"
-                            />
-                            <Ability 
+                            /> */}
+                            {/* <Ability 
                                 ability="Redux"
                                 starsFull="2"
-                            />
+                            /> */}
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillThree')}</p>
+                        {/* <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillThree')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Express.js"
@@ -113,14 +114,14 @@ const Abilities = ({ location }) => {
                                 ability="ESLint"
                                 starsFull="2"
                             />
-                        </div>
-                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillFour')}</p>
+                        </div> */}
+                        {/* <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillFour')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Bootstrap"
                                 starsFull="3"
                             />
-                        </div>
+                        </div> */}
                         <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillFourBis')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
@@ -132,14 +133,14 @@ const Abilities = ({ location }) => {
                                 starsFull="2"
                             />
                         </div>
-                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillFive')}</p>
+                        {/* <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillFive')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="GatsbyJS"
                                 starsFull="3"
                             />
-                        </div>
-                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillSix')}</p>
+                        </div> */}
+                        {/* <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillSix')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Postman"
@@ -153,8 +154,8 @@ const Abilities = ({ location }) => {
                                 ability=".NET"
                                 starsFull="0"
                             />
-                        </div>
-                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillSeven')}</p>
+                        </div> */}
+                        {/* <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillSeven')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Handlebars"
@@ -164,8 +165,8 @@ const Abilities = ({ location }) => {
                                 ability="Pug"
                                 starsFull="0"
                             />
-                        </div>
-                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillEight')}</p>
+                        </div> */}
+                        {/* <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillEight')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Contentful"
@@ -175,8 +176,8 @@ const Abilities = ({ location }) => {
                                 ability="WordPress"
                                 starsFull="1"
                             />
-                        </div>
-                        <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillNine')}</p>
+                        </div> */}
+                        {/* <p className={abilitiesStyles.separationTitle}>{dataDeterminer('skillNine')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
                             <Ability 
                                 ability="Scilab"
@@ -189,11 +190,11 @@ const Abilities = ({ location }) => {
                             ability="Web Design"
                             starsFull="3"
                             />
-                        </div>
+                        </div> */}
                         
                     </div>
 
-                    <div className={abilitiesStyles.tools}>
+                    {/* <div className={abilitiesStyles.tools}>
                         <h1 className={abilitiesStyles.headingPrimarySub}>{dataDeterminer('toolsTitle')}</h1>
                         <p className={abilitiesStyles.separationTitle}>{dataDeterminer('toolOne')}</p>
                         <div className={abilitiesStyles.abilityGroups}>
@@ -324,7 +325,7 @@ const Abilities = ({ location }) => {
                                 starsFull="0"
                             />
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className={abilitiesStyles.languages}>
                         <h1 className={abilitiesStyles.headingPrimarySub}>{dataDeterminer('langTitle')}</h1>
@@ -345,14 +346,14 @@ const Abilities = ({ location }) => {
                                 ability={dataDeterminer("langFour")}
                                 starsFull="2"
                             />
-                            <Ability
+                            {/* <Ability
                                 ability={dataDeterminer("langFive")}
                                 starsFull="0"
                             />
                             <Ability
                                 ability={dataDeterminer("langSix")}
                                 starsFull="0"
-                            />
+                            /> */}
                         </div>
                     </div>
 

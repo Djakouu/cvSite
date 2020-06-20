@@ -60,7 +60,7 @@ const Profile = ({ location }) => {
                             </div>
                             <div className={profileStyles.detailsInfoAge}>
                                 <h2>{dataDeterminer('ageTitle')}:</h2>
-                                <p>28</p>
+                                <p>29</p>
                             </div>
                             <div className={profileStyles.detailsInfoAdress}>
                                 <h2>{dataDeterminer('adressTitle')}:</h2>

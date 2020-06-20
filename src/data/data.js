@@ -6,9 +6,9 @@ const data = {
     "profileTitleFr": "Profil",
     "profileTitleGr": "Profil",
 
-    "profileSubtitleEn": "I'm an, unusual, economist and javascript webdeveloper",
-    "profileSubtitleFr": "Je suis un économiste et un développeur javascript inaccoutumé",
-    "profileSubtitleGr": "Ich bin ein ungewöhnlicher Wirtschaftler und Javascript-Webentwickler",
+    // "profileSubtitleEn": "I'm an, unusual, economist and javascript webdeveloper",
+    // "profileSubtitleFr": "Je suis un économiste et un développeur javascript inaccoutumé",
+    // "profileSubtitleGr": "Ich bin ein ungewöhnlicher Wirtschaftler und Javascript-Webentwickler",
     
     "experienceTitleEn": "Experience",
     "experienceTitleFr": "Expérience",
@@ -81,29 +81,47 @@ const data = {
     "aboutTitleFr": "Bio",
     "aboutTitleGr": "Bio",
 
-    "aboutTextEn": <p>  Unusual, economist 🏦 📈 and full-stack web developer 🖥️ ⌨️ 
+    "aboutTextEn": <p>  
+                        {/* Unusual, economist 🏦 📈 and full-stack web developer 🖥️ ⌨️ 
                         Curious to always learn more, eager for challenges 
                         and ready for more after the extra mile 🚨 🚀
                         <br/>
                         <br/>
                         I am proactive, enterprising and I love teamwork.
-                        "If everyone is moving forward together, then success takes care of itself." – Henry Ford 
+                        "If everyone is moving forward together, then success takes care of itself." – Henry Ford  */}
+                        Full-satck web developer
+                        <br /><br />
+                        My favorite techs are React, Node.js and Java
+                        <br /><br />
+                        I'm looking for a pre-hiring internship, from 4 to 6 months
                     </p>,
-    "aboutTextFr": <p>  Economiste 🏦 📈 et développeur fullstack 🖥️ ⌨️ inaccoutumé,
+    "aboutTextFr": <p>  
+                        {/* Economiste 🏦 📈 et développeur fullstack 🖥️ ⌨️ inaccoutumé,
                         je suis curieux pour apprendre toujours plus, avide de défis 
                         et prêt pour me donner plus après l'effort supplémentaire 🚨 🚀
                         <br/>
                         <br/>
                         je suis proactif, enterprenant et je suis fait pour le travail en équipe.
-                        "Si tout le monde avance ensemble, alors le succès prend soin de lui-même." – Henry Ford 
+                        "Si tout le monde avance ensemble, alors le succès prend soin de lui-même." – Henry Ford  */}
+                        Développeur web full-stack
+                        <br /><br />
+                        Technos préférées: React, Node.js, Java
+                        <br /><br />
+                        Je recherche un stage de pré-embauche, de 4 à 6 mois
                     </p>,
-    "aboutTextGr": <p>  Ungewöhnlicher, ökonomischer 🏦 📈 und Full-Stack-Webentwickler 🖥️ ⌨️ 
+    "aboutTextGr": <p>  
+                        {/* Ungewöhnlicher, ökonomischer 🏦 📈 und Full-Stack-Webentwickler 🖥️ ⌨️ 
                         Neugierig, immer mehr zu lernen, eifrig auf Herausforderungen 
                         und bereit für mehr nach der Extrameile 🚨 🚀
                         <br/>
                         <br/>
                         Ich bin proaktiv, unternehmungslustig und ich liebe Teamarbeit.
-                        "Wenn alle gemeinsam vorankommen, kümmert sich der Erfolg um sich." – Henry Ford 
+                        "Wenn alle gemeinsam vorankommen, kümmert sich der Erfolg um sich." – Henry Ford  */}
+                        Full-Stack-Webentwickler
+                        <br /><br />
+                        Bevorzugte Technologien: React, Node.js, Java
+                        <br /><br />
+                        Ich suche ein Praktikum vor der Einstellung von 4 bis 6 Monaten
                     </p>,
 
     //DETAILS
@@ -134,18 +152,17 @@ const data = {
     //FINAL Line
     "finalLineEn": <p>
                         A must-know about me is my love for flags.
-                        If you think you are able to offer me a 60x35" flag 
-                        or less big of your country my adress is found just above!
+                        If you think you are able to offer me a flag 
+                        of your country my adress is found just above ^^
                     </p>,
     "finalLineFr": <p>
                         Mon grand amour pour les drapeaux est une des caractéristiques de ma personnalité. 
-                        Si vous pensez pouvoir m'offir un drapeau 150x90 cm ou moins grand de votre pays,
-                        mon adresse se retrouve juste au-dessus !
+                        Si vous pensez pouvoir m'offir un drapeau de votre pays,
+                        mon adresse se retrouve juste au-dessus ^^
                     </p>,
     "finalLineGr": <p>
                         Ein Muss über mich ist meine Liebe zu Fahnen.
-                        Wenn Sie denken, dass Sie mir eine 150x90 cm Flagge anbieten können
-                        oder weniger groß von deinem Land meine Anschrift ist gleich oben zu finden!
+                        Wenn Sie denken, dass Sie mir eine Flagge von deinem Land, meine Anschrift ist gleich oben zu finden ^^
                     </p>,
 
 //EXPERIENCE SECTION
@@ -489,9 +506,9 @@ const data = {
 
     "interestOneTextEn": <p>
                             I love visiting new cities. 
-                            I've already been to big ones such as Copenhagen, Paris, Milano and Madrid. 
+                            {/* I've already been to big ones such as Copenhagen, Paris, Milano and Madrid.  */}
                             Usually in a group, I enjoy discovering new cultures and opening my mind.
-                            <br />
+                            {/* <br />
                             <br />
                             One of the cities I would love to visit, and why not live in, is London. 
                             Being a fan of football and especially of Chelsea Football Club, one of my favorite 
@@ -499,13 +516,13 @@ const data = {
                             <br />
                             <br />
                             Switzerland and Germany are other places I would love to settle in. 
-                            I find the language and the culture very attractive
+                            I find the language and the culture very attractive */}
                          </p>,
     "interestOneTextFr": <p>
                             J'aime visiter de nouvelles villes.
-                            Je suis déjà allé dans des grandes villes telles que Copenhague, Paris, Milan et Madrid.
+                            {/* Je suis déjà allé dans des grandes villes telles que Copenhague, Paris, Milan et Madrid. */}
                             Habituellement, en groupe, j'aime découvrir de nouvelles cultures et ouvrir mon esprit.
-                            <br />
+                            {/* <br />
                             <br />
                             Une des villes que j'aimerais visiter et pourquoi pas y vivre est Londres.
                             Etant fan de foot et en particulier de "Chelsea", un de mes passe-temps préférés
@@ -513,13 +530,13 @@ const data = {
                             <br />
                             <br />
                             La Suisse et l'Allemagne sont d'autres endroits dans lesquels j'aimerais m'installer.
-                            Je trouve la langue et la culture très attrayantes
+                            Je trouve la langue et la culture très attrayantes */}
                          </p>,
     "interestOneTextGr": <p>
                             Ich liebe es, neue Städte zu besuchen.
-                            Ich war schon in großen Städten wie Kopenhagen, Paris, Mailand und Madrid.
+                            {/* Ich war schon in großen Städten wie Kopenhagen, Paris, Mailand und Madrid. */}
                             Normalerweise genieße ich es, in einer Gruppe neue Kulturen zu entdecken und meinen Geist zu öffnen.
-                            <br />
+                            {/* <br />
                             <br />
                             Eine der Städte, die ich besuchen möchte und warum nicht dort leben, ist London.
                             Fußballfan zu sein und vor allem "Chelsea", 
@@ -527,7 +544,7 @@ const data = {
                             <br />
                             <br />
                             Die Schweiz und Deutschland sind andere Orte, an denen ich mich gerne niederlassen würde.
-                            Ich finde die Sprache und die Kultur sehr attraktiv
+                            Ich finde die Sprache und die Kultur sehr attraktiv */}
                          </p>,
 
     "interestTwoTitleEn": "Volunteering",
@@ -539,24 +556,24 @@ const data = {
                             I've spent most of my free time with the Remix Student Association
                             in Grenoble participating into the adjustment of students to their new city, 
                             organising events and parties for cultural exchange.
-                            <br />
+                            {/* <br />
                             <br />
                             I've also got the opportunity to help refugees settle in the city, 
                             answering their needs for two years. I've taught them French, computer science, 
                             helped them with paperwork, translation and finding jobs. 
-                            It's a great honor for me to see them moved forward since they got here
+                            It's a great honor for me to see them moved forward since they got here */}
                          </p>,
     "interestTwoTextFr": <p>
                             Un de mes autres intérêts est de faire du bénévolat pour aider les gens autour.
                             J'ai passé la majeure partie de mon temps libre avec l'association des étudiants Remix 
                             de Grenoble à participer à l'adaptation des étudiants à leur nouvelle ville, 
                             à organiser des fêtes et des échanges culturels.
-                            <br />
+                            {/* <br />
                             <br />
                             J'ai également eu l'opportunité d'aider les réfugiés à s'installer dans la ville 
                             et à répondre à leurs besoins pendant deux ans. Je leur ai appris le français, 
                             l'informatique, et je les ai aidés avec la paperasse, la traduction et la recherche d'emploi.
-                            C'est un grand honneur pour moi de les voir progresser depuis leur arrivée ici.
+                            C'est un grand honneur pour moi de les voir progresser depuis leur arrivée ici. */}
                          </p>,
     "interestTwoTextGr": <p>
                             Eines meiner anderen Interessen ist es, mich als Helfer für die Menschen in 
@@ -564,13 +581,13 @@ const data = {
                             Ich habe die meiste Zeit meiner Freizeit mit der Remix Student Association in Grenoble 
                             verbracht und mich an der Anpassung von Studenten an ihre neue Stadt beteiligt 
                             und Veranstaltungen und Partys für den kulturellen Austausch organisiert.
-                            <br />
+                            {/* <br />
                             <br />
                             Ich hatte auch die Möglichkeit, Flüchtlingen zu helfen, 
                             sich in der Stadt niederzulassen und ihre Bedürfnisse für zwei Jahre zu befriedigen. 
                             Ich unterrichtete sie in Französisch, Informatik und half ihnen bei Papierkram, 
                             Übersetzung und Jobsuche. Es ist mir eine große Ehre, dass sie seit ihrer Ankunft hier 
-                            Fortschritte gemacht haben.
+                            Fortschritte gemacht haben. */}
                          </p>,
 
     "interestThreeTitleEn": "Movies",
@@ -578,54 +595,57 @@ const data = {
     "interestThreeTitleGr": "Kino",
 
     "interestThreeTextEn": <p>
-                                I am also a big fan of the cinema world. 
+                                {/* I am also a big fan of the cinema world.  */}
                                 My favorite TV shows are: 
                                 "Breaking Bad", "The Big Bang Theory", "Suits", "La Casa De Papel", "Prison Break", "HIMYM" and "Chuck" 
                                 (I couldn't leave one of them off the list)
                                 <br />
                                 <br />
                                 My top three movies are: 
-                                "The Hobbit", "The Lord Of The Rings" and "Titanic" (We wouldn't say but yes!) 
+                                "The Hobbit", "The Lord Of The Rings" and "Titanic" 
+                                {/* (We wouldn't say but yes!)  */}
                            </p>,
     "interestThreeTextFr": <p>
-                                Je suis aussi un grand fan du monde du cinéma.
+                                {/* Je suis aussi un grand fan du monde du cinéma. */}
                                 Mes séries télévisées préférées sont:
                                 "Breaking Bad", "Big Bang Théorie", "Suits", "La Casa De Papel", "Prison Break", "HIMYM" et "Chuck"
                                 (Je ne pouvais pas en laisser un en dehors de la liste)
                                 <br />
                                 <br />
                                 Mes trois meilleurs films sont:
-                                "Le Hobbit", "Le Seigneur des Anneaux" et "Titanic" (On ne dirait pas mais oui!) 
+                                "Le Hobbit", "Le Seigneur des Anneaux" et "Titanic" 
+                                {/* (On ne dirait pas mais oui!)  */}
                            </p>,
     "interestThreeTextGr": <p>
-                                Ich bin auch ein großer Fan der Kinowelt.
+                                {/* Ich bin auch ein großer Fan der Kinowelt. */}
                                 Meine Lieblingsfernsehsendungen sind:
                                 "Breaking Bad", "The Big Bang Theory", "Suits", "La Casa De Papel", "Prison Break", "HIMYM" und "Chuck"
                                 (Ich konnte keinen von der Liste lassen)
                                 <br />
                                 <br />
                                 Meine drei besten Filme sind:
-                                "Der Hobbit", "Der Herr der Ringe" und "Titanic" (Wir würden nicht sagen, aber ja!) 
+                                "Der Hobbit", "Der Herr der Ringe" und "Titanic" 
+                                {/* (Wir würden nicht sagen, aber ja!)  */}
                            </p>,
 
     "interestFourTitleEn": "Sports",
     "interestFourTitleFr": "Sports",
     "interestFourTitleGr": "Sporte",
 
-    "interestFourTextEn": <p>
-                               Besides that, I would be watching football on TV,
+    "interestFourTextEn": <p> Football, Football and Football
+                               {/* Besides that, I would be watching football on TV,
                                playing football video games or practicing football in real life 
-                               (That's a lot of football but I also enjoy the gym and swimming)
+                               (That's a lot of football but I also enjoy the gym and swimming) */}
                           </p>,
-    "interestFourTextFr": <p>
-                               En plus de cela, je regarderais bien des matchs de football, 
+    "interestFourTextFr": <p> Foot, Foot et Foot
+                               {/* En plus de cela, je regarderais bien des matchs de football, 
                                jouerais au football sur des jeux vidéo ou pratiquerais le football dans la vie réelle
-                               (Cela fait beaucoup de football mais j'aime aussi la gym et la natation)
+                               (Cela fait beaucoup de football mais j'aime aussi la gym et la natation) */}
                           </p>,
-    "interestFourTextGr": <p>
-                               Außerdem schaue ich mir Fußballspiele an, spiele Fußball bei Videospielen 
+    "interestFourTextGr": <p> Fußballspiele, Fußballspiele und Fußballspiele
+                               {/* Außerdem schaue ich mir Fußballspiele an, spiele Fußball bei Videospielen 
                                oder übe Fußball im wirklichen Leben 
-                               (das ist viel Fußball, aber ich mag auch das Fitnessstudio und das Schwimmen)
+                               (das ist viel Fußball, aber ich mag auch das Fitnessstudio und das Schwimmen) */}
                           </p>,
 
     "interestFiveTitleEn": "Web development",

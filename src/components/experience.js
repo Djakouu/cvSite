@@ -37,36 +37,36 @@ const Experience = ({ location }) => {
                             purpose={dataDeterminer('educationOnePurpose')}
                             description={dataDeterminer('educationOneDescription')}
                         />
-                        <ExperiencePiece 
+                        {/* <ExperiencePiece 
                             location={dataDeterminer('educationTwoLocation')}
                             date="2015 - 2019"
                             purpose={dataDeterminer('educationTwoPurpose')}
                             description={dataDeterminer('educationTwoDescription')}
-                        />
+                        /> */}
                         <ExperiencePiece 
                             location={dataDeterminer('educationThreeLocation')}
-                            date="2014 - 2015"
+                            date="2017 - 2018"
                             purpose={dataDeterminer('educationThreePurpose')}
                             description={dataDeterminer('educationThreeDescription')}
                         />
-                        <ExperiencePiece 
+                        {/* <ExperiencePiece 
                             location={dataDeterminer('educationFourLocation')}
                             date="2008 - 2014"
                             purpose={dataDeterminer('educationFourPurpose')}
                             description={dataDeterminer('educationFourDescription')}
-                        />
-                        <ExperiencePiece 
+                        /> */}
+                        {/* <ExperiencePiece 
                             location={dataDeterminer('educationFiveLocation')}
                             date="2007 - 2008"
                             purpose={dataDeterminer('educationFivePurpose')}
                             description={dataDeterminer('educationFiveDescription')}
-                        />
+                        /> */}
                             
                         
                         </div>
 
-                    <div className={experienceStyles.career}>
-                        <h1 className={experienceStyles.headingPrimarySub}>{dataDeterminer("careerTitle")}</h1>
+                    {/* <div className={experienceStyles.career}> */}
+                        {/* <h1 className={experienceStyles.headingPrimarySub}>{dataDeterminer("careerTitle")}</h1>
                         <ExperiencePiece 
                             location={dataDeterminer('careerOneLocation')}
                             date={dataDeterminer('careerOneDate')}
@@ -78,16 +78,16 @@ const Experience = ({ location }) => {
                             date={dataDeterminer('careerTwoDate')}
                             purpose={dataDeterminer('careerTwoPurpose')}
                             description={dataDeterminer('careerTwoDescription')}
-                        />
-                    </div>
+                        /> */}
+                    {/* </div> */}
                     <div className={experienceStyles.activities}>
                         <h1 className={experienceStyles.headingPrimarySub}>{dataDeterminer("activitiesTitle")}</h1>
-                        <ExperiencePiece 
+                        {/* <ExperiencePiece 
                             location={dataDeterminer('activityOneLocation')}
                             date={`2017 - 2019 (${dataDeterminer('activityOneDate')})`}
                             purpose={dataDeterminer('activityOnePurpose')}
                             description={dataDeterminer('activityOneDescription')}
-                        />
+                        /> */}
                         <ExperiencePiece 
                             location={dataDeterminer('activityTwoLocation')}
                             date={`2019 (${dataDeterminer('activityTwoDate')})`}
@@ -100,12 +100,12 @@ const Experience = ({ location }) => {
                             purpose={dataDeterminer('activityThreePurpose')}
                             description={dataDeterminer('activityThreeDescription')}
                         />
-                        <ExperiencePiece 
+                        {/* <ExperiencePiece 
                             location={dataDeterminer('activityFourLocation')}
                             date={`2016 - 2017 (${dataDeterminer('activityFourDate')})`}
                             purpose={dataDeterminer('activityFourPurpose')}
                             description={dataDeterminer('activityFourDescription')}
-                        />
+                        /> */}
                     </div>
 
                 </div>
